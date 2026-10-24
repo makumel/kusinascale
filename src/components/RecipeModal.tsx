@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Recipe } from '../types/recipe';
 import { CostingCalculator } from './CostingCalculator';
+import { exportRecipeKitchenSheet, ImageExportFormat } from '../utils/brandImageExporter';
+import { Image as ImageIcon } from 'lucide-react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import {
   X,
@@ -9,12 +11,12 @@ import {
   Lightbulb,
   CheckCircle2,
   Printer,
-  Download,
   BookmarkCheck,
   Smartphone,
   Minus,
   Plus,
-  Scale
+  Scale,
+  Download
 } from 'lucide-react';
 
 interface RecipeModalProps {
@@ -33,7 +35,15 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
   const [activeTab, setActiveTab] = useState<'calculator' | 'recipe'>(initialTab);
   const [completedSteps, setCompletedSteps] = useState<Record<number, boolean>>({});
   const [portions, setPortions] = useState<number>(recipe ? recipe.baseServings : 5);
+  const [isExporting, setIsExporting] = useState<boolean>(false);
   const { triggerInstall } = usePWAInstall();
+
+  useEffect(() => {
+    setActiveTab(initialTab);
+    if (recipe) {
+      setPortions(recipe.baseServings);
+    }
+  }, [initialTab, recipe]);
 
   if (!recipe) return null;
 
@@ -46,66 +56,59 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
     }));
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
 
-  // Strictly downloads ONLY the scaled ingredients & prep checklist.
-  // Pricing calculator, margins, and formulas are never downloadable.
-  const handleDownloadPrepList = () => {
-    const divider = '='.repeat(60);
-    const dateStr = new Date().toLocaleDateString('en-PH', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-
-    const scaledIngList = recipe.ingredients.map((ing, idx) => {
-      const scaledVal = Math.round(ing.quantity * scaleMultiplier * 100) / 100;
-      return `${idx + 1}. [ ] ${ing.name} — ${scaledVal} ${ing.unit}`;
-    });
-
-    const stepsList = recipe.instructions.map((step, idx) => {
-      return `Hakbang ${idx + 1}:\n${step}\n`;
-    });
-
-    const tipsList = (recipe.chefTips || []).map((tip) => `- ${tip}`);
-
-    const fileContent = [
-      divider,
-      `KUSINAKITA • GABAY SA PAMAMALENGKE AT PAGLULUTO`,
+  const handleDownloadShoppingList = () => {
+    if (!recipe) return;
+    const lines = [
+      "=======================================================",
+      "KUSINAKITA - PALENGKE SHOPPING & PREP LIST",
+      "=======================================================",
       `Recipe: ${recipe.name}`,
-      `Kategorya: ${recipe.categoryLabel} (${recipe.difficulty})`,
-      `Inihanda para sa: ${portions} PAX (Scale: ${scaleMultiplier.toFixed(1)}x)`,
-      `Petsa: ${dateStr}`,
-      divider,
-      '',
-      `[ MGA SANGKAP NA PAMAMALENGKEHIN (${portions} PAX) ]`,
-      ...scaledIngList,
-      '',
-      divider,
-      `[ PARAAN NG PAGLULUTO ]`,
-      ...stepsList,
-      divider,
-      `[ SEKRRETO SA NEGOSYO AT CHEF TIPS ]`,
-      ...tipsList,
-      '',
-      divider,
-      `Tala: Ang Interactive Food Costing & SRP Calculator ay protektado at eksklusibong`,
-      `matatagpuan sa KusinaKita App: https://kusinakita.mikabiz.space`,
-      divider,
-    ].join('\n');
+      `Category: ${recipe.categoryLabel}`,
+      `Servings: ${portions} pax (Base: ${recipe.baseServings} pax, Scale: ${scaleMultiplier.toFixed(2)}x)`,
+      `Prep / Cook Time: ${recipe.prepTime} / ${recipe.cookTime}`,
+      `Date Generated: ${new Date().toLocaleDateString('fil-PH', { year: 'numeric', month: 'long', day: 'numeric' })}`,
+      "-------------------------------------------------------",
+      "MGA SANGKAP NA BIBILHIN SA PALENGKE:",
+      "-------------------------------------------------------",
+      ...recipe.ingredients.map((ing, idx) => {
+        const scaledQty = (ing.quantity * scaleMultiplier);
+        const qtyStr = scaledQty % 1 === 0 ? String(scaledQty) : scaledQty.toFixed(2);
+        return `[ ] ${idx + 1}. ${ing.name.padEnd(28, ' ')} : ${qtyStr} ${ing.unit} (${((ing.category || 'sangkap') as string).toUpperCase()})`;
+      }),
+      "-------------------------------------------------------",
+      "MGA HAKBANG SA PAGLULUTO:",
+      "-------------------------------------------------------",
+      ...recipe.instructions.map((step, idx) => `${idx + 1}. ${step}`),
+      "-------------------------------------------------------",
+      "LIHIM NG KUSINERO:",
+      (recipe.chefTips && recipe.chefTips.length > 0 ? recipe.chefTips.join(' \n• ') : (recipe.marketNotes || 'Walang karagdagang paalala.')),
+      "=======================================================",
+      "KusinaKita - May Kita sa Kusina • https://kusinakita.mikabiz.space",
+      "Paalala: Ang opisyal na Food Costing at Kalkulador ng SRP ay eksklusibong makukuha sa naka-install na PWA app."
+    ];
 
-    const blob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
+    const blob = new Blob([lines.join('\r\n')], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `KusinaKita_${recipe.id}_${portions}pax_MarketList.txt`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `KusinaKita_${recipe.id}_${portions}pax_ShoppingList.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
+
+  const handleExportKitchenSheet = async (format: ImageExportFormat) => {
+    setIsExporting(true);
+    try {
+      await exportRecipeKitchenSheet(recipe, portions, format);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-900/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
@@ -141,11 +144,12 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
             {/* Header Action Controls */}
             <div className="flex items-center gap-2 no-print">
               <button
-                onClick={handlePrint}
-                title="I-print ang Recipe Card & Prep Sheet"
-                aria-label="I-print ang Recipe Card & Prep Sheet"
+                onClick={() => handleExportKitchenSheet('png')}
+                disabled={isExporting}
+                title="I-save ang Branded Kitchen Card bilang PNG (Never PDF / Never Excel)"
+                aria-label="I-save ang Branded Kitchen Card bilang PNG"
                 type="button"
-                className="p-2 text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 active:scale-95 rounded-xl transition-all cursor-pointer"
+                className="p-2 text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 active:scale-95 rounded-xl transition-all cursor-pointer disabled:opacity-50"
               >
                 <Printer className="w-5 h-5" />
               </button>
@@ -251,16 +255,46 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
                       </button>
                     </div>
 
-                    {/* ONLY Downloadable Part: Scaled Ingredients & Prep Checklist */}
-                    <button
-                      onClick={handleDownloadPrepList}
-                      type="button"
-                      title="I-download ang Market Shopping List para sa napiling portions"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white font-semibold text-xs shadow-xs transition-all cursor-pointer"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Download Shopping List ({portions} pax)</span>
-                    </button>
+                    {/* Shopping Prep Checklist Exporter & Image Exporter */}
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <button
+                        onClick={handleDownloadShoppingList}
+                        type="button"
+                        title="I-download ang Palengke Shopping & Prep Checklist (.txt)"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white font-semibold text-xs shadow-xs transition-all cursor-pointer"
+                      >
+                        <Download className="w-4 h-4" />
+                        <span>Download Shopping List ({portions} pax)</span>
+                      </button>
+                      <button
+                        onClick={() => handleExportKitchenSheet('png')}
+                        disabled={isExporting}
+                        type="button"
+                        title="I-download ang Branded Kitchen Prep Sheet (PNG Image)"
+                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-700 font-semibold text-xs transition-all cursor-pointer disabled:opacity-50"
+                      >
+                        <ImageIcon className="w-4 h-4 text-emerald-600" />
+                        <span>{isExporting ? 'Generating...' : 'PNG'}</span>
+                      </button>
+                      <button
+                        onClick={() => handleExportKitchenSheet('jpeg')}
+                        disabled={isExporting}
+                        type="button"
+                        title="I-download bilang JPG Image"
+                        className="px-2.5 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-700 font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
+                      >
+                        JPG
+                      </button>
+                      <button
+                        onClick={() => handleExportKitchenSheet('gif')}
+                        disabled={isExporting}
+                        type="button"
+                        title="I-download bilang GIF Image"
+                        className="px-2.5 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-700 font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
+                      >
+                        GIF
+                      </button>
+                    </div>
                   </div>
                 </div>
 

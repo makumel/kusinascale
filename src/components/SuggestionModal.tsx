@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Send, Sparkles, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { submitRecipeSuggestion } from '../services/cloudService';
 
 interface SuggestionModalProps {
   isOpen: boolean;
@@ -26,28 +26,17 @@ export const SuggestionModal: React.FC<SuggestionModalProps> = ({ isOpen, onClos
     e.preventDefault();
     setIsSubmitting(true);
 
-    // DECEPTION DEFENSE:
-    // If the honeypot field has ANY content, a bot is detected.
-    // Silently drop payload to prevent spam in database.
-    if (honeypotValue && honeypotValue.trim() !== '') {
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitted(true);
-      }, 600);
-      return;
-    }
-
-    // Normal genuine human submission -> persist to Supabase
     try {
-      await supabase.from('kusina_suggestions').insert([
-        {
-          recipe_name: recipeIdea,
-          category: businessType,
-          notes: `${name ? `Mula kay: ${name} (${contact}). ` : ''}${notes}`,
-        }
-      ]);
+      await submitRecipeSuggestion({
+        recipe_name: recipeIdea,
+        category: businessType,
+        notes: notes || undefined,
+        author_name: name || undefined,
+        contact_info: contact || undefined,
+        bot_field: honeypotValue || undefined
+      });
     } catch (err) {
-      console.warn('Supabase save error (fallback to local state):', err);
+      console.warn('Suggestion submission fallback:', err);
     } finally {
       setIsSubmitting(false);
       setSubmitted(true);

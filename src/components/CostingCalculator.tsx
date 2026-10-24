@@ -1,6 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { Recipe, CostingParameters } from '../types/recipe';
 import { calculateCosting, formatPHP, formatQuantity, calculateMarkupPercent } from '../utils/costingEngine';
+import { saveRecipeCosting } from '../services/cloudService';
+import { exportCostingBreakdownSheet, ImageExportFormat } from '../utils/brandImageExporter';
+import { Image as ImageIcon } from 'lucide-react';
 import {
   RotateCcw,
   Sparkles,
@@ -16,7 +19,9 @@ import {
   Scale,
   Calendar,
   Store,
-  Sliders
+  Sliders,
+  Cloud,
+  CheckCircle2
 } from 'lucide-react';
 
 interface CostingCalculatorProps {
@@ -57,6 +62,67 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
 
   // Dynamic price overrides (ingredientId -> custom batch cost in PHP)
   const [priceOverrides, setPriceOverrides] = useState<Record<string, number>>({});
+  const [isSaving, setIsSaving] = useState<boolean>(false);
+  const [savedId, setSavedId] = useState<string | null>(null);
+  const [saveSuccessMsg, setSaveSuccessMsg] = useState<string>('');
+  const [isExporting, setIsExporting] = useState<boolean>(false);
+
+  const handleExportCosting = async (format: ImageExportFormat) => {
+    setIsExporting(true);
+    try {
+      await exportCostingBreakdownSheet(recipe, breakdown, format);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  const handleSaveCosting = async () => {
+    setIsSaving(true);
+    setSaveSuccessMsg('');
+    try {
+      const payload = {
+        recipe_id: recipe.id,
+        recipe_name: recipe.name,
+        servings,
+        target_margin: targetMargin,
+        cost_per_serving: breakdown.costPerServing,
+        suggested_srp: breakdown.suggestedSrp,
+        profit_per_serving: breakdown.profitPerServing,
+        total_batch_profit: breakdown.netBatchProfit,
+        price_overrides: computedOverrides,
+        overhead_breakdown: {
+          overheadMode,
+          lpgCost,
+          utilitiesCost,
+          laborCost,
+          packagingPerServing,
+          shrinkagePercent,
+          dailyTargetUnits
+        }
+      };
+
+      try {
+        const localSaved = JSON.parse(localStorage.getItem('kusina_local_costings') || '{}');
+        localSaved[recipe.id] = { ...payload, savedAt: new Date().toISOString() };
+        localStorage.setItem('kusina_local_costings', JSON.stringify(localSaved));
+      } catch {
+        // local storage fallback safe
+      }
+
+      const res = await saveRecipeCosting(payload);
+      if (res && res.id) {
+        setSavedId(res.id);
+        setSaveSuccessMsg(`Na-save sa Cloud! ID: ${res.id}`);
+      } else {
+        setSaveSuccessMsg('Na-save sa Device Storage (Offline Mode)');
+      }
+    } catch {
+      setSaveSuccessMsg('Na-save sa Device Storage (Offline Mode)');
+    } finally {
+      setIsSaving(false);
+      setTimeout(() => setSaveSuccessMsg(''), 6000);
+    }
+  };
 
   // Compute active price overrides considering market preset
   const computedOverrides = useMemo(() => {
@@ -175,6 +241,90 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
 
   return (
     <div className="space-y-6">
+      {/* KusinaKita Official Brand Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-stone-900 to-emerald-900 text-white shadow-md border border-emerald-800/40">
+        <div className="flex items-center gap-3">
+          <img
+            src="/brand-logo-main.png"
+            alt="KusinaKita - Asian and Carinderia"
+            className="h-12 w-auto object-contain bg-white/10 rounded-xl p-1"
+          />
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-serif text-base sm:text-lg font-bold tracking-tight text-white leading-none">
+                Kusina<span className="text-emerald-400">Kita</span> Costing Engine
+              </span>
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 uppercase tracking-wider">
+                Hindi Ito AI
+              </span>
+            </div>
+            <p className="text-[11px] text-stone-300 mt-1">
+              May Kita sa Kusina • Commercial Food Costing &amp; Target SRP Protection
+            </p>
+          </div>
+        </div>
+
+        {/* Cloud & Local Storage Save Actions (Zero Downloads / PWA Exclusivity) */}
+        <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2 self-end sm:self-center">
+          {saveSuccessMsg && (
+            <span className="text-[11px] font-semibold text-emerald-300 bg-emerald-950/80 px-2.5 py-1 rounded-lg border border-emerald-500/30 animate-in fade-in">
+              {saveSuccessMsg}
+            </span>
+          )}
+          <button
+            onClick={handleSaveCosting}
+            disabled={isSaving}
+            type="button"
+            title="I-save ang binagong presyo at overhead sa Cloud at Device Storage"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs shadow-xs transition-all cursor-pointer disabled:opacity-50"
+          >
+            {savedId ? (
+              <>
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-300" />
+                <span>Naka-save (#{savedId})</span>
+              </>
+            ) : (
+              <>
+                <Cloud className="w-3.5 h-3.5 text-emerald-200" />
+                <span>{isSaving ? 'Nagsa-save...' : 'I-save sa Cloud / App'}</span>
+              </>
+            )}
+          </button>
+
+          {/* Branded Costing Card Exporter: PNG / JPG / GIF (Never Excel / Never PDF) */}
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => handleExportCosting('png')}
+              disabled={isExporting}
+              type="button"
+              title="I-download ang Branded Costing Card (PNG)"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-95 text-stone-950 font-bold text-xs shadow-xs transition-all cursor-pointer disabled:opacity-50"
+            >
+              <ImageIcon className="w-3.5 h-3.5" />
+              <span>{isExporting ? 'Generating...' : 'I-save Costing (PNG)'}</span>
+            </button>
+            <button
+              onClick={() => handleExportCosting('jpeg')}
+              disabled={isExporting}
+              type="button"
+              title="I-download bilang JPG Image"
+              className="px-2.5 py-2 rounded-xl border border-emerald-700 bg-emerald-900/60 hover:bg-emerald-800 text-white font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
+            >
+              JPG
+            </button>
+            <button
+              onClick={() => handleExportCosting('gif')}
+              disabled={isExporting}
+              type="button"
+              title="I-download bilang GIF Image"
+              className="px-2.5 py-2 rounded-xl border border-emerald-700 bg-emerald-900/60 hover:bg-emerald-800 text-white font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
+            >
+              GIF
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Top Controls & Reset Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-stone-200">
         <div>

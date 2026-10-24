@@ -1,0 +1,15 @@
+import urllib.request
+import re
+
+folder_id = '1cobRFCee601rmCImuRU7hFw-Ge9dlCBZ'
+url = f'https://drive.google.com/drive/folders/{folder_id}'
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+
+with urllib.request.urlopen(req) as resp:
+    raw = resp.read().decode('utf-8', errors='ignore')
+
+# Look for file id '1nF3QlriVinDulgLJfW5GIQZG45NxM5Xl' and inspect surrounding numbers
+pos = raw.find('1nF3QlriVinDulgLJfW5GIQZG45NxM5Xl')
+if pos != -1:
+    snippet = raw[pos:pos+400]
+    print("Snippet:", snippet)

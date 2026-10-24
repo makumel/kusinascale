@@ -1,6 +1,7 @@
 import React from 'react';
-import { Sparkles, MessageSquarePlus, Calculator, TrendingUp, Smartphone, CheckCircle2, Flame } from 'lucide-react';
+import { Sparkles, MessageSquarePlus, Calculator, TrendingUp, Smartphone, CheckCircle2, Flame, Wifi, WifiOff } from 'lucide-react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
+import { useNetworkStatus } from '../hooks/useNetworkStatus';
 
 interface NavbarProps {
   onOpenSuggestion: () => void;
@@ -10,6 +11,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, onOpenLaunchOffer, recipeCount }) => {
   const { isInstalled, triggerInstall } = usePWAInstall();
+  const { isOnline } = useNetworkStatus();
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
@@ -41,6 +43,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, onOpenLaunchOf
 
           {/* Quick Metrics & Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Palengke Offline / Online Status Badge */}
+            {!isOnline ? (
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-900 text-xs font-bold animate-pulse">
+                <WifiOff className="w-3.5 h-3.5 text-amber-700" />
+                <span className="hidden sm:inline">Palengke Mode (Offline)</span>
+                <span className="sm:hidden">Offline</span>
+              </div>
+            ) : (
+              <div className="hidden xl:flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200/80 text-[11px] font-medium" title="Offline ready: Ang lahat ng 64 recipe ay naka-cache sa device">
+                <Wifi className="w-3 h-3 text-emerald-600" />
+                <span>Palengke Ready</span>
+              </div>
+            )}
+
             <div className="hidden lg:flex items-center gap-3 px-3.5 py-1.5 rounded-xl bg-stone-100/80 border border-stone-200 text-xs text-stone-700">
               <span className="inline-flex items-center gap-1.5 font-medium">
                 <Calculator className="w-3.5 h-3.5 text-emerald-600" />
