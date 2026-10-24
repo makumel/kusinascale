@@ -10,6 +10,7 @@ import {
   Lightbulb,
   CheckCircle2,
   Printer,
+  Download,
   Sparkles,
   BookmarkCheck
 } from 'lucide-react';
@@ -41,10 +42,38 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
     window.print();
   };
 
+  const handleExportCSV = () => {
+    if (!recipe) return;
+    const headers = ['Pangalan ng Sangkap', 'Kategorya', 'Dami', 'Yunit', 'Halaga (PHP)', 'Market Note'];
+    const rows = recipe.ingredients.map(ing => [
+      '"' + ing.name.replace(/"/g, '""') + '"',
+      '"' + ing.category + '"',
+      ing.quantity,
+      '"' + ing.unit + '"',
+      ing.baseCost,
+      '"' + (ing.unitCostDescription || '').replace(/"/g, '""') + '"'
+    ]);
+    const lines = [
+      `"${recipe.name} - KusinaKita Negosyo Costing Sheet"`,
+      `"Kategorya: ${recipe.categoryLabel}","Yield: ${recipe.baseServings} servings","Prep Time: ${recipe.prepTime}"`,
+      '',
+      headers.join(','),
+      ...rows.map(e => e.join(','))
+    ];
+    const csvContent = 'data:text/csv;charset=utf-8,﻿' + lines.join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `KusinaKita_${recipe.id}_Costing.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-900/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      <div id="recipe-print-area" className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden my-auto max-h-[92vh] flex flex-col">
         {/* Sticky Header with Title and Tab Switcher */}
         <div className="p-4 sm:p-6 border-b border-stone-200 bg-white sticky top-0 z-20 flex flex-col gap-4">
           <div className="flex items-start justify-between gap-4">
@@ -73,8 +102,17 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               </div>
             </div>
 
-            {/* Action buttons: Print & Close */}
-            <div className="flex items-center gap-2">
+            {/* Action buttons: Print, Export CSV & Close */}
+            <div className="flex items-center gap-2 no-print">
+              <button
+                onClick={handleExportCSV}
+                title="I-download ang Costing Sheet (CSV / Excel)"
+                aria-label="I-download ang Costing Sheet (CSV / Excel)"
+                type="button"
+                className="p-2 text-emerald-700 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-xl transition-all cursor-pointer"
+              >
+                <Download className="w-5 h-5" />
+              </button>
               <button
                 onClick={handlePrint}
                 title="I-print ang Costing Sheet"
@@ -96,7 +134,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex items-center gap-2 border-b border-stone-100 pt-1">
+          <div className="flex items-center gap-2 border-b border-stone-100 pt-1 no-print">
             <button
               onClick={() => setActiveTab('calculator')}
               type="button"
