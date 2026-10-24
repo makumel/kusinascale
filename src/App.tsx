@@ -6,6 +6,7 @@ import { CategoryFilter } from './components/CategoryFilter';
 import { RecipeCard } from './components/RecipeCard';
 import { RecipeModal } from './components/RecipeModal';
 import { SuggestionModal } from './components/SuggestionModal';
+import { LaunchSalesFunnel } from './components/LaunchSalesFunnel';
 import {
   TrendingUp,
   Percent,
@@ -13,7 +14,9 @@ import {
   Utensils,
   SearchX,
   Sparkles,
-  HelpCircle
+  HelpCircle,
+  Flame,
+  ArrowRight
 } from 'lucide-react';
 
 export function App() {
@@ -26,6 +29,9 @@ export function App() {
 
   // Suggestion modal state
   const [isSuggestionOpen, setIsSuggestionOpen] = useState(false);
+
+  // Launch Sales Funnel modal state
+  const [isLaunchOfferOpen, setIsLaunchOfferOpen] = useState(false);
 
   // Compute category counts
   const categoriesWithCounts = useMemo(() => {
@@ -73,10 +79,11 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#faf8f5] text-stone-900 selection:bg-orange-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#faf8f5] text-stone-900 selection:bg-orange-500 selection:text-white pb-20 sm:pb-12">
       {/* Editorial Navbar */}
       <Navbar
         onOpenSuggestion={() => setIsSuggestionOpen(true)}
+        onOpenLaunchOffer={() => setIsLaunchOfferOpen(true)}
         recipeCount={RECIPES.length}
       />
 
@@ -91,7 +98,7 @@ export function App() {
 
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-stone-950 tracking-tight leading-[1.15]">
               Master Your Food Costing &amp;{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-emerald-600 to-teal-700">
                 Suggested SRP
               </span>
             </h1>
@@ -101,6 +108,18 @@ export function App() {
               kuryente, at kontrolin ang iyong <strong className="text-stone-900">30% hanggang 70%</strong> na tubo
               bago ka pa magbukas ng kalan.
             </p>
+
+            {/* Direct Launch Offer CTA Button in Hero */}
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                onClick={() => setIsLaunchOfferOpen(true)}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 hover:from-red-700 hover:to-orange-700 active:scale-95 text-white font-extrabold text-sm shadow-xl shadow-orange-600/25 transition-all hover:scale-105 cursor-pointer group"
+              >
+                <Flame className="w-4 h-4 text-amber-200 animate-bounce" />
+                <span>Kunin ang 572+ Negosyo Bible (₱299 Launch Offer)</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
 
             {/* Feature Pills */}
             <div className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-medium text-stone-700">
@@ -241,7 +260,7 @@ export function App() {
               </div>
               <p className="text-xs text-stone-300 leading-relaxed">
                 Formula:{' '}
-                <code className="text-orange-300 bg-stone-900 px-1 py-0.5 rounded font-mono text-[11px]">
+                <code className="text-emerald-300 bg-stone-900 px-1 py-0.5 rounded font-mono text-[11px]">
                   SRP = Puhunan / (1 - Margin%)
                 </code>
                 . Ginagarantiyahan nito na may sapat kang pondo para sa expansion at re-stocking.
@@ -251,21 +270,47 @@ export function App() {
         </section>
       </main>
 
+      {/* Floating Sticky Launch Banner for Mobile & Desktop */}
+      <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:w-auto z-40">
+        <button
+          onClick={() => setIsLaunchOfferOpen(true)}
+          className="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-3 px-5 py-3 rounded-2xl bg-stone-900/95 hover:bg-stone-950 text-white shadow-2xl border border-amber-500/40 backdrop-blur-md cursor-pointer hover:scale-105 transition-all group"
+        >
+          <div className="flex items-center gap-2 text-left">
+            <span className="flex h-2.5 w-2.5 rounded-full bg-red-500 animate-ping" />
+            <span className="text-xs font-bold text-amber-300">Launch Special ₱299</span>
+            <span className="text-xs text-stone-300 hidden md:inline">• 572+ Recipes &amp; Costing OS</span>
+          </div>
+          <span className="text-xs font-extrabold bg-gradient-to-r from-emerald-600 to-teal-600 group-hover:from-emerald-500 group-hover:to-teal-500 px-3.5 py-1.5 rounded-xl text-white shadow-sm flex items-center gap-1">
+            <span>KUNIN BUNDLE</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </span>
+        </button>
+      </div>
+
       {/* Editorial Footer */}
       <footer className="mt-20 border-t border-stone-200 bg-white py-12 text-stone-500 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="KusinaKita" className="w-8 h-8 object-contain rounded-lg border border-stone-200" />
               <span className="font-serif text-lg font-bold text-stone-900">
-                Kusina<span className="text-emerald-700">Scale</span>
+                Kusina<span className="text-emerald-700">Kita</span>
               </span>
               <span className="text-stone-300">|</span>
               <span className="text-stone-500">
-                Food Costing &amp; Portions Calculator para sa Negosyong Pilipino
+                May kita sa kusina! Proven &amp; tested carinderia recipes — hindi ito AI.
               </span>
             </div>
 
             <div className="flex items-center gap-4 text-stone-600 font-medium">
+              <button
+                onClick={() => setIsLaunchOfferOpen(true)}
+                className="hover:text-emerald-700 font-bold text-amber-700 transition-colors cursor-pointer"
+              >
+                🔥 Launch Bundle (₱299)
+              </button>
+              <span>•</span>
               <button
                 onClick={() => setIsSuggestionOpen(true)}
                 className="hover:text-emerald-700 transition-colors cursor-pointer"
@@ -284,7 +329,7 @@ export function App() {
 
           <div className="border-t border-stone-100 pt-6 text-[11px] text-stone-400 flex flex-col sm:flex-row items-center justify-between gap-2">
             <p>
-              © {new Date().getFullYear()} KusinaKita. Built for culinary entrepreneurs, food stalls, and catering artisans.
+              © {new Date().getFullYear()} KusinaKita. Kita-kits sa kusina! Ginawa para sa mga madiskarteng kusinerong Pilipino.
             </p>
             <p>
               Disclaimer: Ang mga presyo ng sangkap ay gabay lamang batay sa palengke at supermarket benchmarks.
@@ -303,6 +348,13 @@ export function App() {
       <SuggestionModal
         isOpen={isSuggestionOpen}
         onClose={() => setIsSuggestionOpen(false)}
+      />
+
+      {/* High-Converting Launch Funnel Modal */}
+      <LaunchSalesFunnel
+        isOpen={isLaunchOfferOpen}
+        onClose={() => setIsLaunchOfferOpen(false)}
+        onGoToApp={() => setIsLaunchOfferOpen(false)}
       />
     </div>
   );
