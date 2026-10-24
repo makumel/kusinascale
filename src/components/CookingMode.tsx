@@ -303,6 +303,13 @@ export const CookingMode: React.FC<CookingModeProps> = ({ recipe, portions, onEx
                         : 'bg-stone-50 hover:bg-stone-100/80 border-stone-200 text-stone-900'
                     }`}
                   >
+                    <input
+                      type="checkbox"
+                      className="sr-only"
+                      checked={isPrepped}
+                      readOnly
+                      aria-label={`Handa na ang ${ing.name}`}
+                    />
                     <div className="mt-0.5">
                       {isPrepped ? (
                         <CheckCircle2 className="w-4 h-4 text-emerald-600" />
@@ -372,6 +379,13 @@ export const CookingMode: React.FC<CookingModeProps> = ({ recipe, portions, onEx
                     }`}
                   >
                     <div className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        className="sr-only"
+                        checked={isDone}
+                        readOnly
+                        aria-label={`Tapos na ang hakbang ${idx + 1}`}
+                      />
                       <button
                         onClick={() => setCompletedSteps((prev) => ({ ...prev, [idx]: !prev[idx] }))}
                         type="button"
