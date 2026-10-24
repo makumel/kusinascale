@@ -85,7 +85,7 @@ export function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-100/80 text-orange-800 border border-orange-200/90 shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+              <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
               <span>Para sa Carinderia, Cloud Kitchen, Kiosk at Handaan</span>
             </div>
 
@@ -105,7 +105,7 @@ export function App() {
             {/* Feature Pills */}
             <div className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-medium text-stone-700">
               <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200 shadow-2xs">
-                <Layers className="w-4 h-4 text-orange-600" />
+                <Layers className="w-4 h-4 text-emerald-700" />
                 <span>1x hanggang 10x Batch Scaling</span>
               </div>
               <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200 shadow-2xs">
@@ -218,7 +218,7 @@ export function App() {
                 <span>1. Raw Ingredients</span>
               </div>
               <p className="text-xs text-stone-300 leading-relaxed">
-                Tinitiyak ng KusinaScale na bawat gramo ng pampalasa, marinade, at mantika ay may
+                Tinitiyak ng KusinaKita na bawat gramo ng pampalasa, marinade, at mantika ay may
                 katumbas na sentimos sa bawat serving.
               </p>
             </div>
@@ -257,7 +257,7 @@ export function App() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <span className="font-serif text-lg font-bold text-stone-900">
-                Kusina<span className="text-orange-600">Scale</span>
+                Kusina<span className="text-emerald-700">Scale</span>
               </span>
               <span className="text-stone-300">|</span>
               <span className="text-stone-500">
@@ -268,14 +268,14 @@ export function App() {
             <div className="flex items-center gap-4 text-stone-600 font-medium">
               <button
                 onClick={() => setIsSuggestionOpen(true)}
-                className="hover:text-orange-600 transition-colors cursor-pointer"
+                className="hover:text-emerald-700 transition-colors cursor-pointer"
               >
                 Mag-Suggest ng Ulam
               </button>
               <span>•</span>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="hover:text-orange-600 transition-colors cursor-pointer"
+                className="hover:text-emerald-700 transition-colors cursor-pointer"
               >
                 Bumalik sa Taas
               </button>
@@ -284,7 +284,7 @@ export function App() {
 
           <div className="border-t border-stone-100 pt-6 text-[11px] text-stone-400 flex flex-col sm:flex-row items-center justify-between gap-2">
             <p>
-              © {new Date().getFullYear()} KusinaScale. Built for culinary entrepreneurs, food stalls, and catering artisans.
+              © {new Date().getFullYear()} KusinaKita. Built for culinary entrepreneurs, food stalls, and catering artisans.
             </p>
             <p>
               Disclaimer: Ang mga presyo ng sangkap ay gabay lamang batay sa palengke at supermarket benchmarks.

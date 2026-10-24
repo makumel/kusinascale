@@ -2,7 +2,7 @@ import { Recipe, CostingParameters, CostingBreakdown, ScaledIngredientItem } fro
 
 /**
  * Calculates complete batch food costing, overhead, packaging, suggested retail price (SRP),
- * and projected net profit margins for KusinaScale recipes.
+ * and projected net profit margins for KusinaKita recipes.
  */
 export function calculateCosting(
   recipe: Recipe,

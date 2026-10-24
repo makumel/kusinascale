@@ -58,7 +58,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full">
                     {recipe.categoryLabel}
                   </span>
                   <span className="text-xs text-stone-400">•</span>
@@ -102,7 +102,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               type="button"
               className={`flex items-center gap-2 pb-2.5 px-3 text-xs sm:text-sm font-semibold border-b-2 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-t-lg ${
                 activeTab === 'calculator'
-                  ? 'border-orange-600 text-orange-600'
+                  ? 'border-orange-600 text-emerald-700'
                   : 'border-transparent text-stone-600 hover:text-stone-900'
               }`}
             >
@@ -118,7 +118,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               type="button"
               className={`flex items-center gap-2 pb-2.5 px-3 text-xs sm:text-sm font-semibold border-b-2 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-t-lg ${
                 activeTab === 'recipe'
-                  ? 'border-orange-600 text-orange-600'
+                  ? 'border-orange-600 text-emerald-700'
                   : 'border-transparent text-stone-600 hover:text-stone-900'
               }`}
             >
@@ -140,7 +140,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               {/* Recipe Meta Banner */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 bg-stone-50 rounded-2xl border border-stone-200 text-stone-700 text-xs">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-orange-600" />
+                  <Clock className="w-4 h-4 text-emerald-700" />
                   <div>
                     <span className="text-stone-500 font-medium block text-[10px] uppercase">Oras ng Pagluluto</span>
                     <span className="font-semibold text-stone-900">
@@ -149,7 +149,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-orange-600" />
+                  <Users className="w-4 h-4 text-emerald-700" />
                   <div>
                     <span className="text-stone-500 font-medium block text-[10px] uppercase">Base Yield</span>
                     <span className="font-semibold text-stone-900">
@@ -158,7 +158,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-orange-600" />
+                  <Sparkles className="w-4 h-4 text-emerald-700" />
                   <div>
                     <span className="text-stone-500 font-medium block text-[10px] uppercase">Negosyo Classification</span>
                     <span className="font-semibold text-stone-900">{recipe.marketNotes || 'High Demand Menu'}</span>
@@ -169,7 +169,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               {/* Instructions Section with Checkboxes */}
               <div className="space-y-3">
                 <h3 className="font-serif text-lg font-bold text-stone-900 flex items-center gap-2">
-                  <BookmarkCheck className="w-5 h-5 text-orange-600" />
+                  <BookmarkCheck className="w-5 h-5 text-emerald-700" />
                   <span>Paraan ng Pagluluto (Instructions)</span>
                 </h3>
                 <div className="space-y-2.5">
@@ -206,7 +206,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
                           />
                         </button>
                         <div className="flex-1 text-xs sm:text-sm leading-relaxed">
-                          <span className="font-bold text-orange-600 mr-2">Hakbang {idx + 1}:</span>
+                          <span className="font-bold text-emerald-700 mr-2">Hakbang {idx + 1}:</span>
                           <span className={isDone ? 'line-through text-stone-500' : ''}>
                             {step}
                           </span>
@@ -238,7 +238,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
 
         {/* Modal Footer */}
         <div className="p-4 bg-stone-50 border-t border-stone-200 flex items-center justify-between text-xs text-stone-500">
-          <span>KusinaScale • Ginawa para sa mga Kusinerong Negosyante</span>
+          <span>KusinaKita • Ginawa para sa mga Kusinerong Negosyante</span>
           <button
             onClick={onClose}
             type="button"
