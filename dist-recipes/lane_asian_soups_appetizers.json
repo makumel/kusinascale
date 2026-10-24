@@ -1,0 +1,2629 @@
+[
+  {
+    "id": "century-egg-with-silken-tofu",
+    "name": "Special Century Egg With Silken Tofu",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Century Egg With Silken Tofu, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Century Egg With Silken Tofu.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/century-egg-with-silken-tofu.jpg"
+  },
+  {
+    "id": "char-siu-bao",
+    "name": "Special Char Siu Bao",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Char Siu Bao, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Char Siu Bao.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/char-siu-bao.jpg"
+  },
+  {
+    "id": "chicken-lettuce-wraps",
+    "name": "Special Chicken Lettuce Wraps",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chicken Lettuce Wraps, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Fresh Chicken (cut-ups)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 220,
+        "unitCostDescription": "₱220/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chicken Lettuce Wraps.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Fresh Chicken at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chicken-lettuce-wraps.jpg"
+  },
+  {
+    "id": "chinese-jellyfish-salad",
+    "name": "Special Chinese Jellyfish Salad",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chinese Jellyfish Salad, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Fresh Dagupan Bangus (steaks)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 240,
+        "unitCostDescription": "₱240/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chinese Jellyfish Salad.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Fresh Dagupan Bangus at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chinese-jellyfish-salad.jpg"
+  },
+  {
+    "id": "chinese-smashed-cucumber-salad",
+    "name": "Special Chinese Smashed Cucumber Salad",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chinese Smashed Cucumber Salad, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chinese Smashed Cucumber Salad.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chinese-smashed-cucumber-salad.jpg"
+  },
+  {
+    "id": "chinese-spring-rolls",
+    "name": "Special Chinese Spring Rolls",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chinese Spring Rolls, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chinese Spring Rolls.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chinese-spring-rolls.jpg"
+  },
+  {
+    "id": "hakaw",
+    "name": "Special Hakaw",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Hakaw, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Hakaw.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/hakaw.jpg"
+  },
+  {
+    "id": "scallion-pancakes",
+    "name": "Special Scallion Pancakes",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Scallion Pancakes, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Scallion Pancakes.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/scallion-pancakes.jpg"
+  },
+  {
+    "id": "siomai",
+    "name": "Special Siomai",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Siomai, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Siomai.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/siomai.jpg"
+  },
+  {
+    "id": "wontons-in-chili-oil-1",
+    "name": "Special Wontons In Chili Oil 1",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Wontons In Chili Oil 1, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Wontons In Chili Oil 1.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/wontons-in-chili-oil-1.jpg"
+  },
+  {
+    "id": "braised-beef-brisket-with-daikon",
+    "name": "Special Braised Beef Brisket With Daikon",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Beef Recipes",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Braised Beef Brisket With Daikon, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Beef Brisket / Chuck (cubed)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Braised Beef Brisket With Daikon.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Beef Brisket / Chuck at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/braised-beef-brisket-with-daikon.jpg"
+  },
+  {
+    "id": "chinese-beef-hot-pot",
+    "name": "Special Chinese Beef Hot Pot",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Beef Recipes",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chinese Beef Hot Pot, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Beef Brisket / Chuck (cubed)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chinese Beef Hot Pot.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Beef Brisket / Chuck at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chinese-beef-hot-pot.jpg"
+  },
+  {
+    "id": "cumin-beef",
+    "name": "Special Cumin Beef",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Beef Recipes",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Cumin Beef, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Beef Brisket / Chuck (cubed)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Cumin Beef.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Beef Brisket / Chuck at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/cumin-beef.jpg"
+  },
+  {
+    "id": "mongolian-beef",
+    "name": "Special Mongolian Beef",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Beef Recipes",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Mongolian Beef, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Beef Brisket / Chuck (cubed)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Mongolian Beef.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Beef Brisket / Chuck at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/mongolian-beef.jpg"
+  },
+  {
+    "id": "orange-beef",
+    "name": "Special Orange Beef",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Beef Recipes",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Orange Beef, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Beef Brisket / Chuck (cubed)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Orange Beef.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Beef Brisket / Chuck at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/orange-beef.jpg"
+  },
+  {
+    "id": "sichuan-boiled-beef",
+    "name": "Special Sichuan Boiled Beef",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Beef Recipes",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Sichuan Boiled Beef, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Beef Brisket / Chuck (cubed)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Sichuan Boiled Beef.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Beef Brisket / Chuck at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/sichuan-boiled-beef.jpg"
+  },
+  {
+    "id": "twice-cooked-beef",
+    "name": "Special Twice Cooked Beef",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Beef Recipes",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Twice Cooked Beef, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Beef Brisket / Chuck (cubed)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Twice Cooked Beef.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Beef Brisket / Chuck at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/twice-cooked-beef.jpg"
+  },
+  {
+    "id": "chinese-chicken-corn-soup",
+    "name": "Special Chinese Chicken Corn Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chinese Chicken Corn Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Fresh Chicken (cut-ups)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 220,
+        "unitCostDescription": "₱220/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chinese Chicken Corn Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Fresh Chicken at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chinese-chicken-corn-soup.jpg"
+  },
+  {
+    "id": "chinese-herbal-chicken-soup",
+    "name": "Special Chinese Herbal Chicken Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chinese Herbal Chicken Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Fresh Chicken (cut-ups)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 220,
+        "unitCostDescription": "₱220/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chinese Herbal Chicken Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Fresh Chicken at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chinese-herbal-chicken-soup.jpg"
+  },
+  {
+    "id": "chinese-tomato-egg-soup",
+    "name": "Special Chinese Tomato Egg Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chinese Tomato Egg Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chinese Tomato Egg Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chinese-tomato-egg-soup.jpg"
+  },
+  {
+    "id": "egg-drop-soup",
+    "name": "Special Egg Drop Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Egg Drop Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Egg Drop Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/egg-drop-soup.jpg"
+  },
+  {
+    "id": "hot-and-sour-soup",
+    "name": "Special Hot And Sour Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Hot And Sour Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Hot And Sour Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/hot-and-sour-soup.jpg"
+  },
+  {
+    "id": "pork-u0026-white-radish-soup",
+    "name": "Special Pork \\U0026 White Radish Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Pork \\U0026 White Radish Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pork \\U0026 White Radish Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/pork-u0026-white-radish-soup.jpg"
+  },
+  {
+    "id": "seaweed-egg-drop-soup",
+    "name": "Special Seaweed Egg Drop Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Seaweed Egg Drop Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Seaweed Egg Drop Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/seaweed-egg-drop-soup.jpg"
+  },
+  {
+    "id": "watercress-pork-rib-soup",
+    "name": "Special Watercress Pork Rib Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Watercress Pork Rib Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Watercress Pork Rib Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/watercress-pork-rib-soup.jpg"
+  },
+  {
+    "id": "winter-melon-soup",
+    "name": "Special Winter Melon Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Winter Melon Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Winter Melon Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/winter-melon-soup.jpg"
+  },
+  {
+    "id": "wonton-soup",
+    "name": "Special Wonton Soup",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Chinese Soups",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Wonton Soup, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Wonton Soup.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/wonton-soup.jpg"
+  },
+  {
+    "id": "agedashi-tofu",
+    "name": "Special Agedashi Tofu",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Agedashi Tofu, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Agedashi Tofu.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/agedashi-tofu.jpg"
+  },
+  {
+    "id": "chawanmushi",
+    "name": "Special Chawanmushi",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chawanmushi, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chawanmushi.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chawanmushi.jpg"
+  },
+  {
+    "id": "chicken-karaage",
+    "name": "Special Chicken Karaage",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chicken Karaage, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Fresh Chicken (cut-ups)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 220,
+        "unitCostDescription": "₱220/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chicken Karaage.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Fresh Chicken at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chicken-karaage.jpg"
+  },
+  {
+    "id": "ebi-fry",
+    "name": "Special Ebi Fry",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ebi Fry, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ebi Fry.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ebi-fry.jpg"
+  },
+  {
+    "id": "ebi-tempura",
+    "name": "Special Ebi Tempura",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ebi Tempura, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ebi Tempura.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ebi-tempura.jpg"
+  },
+  {
+    "id": "edamame",
+    "name": "Special Edamame",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Edamame, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Edamame.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/edamame.jpg"
+  },
+  {
+    "id": "gyoza",
+    "name": "Special Gyoza",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Gyoza, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Gyoza.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/gyoza.jpg"
+  },
+  {
+    "id": "harumaki",
+    "name": "Special Harumaki",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Harumaki, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Harumaki.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/harumaki.jpg"
+  },
+  {
+    "id": "hiyayakko",
+    "name": "Special Hiyayakko",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Hiyayakko, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Hiyayakko.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/hiyayakko.jpg"
+  },
+  {
+    "id": "ikayaki",
+    "name": "Special Ikayaki",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Japanese appetizers",
+    "category": "asian",
+    "categoryLabel": "Top Asian Favorites",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ikayaki, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ikayaki.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ikayaki.jpg"
+  }
+]

@@ -1,0 +1,1777 @@
+[
+  {
+    "id": "rendang",
+    "name": "Special Rendang",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino beef recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Rendang, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Rendang.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/rendang.jpg"
+  },
+  {
+    "id": "paksiw-na-pata",
+    "name": "Special Paksiw Na Pata",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Paksiw Na Pata, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Paksiw Na Pata.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/paksiw-na-pata.jpg"
+  },
+  {
+    "id": "pochero",
+    "name": "Special Pochero",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Pochero, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pochero.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/pochero.jpg"
+  },
+  {
+    "id": "pork-asado",
+    "name": "Special Pork Asado",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Pork Asado, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pork Asado.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/pork-asado.jpg"
+  },
+  {
+    "id": "pork-binagoongan",
+    "name": "Special Pork Binagoongan",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Pork Binagoongan, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pork Binagoongan.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/pork-binagoongan.jpg"
+  },
+  {
+    "id": "pork-humba",
+    "name": "Special Pork Humba",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Pork Humba, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pork Humba.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/pork-humba.jpg"
+  },
+  {
+    "id": "pork-sisig",
+    "name": "Special Pork Sisig",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Pork Sisig, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pork Sisig.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/pork-sisig.jpg"
+  },
+  {
+    "id": "porl-giniling",
+    "name": "Special Porl Giniling",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Porl Giniling, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Porl Giniling.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/porl-giniling.jpg"
+  },
+  {
+    "id": "sinigang",
+    "name": "Special Sinigang",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino pork recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Sinigang, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Sinigang.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/sinigang.jpg"
+  },
+  {
+    "id": "pinangat",
+    "name": "Special Pinangat",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino seafood/fish recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Pinangat, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pinangat.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/pinangat.jpg"
+  },
+  {
+    "id": "rellenong-alimasag",
+    "name": "Special Rellenong Alimasag",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino seafood/fish recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Rellenong Alimasag, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Rellenong Alimasag.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/rellenong-alimasag.jpg"
+  },
+  {
+    "id": "sarciado",
+    "name": "Special Sarciado",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino seafood/fish recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Sarciado, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Sarciado.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/sarciado.jpg"
+  },
+  {
+    "id": "sinaing-na-tulingan",
+    "name": "Special Sinaing Na Tulingan",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino seafood/fish recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Sinaing Na Tulingan, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Sinaing Na Tulingan.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/sinaing-na-tulingan.jpg"
+  },
+  {
+    "id": "sinigang-na-hipon",
+    "name": "Special Sinigang Na Hipon",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino seafood/fish recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Sinigang Na Hipon, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Medium Pacific White Shrimp (Suahe)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 420,
+        "unitCostDescription": "₱420/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Sinigang Na Hipon.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Medium Pacific White Shrimp at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/sinigang-na-hipon.jpg"
+  },
+  {
+    "id": "tinolang-tahong",
+    "name": "Special Tinolang Tahong",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino seafood/fish recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Tinolang Tahong, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Fresh Chicken (cut-ups)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 220,
+        "unitCostDescription": "₱220/kg wet market",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Tinolang Tahong.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Fresh Chicken at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/tinolang-tahong.jpg"
+  },
+  {
+    "id": "chopsuey",
+    "name": "Special Chopsuey",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Chopsuey, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Fresh Kangkong bundles",
+        "quantity": 1,
+        "unit": "tali",
+        "baseCost": 15,
+        "unitCostDescription": "₱15/tali",
+        "category": "produce"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Chopsuey.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Fresh Kangkong bundles at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/chopsuey.jpg"
+  },
+  {
+    "id": "ensaladang-talong",
+    "name": "Special Ensaladang Talong",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ensaladang Talong, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ensaladang Talong.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ensaladang-talong.jpg"
+  },
+  {
+    "id": "fresh-lumpia",
+    "name": "Special Fresh Lumpia",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Fresh Lumpia, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Fresh Lumpia.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/fresh-lumpia.jpg"
+  },
+  {
+    "id": "ginataang-langka",
+    "name": "Special Ginataang Langka",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ginataang Langka, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ginataang Langka.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ginataang-langka.jpg"
+  },
+  {
+    "id": "ginataang-sitaw-at-kalabasa",
+    "name": "Special Ginataang Sitaw At Kalabasa",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ginataang Sitaw At Kalabasa, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ginataang Sitaw At Kalabasa.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ginataang-sitaw-at-kalabasa.jpg"
+  },
+  {
+    "id": "ginisang-ampalaya",
+    "name": "Special Ginisang Ampalaya",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ginisang Ampalaya, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ginisang Ampalaya.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ginisang-ampalaya.jpg"
+  },
+  {
+    "id": "ginisang-monggo",
+    "name": "Special Ginisang Monggo",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Ginisang Monggo, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Ginisang Monggo.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/ginisang-monggo.jpg"
+  },
+  {
+    "id": "laing",
+    "name": "Special Laing",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Laing, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Laing.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/laing.jpg"
+  },
+  {
+    "id": "lumpiang-togue",
+    "name": "Special Lumpiang Togue",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Lumpiang Togue, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Lumpiang Togue.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/lumpiang-togue.jpg"
+  },
+  {
+    "id": "tortang-talong",
+    "name": "Special Tortang Talong",
+    "tagline": "Mabango at Patok na Negosyo Recipe mula sa Filipino vegetable recipes",
+    "category": "carinderia",
+    "categoryLabel": "Carinderia Negosyo",
+    "baseServings": 5,
+    "prepTime": "15 mins",
+    "cookTime": "35 mins",
+    "difficulty": "Katamtaman (Medium)",
+    "description": "Autentiko at malasang Tortang Talong, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
+    "defaultOverheadPercent": 15,
+    "defaultPackagingPerServing": 6,
+    "defaultTargetMargin": 50,
+    "marketNotes": "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
+    "ingredients": [
+      {
+        "name": "Pork Kasim / Liempo (sliced)",
+        "quantity": 1,
+        "unit": "kg",
+        "baseCost": 360,
+        "unitCostDescription": "₱360/kg fresh local",
+        "category": "protein"
+      },
+      {
+        "name": "Garlic & Red Onion Sauté Base",
+        "quantity": 1,
+        "unit": "portion",
+        "baseCost": 22,
+        "unitCostDescription": "₱22 market portion",
+        "category": "produce"
+      },
+      {
+        "name": "Gulay at Sariwang Sahog",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 40,
+        "unitCostDescription": "₱40 gulay portion",
+        "category": "produce"
+      },
+      {
+        "name": "Pampalasa, Toyo at Sarsa",
+        "quantity": 1,
+        "unit": "set",
+        "baseCost": 25,
+        "unitCostDescription": "₱25 pantry portion",
+        "category": "pantry"
+      },
+      {
+        "name": "Vegetable Cooking Oil",
+        "quantity": 50,
+        "unit": "ml",
+        "baseCost": 12,
+        "unitCostDescription": "₱12 usage",
+        "category": "pantry"
+      }
+    ],
+    "instructions": [
+      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Tortang Talong.",
+      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
+      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
+      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
+      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
+      "Ihain nang mainit kasama ang mainit na kanin."
+    ],
+    "chefTips": [
+      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
+      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita."
+    ],
+    "imageUrl": "/recipes/tortang-talong.jpg"
+  }
+]

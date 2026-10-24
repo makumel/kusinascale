@@ -16,7 +16,6 @@ import {
   Minus,
   Plus,
   Scale,
-  Download
 } from 'lucide-react';
 
 interface RecipeModalProps {
@@ -56,48 +55,6 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
     }));
   };
 
-
-  const handleDownloadShoppingList = () => {
-    if (!recipe) return;
-    const lines = [
-      "=======================================================",
-      "KUSINAKITA - PALENGKE SHOPPING & PREP LIST",
-      "=======================================================",
-      `Recipe: ${recipe.name}`,
-      `Category: ${recipe.categoryLabel}`,
-      `Servings: ${portions} pax (Base: ${recipe.baseServings} pax, Scale: ${scaleMultiplier.toFixed(2)}x)`,
-      `Prep / Cook Time: ${recipe.prepTime} / ${recipe.cookTime}`,
-      `Date Generated: ${new Date().toLocaleDateString('fil-PH', { year: 'numeric', month: 'long', day: 'numeric' })}`,
-      "-------------------------------------------------------",
-      "MGA SANGKAP NA BIBILHIN SA PALENGKE:",
-      "-------------------------------------------------------",
-      ...recipe.ingredients.map((ing, idx) => {
-        const scaledQty = (ing.quantity * scaleMultiplier);
-        const qtyStr = scaledQty % 1 === 0 ? String(scaledQty) : scaledQty.toFixed(2);
-        return `[ ] ${idx + 1}. ${ing.name.padEnd(28, ' ')} : ${qtyStr} ${ing.unit} (${((ing.category || 'sangkap') as string).toUpperCase()})`;
-      }),
-      "-------------------------------------------------------",
-      "MGA HAKBANG SA PAGLULUTO:",
-      "-------------------------------------------------------",
-      ...recipe.instructions.map((step, idx) => `${idx + 1}. ${step}`),
-      "-------------------------------------------------------",
-      "LIHIM NG KUSINERO:",
-      (recipe.chefTips && recipe.chefTips.length > 0 ? recipe.chefTips.join(' \n• ') : (recipe.marketNotes || 'Walang karagdagang paalala.')),
-      "=======================================================",
-      "KusinaKita - May Kita sa Kusina • https://kusinakita.mikabiz.space",
-      "Paalala: Ang opisyal na Food Costing at Kalkulador ng SRP ay eksklusibong makukuha sa naka-install na PWA app."
-    ];
-
-    const blob = new Blob([lines.join('\r\n')], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `KusinaKita_${recipe.id}_${portions}pax_ShoppingList.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
 
   const handleExportKitchenSheet = async (format: ImageExportFormat) => {
     setIsExporting(true);
@@ -257,15 +214,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
 
                     {/* Shopping Prep Checklist Exporter & Image Exporter */}
                     <div className="flex flex-wrap items-center gap-1.5">
-                      <button
-                        onClick={handleDownloadShoppingList}
-                        type="button"
-                        title="I-download ang Palengke Shopping & Prep Checklist (.txt)"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white font-semibold text-xs shadow-xs transition-all cursor-pointer"
-                      >
-                        <Download className="w-4 h-4" />
-                        <span>Download Shopping List ({portions} pax)</span>
-                      </button>
+                      
                       <button
                         onClick={() => handleExportKitchenSheet('png')}
                         disabled={isExporting}
