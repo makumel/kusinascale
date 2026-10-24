@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-ssr
+*.local
+.gemini
+.system_generated
+.vscode
+.DS_Store
+*.log
+scratch/
