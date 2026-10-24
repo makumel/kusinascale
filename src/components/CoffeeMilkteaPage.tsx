@@ -6,6 +6,7 @@ import {
   BeverageRecipe
 } from '../data/coffeeMilkteaData';
 import { IntroSalesRecipePopup } from './IntroSalesRecipePopup';
+import { BeverageRecipeModal } from './BeverageRecipeModal';
 import {
   Sparkles,
   Lock,
@@ -16,10 +17,8 @@ import {
   Download,
   CheckCircle2,
   ArrowRight,
-  TrendingUp,
   X,
   FileSpreadsheet,
-  Clock,
   ShieldCheck,
   Award
 } from 'lucide-react';
@@ -37,8 +36,8 @@ export const CoffeeMilkteaPage: React.FC<CoffeeMilkteaPageProps> = ({ onBackToCa
   // Modals state
   const [isIntroPopupOpen, setIsIntroPopupOpen] = useState<boolean>(false);
   const [isUnlockModalOpen, setIsUnlockModalOpen] = useState<boolean>(false);
-  const [selectedRecipeForCalc, setSelectedRecipeForCalc] = useState<BeverageRecipe | null>(null);
   const [selectedRecipeDetail, setSelectedRecipeDetail] = useState<BeverageRecipe | null>(null);
+  const [recipeModalInitialTab, setRecipeModalInitialTab] = useState<'spreadsheet' | 'sop' | 'simulator'>('spreadsheet');
 
   // Filter & Search state
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -531,20 +530,39 @@ export const CoffeeMilkteaPage: React.FC<CoffeeMilkteaPageProps> = ({ onBackToCa
                     </div>
                   </div>
 
-                  {/* Card Footer Actions */}
-                  <div className="p-4 mt-auto flex items-center justify-between gap-2">
+                  {/* Card Footer Actions: Spreadsheet vs SOP vs Live Calculator */}
+                  <div className="p-3 mt-auto flex items-center justify-between gap-1.5 border-t border-stone-100 bg-stone-50/50">
                     <button
-                      onClick={() => setSelectedRecipeDetail(recipe)}
-                      className="flex-1 py-2 px-3 rounded-xl border border-stone-300 hover:bg-stone-50 text-stone-700 font-bold text-xs transition cursor-pointer text-center"
+                      onClick={() => {
+                        setSelectedRecipeDetail(recipe);
+                        setRecipeModalInitialTab('spreadsheet');
+                      }}
+                      className="flex-1 py-2 px-2 rounded-xl bg-white hover:bg-emerald-50 text-emerald-800 border border-stone-200 hover:border-emerald-300 font-bold text-[11px] transition cursor-pointer text-center flex items-center justify-center gap-1 shadow-2xs"
+                      title="Tingnan ang Orihinal na Drive Spreadsheet Format"
                     >
-                      Resipe &amp; SOP
+                      <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-700" />
+                      <span>Drive Sheet</span>
                     </button>
                     <button
-                      onClick={() => setSelectedRecipeForCalc(recipe)}
-                      className="py-2 px-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs transition cursor-pointer flex items-center gap-1.5"
+                      onClick={() => {
+                        setSelectedRecipeDetail(recipe);
+                        setRecipeModalInitialTab('sop');
+                      }}
+                      className="py-2 px-2.5 rounded-xl bg-white hover:bg-amber-50 text-stone-800 border border-stone-200 hover:border-amber-300 font-bold text-[11px] transition cursor-pointer flex items-center gap-1 shadow-2xs"
+                      title="Tingnan ang Barista SOP Hakbang"
+                    >
+                      <span>☕ SOP</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setSelectedRecipeDetail(recipe);
+                        setRecipeModalInitialTab('simulator');
+                      }}
+                      className="py-2 px-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-[11px] transition cursor-pointer flex items-center gap-1 shadow-xs"
+                      title="Live Margin Simulator"
                     >
                       <Calculator className="w-3.5 h-3.5" />
-                      <span>Kalkulahin</span>
+                      <span>Sim</span>
                     </button>
                   </div>
                 </div>
@@ -571,7 +589,14 @@ export const CoffeeMilkteaPage: React.FC<CoffeeMilkteaPageProps> = ({ onBackToCa
         isOpen={isIntroPopupOpen}
         onClose={() => setIsIntroPopupOpen(false)}
         onUnlockFullPackage={() => setIsUnlockModalOpen(true)}
-        onOpenCalculator={(recipe) => setSelectedRecipeForCalc(recipe)}
+        onOpenCalculator={(recipe) => {
+          setSelectedRecipeDetail(recipe);
+          setRecipeModalInitialTab('simulator');
+        }}
+        onOpenSpreadsheetModal={(recipe, tab) => {
+          setSelectedRecipeDetail(recipe);
+          setRecipeModalInitialTab(tab || 'spreadsheet');
+        }}
       />
 
       {/* Gate Unlock Modal (With CSS Invisible Honeypot Field) */}
@@ -717,290 +742,15 @@ export const CoffeeMilkteaPage: React.FC<CoffeeMilkteaPageProps> = ({ onBackToCa
         </div>
       )}
 
-      {/* Recipe Detail / SOP View Modal */}
+            {/* 3-in-1 Master Beverage Recipe Modal: Authentic Drive Spreadsheet + Barista Kitchen SOP + Live Margin Simulator */}
       {selectedRecipeDetail && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/80 backdrop-blur-md flex justify-center p-4 animate-fadeIn">
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden my-auto p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
-            
-            <button
-              onClick={() => setSelectedRecipeDetail(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 transition cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="space-y-1">
-              <span className="text-xs font-bold text-amber-800 uppercase tracking-wider">{selectedRecipeDetail.categoryLabel}</span>
-              <h3 className="font-serif text-2xl font-bold text-stone-900">
-                {selectedRecipeDetail.name} ({selectedRecipeDetail.size})
-              </h3>
-              <p className="text-xs text-stone-500">{selectedRecipeDetail.description}</p>
-            </div>
-
-            {/* Ingredients Table */}
-            <div className="border border-stone-200 rounded-2xl overflow-hidden">
-              <div className="bg-stone-100 px-4 py-2 font-bold text-xs text-stone-700">Mga Sangkap at Gastos:</div>
-              <div className="divide-y divide-stone-100 text-xs p-2">
-                {selectedRecipeDetail.primaryIngredients.map((ing, idx) => (
-                  <div key={idx} className="flex justify-between py-1.5 px-2">
-                    <span className="text-stone-800 font-medium">{ing.name} ({ing.quantity} {ing.unit})</span>
-                    <span className="font-mono font-bold text-stone-900">₱{ing.cost.toFixed(2)}</span>
-                  </div>
-                ))}
-                {selectedRecipeDetail.secondaryIngredients.map((ing, idx) => (
-                  <div key={`s-${idx}`} className="flex justify-between py-1.5 px-2">
-                    <span className="text-stone-700">{ing.name} ({ing.quantity} {ing.unit})</span>
-                    <span className="font-mono font-bold text-stone-800">₱{ing.cost.toFixed(2)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Step-by-Step Instructions */}
-            <div className="space-y-3">
-              <h4 className="font-bold text-sm text-stone-900 flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-orange-600" />
-                <span>Hakbang sa Paghahanda (Barista SOP):</span>
-              </h4>
-              <ol className="space-y-2 text-xs text-stone-700 list-decimal list-inside leading-relaxed">
-                {selectedRecipeDetail.preparationSteps.map((step, idx) => (
-                  <li key={idx} className="pl-1 font-medium">{step}</li>
-                ))}
-              </ol>
-            </div>
-
-            {/* Barista Notes */}
-            {selectedRecipeDetail.baristaNotes.length > 0 && (
-              <div className="p-4 bg-amber-50 border border-amber-200 rounded-2xl space-y-1">
-                <div className="text-xs font-bold text-amber-900 flex items-center gap-1.5">
-                  <Flame className="w-3.5 h-3.5 text-amber-700" />
-                  <span>Lihim ng Barista:</span>
-                </div>
-                <ul className="text-xs text-amber-950 list-disc list-inside space-y-1">
-                  {selectedRecipeDetail.baristaNotes.map((note, idx) => (
-                    <li key={idx}>{note}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="flex items-center justify-end gap-3 pt-2">
-              <button
-                onClick={() => {
-                  setSelectedRecipeForCalc(selectedRecipeDetail);
-                  setSelectedRecipeDetail(null);
-                }}
-                className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs flex items-center gap-1.5 cursor-pointer"
-              >
-                <Calculator className="w-4 h-4" />
-                <span>Buksan sa Live Costing Calculator</span>
-              </button>
-            </div>
-
-          </div>
-        </div>
-      )}
-
-      {/* Interactive Drink Costing Simulator Drawer/Modal */}
-      {selectedRecipeForCalc && (
-        <InteractiveDrinkCalculatorModal
-          recipe={selectedRecipeForCalc}
-          onClose={() => setSelectedRecipeForCalc(null)}
+        <BeverageRecipeModal
+          recipe={selectedRecipeDetail}
+          initialTab={recipeModalInitialTab}
+          onClose={() => setSelectedRecipeDetail(null)}
         />
       )}
 
-    </div>
-  );
-};
-
-interface InteractiveDrinkCalculatorModalProps {
-  recipe: BeverageRecipe;
-  onClose: () => void;
-}
-
-const InteractiveDrinkCalculatorModal: React.FC<InteractiveDrinkCalculatorModalProps> = ({
-  recipe,
-  onClose
-}) => {
-  const [recipeCostAdjustment, setRecipeCostAdjustment] = useState<number>(recipe.recipeCost);
-  const [packagingCost, setPackagingCost] = useState<number>(recipe.packagingCost);
-  const [laborCost, setLaborCost] = useState<number>(recipe.laborCost);
-  const [markupPercent, setMarkupPercent] = useState<number>(Math.round((recipe.walkinNetProfit / (recipe.totalCost || 1)) * 100));
-  const [pandaCommissionPercent, setPandaCommissionPercent] = useState<number>(30);
-  const [promoDiscountPercent, setPromoDiscountPercent] = useState<number>(5);
-
-  const totalCost = recipeCostAdjustment + packagingCost + laborCost;
-  const markupAmount = (totalCost * markupPercent) / 100;
-  const walkinPrice = totalCost + markupAmount;
-  const netProfit = markupAmount;
-  const profitMarginPercent = walkinPrice > 0 ? (netProfit / walkinPrice) * 100 : 0;
-
-  // FoodPanda Protection Formula: Price = WalkinSRP / (1 - Commission - Promo)
-  const pandaDivisor = 1 - (pandaCommissionPercent / 100) - (promoDiscountPercent / 100);
-  const pandaPrice = pandaDivisor > 0 ? walkinPrice / pandaDivisor : walkinPrice * 1.5;
-
-  return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/80 backdrop-blur-md flex justify-center p-4 animate-fadeIn">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden my-auto p-6 sm:p-8 space-y-6">
-        
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 transition cursor-pointer"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800">
-            <Calculator className="w-3.5 h-3.5" />
-            <span>Interactive Profit &amp; SRP Simulator</span>
-          </div>
-          <h3 className="font-serif text-2xl font-bold text-stone-900">
-            {recipe.name} ({recipe.size})
-          </h3>
-          <p className="text-xs text-stone-500">
-            I-adjust ang iyong sariling presyo ng sangkap at labor para makita ang live net profit at FoodPanda delivery pricing.
-          </p>
-        </div>
-
-        {/* Sliders & Inputs */}
-        <div className="space-y-4 text-xs font-medium">
-          
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-stone-700">Raw Recipe / Ingredients Cost:</span>
-              <span className="font-bold font-mono text-stone-900">₱{recipeCostAdjustment.toFixed(2)}</span>
-            </div>
-            <input
-              type="range"
-              min="15"
-              max="150"
-              step="0.5"
-              value={recipeCostAdjustment}
-              onChange={(e) => setRecipeCostAdjustment(parseFloat(e.target.value))}
-              className="w-full accent-amber-600 cursor-pointer"
-            />
-          </div>
-
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-stone-700">Packaging (Cup, Sealer Film, Straw):</span>
-              <span className="font-bold font-mono text-stone-900">₱{packagingCost.toFixed(2)}</span>
-            </div>
-            <input
-              type="range"
-              min="3"
-              max="20"
-              step="0.5"
-              value={packagingCost}
-              onChange={(e) => setPackagingCost(parseFloat(e.target.value))}
-              className="w-full accent-amber-600 cursor-pointer"
-            />
-          </div>
-
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-stone-700">Labor Allocation ng Barista (Sweldo):</span>
-              <span className="font-bold font-mono text-emerald-700">₱{laborCost.toFixed(2)} per cup</span>
-            </div>
-            <input
-              type="range"
-              min="3"
-              max="35"
-              step="0.5"
-              value={laborCost}
-              onChange={(e) => setLaborCost(parseFloat(e.target.value))}
-              className="w-full accent-emerald-600 cursor-pointer"
-            />
-          </div>
-
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-stone-700">Target Markup Percentage:</span>
-              <span className="font-bold font-mono text-amber-800">{markupPercent}%</span>
-            </div>
-            <input
-              type="range"
-              min="20"
-              max="150"
-              step="1"
-              value={markupPercent}
-              onChange={(e) => setMarkupPercent(parseInt(e.target.value, 10))}
-              className="w-full accent-amber-600 cursor-pointer"
-            />
-          </div>
-
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-stone-700">Food Delivery Commission Rate:</span>
-              <span className="font-bold font-mono text-rose-800">{pandaCommissionPercent}%</span>
-            </div>
-            <input
-              type="range"
-              min="15"
-              max="40"
-              step="1"
-              value={pandaCommissionPercent}
-              onChange={(e) => setPandaCommissionPercent(parseInt(e.target.value, 10))}
-              className="w-full accent-rose-600 cursor-pointer"
-            />
-          </div>
-
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-stone-700">Merchant Promo / Voucher Buffer:</span>
-              <span className="font-bold font-mono text-stone-700">{promoDiscountPercent}%</span>
-            </div>
-            <input
-              type="range"
-              min="0"
-              max="20"
-              step="1"
-              value={promoDiscountPercent}
-              onChange={(e) => setPromoDiscountPercent(parseInt(e.target.value, 10))}
-              className="w-full accent-stone-600 cursor-pointer"
-            />
-          </div>
-
-        </div>
-
-        {/* Live Computation Result Cards */}
-        <div className="grid grid-cols-2 gap-3 pt-2">
-          <div className="bg-stone-50 p-3.5 rounded-2xl border border-stone-200">
-            <span className="text-[10px] text-stone-500 uppercase font-semibold block">Kabuuang Gastos (Total Cost)</span>
-            <span className="font-serif text-xl font-black text-stone-900 font-mono">₱{totalCost.toFixed(2)}</span>
-            <span className="text-[10px] text-stone-500 block">Food + Pack + Labor</span>
-          </div>
-
-          <div className="bg-emerald-50 p-3.5 rounded-2xl border border-emerald-200">
-            <span className="text-[10px] text-emerald-800 uppercase font-semibold block">Walk-In SRP (Benta)</span>
-            <span className="font-serif text-xl font-black text-emerald-800 font-mono">₱{walkinPrice.toFixed(2)}</span>
-            <span className="text-[10px] text-emerald-700 block font-bold">Net Profit: ₱{netProfit.toFixed(2)} ({profitMarginPercent.toFixed(1)}%)</span>
-          </div>
-        </div>
-
-        {/* FoodPanda Delivery Margin Protection Result */}
-        <div className="p-4 bg-rose-50 border border-rose-200 rounded-2xl space-y-1">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-rose-900 flex items-center gap-1">
-              <TrendingUp className="w-3.5 h-3.5 text-rose-700" />
-              <span>Recommended FoodPanda / GrabFood SRP:</span>
-            </span>
-            <span className="font-mono text-lg font-black text-rose-800">₱{pandaPrice.toFixed(2)}</span>
-          </div>
-          <p className="text-[11px] text-rose-950 leading-relaxed">
-            Gamit ang presyong ito, mananatiling buo ang iyong <strong>₱{netProfit.toFixed(2)}</strong> na tubo kahit ibawas pa ang 30% commission ng app at 5% discount voucher buffer.
-          </p>
-        </div>
-
-        <button
-          onClick={onClose}
-          className="w-full py-3 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs transition cursor-pointer"
-        >
-          Isara ang Simulator
-        </button>
-
-      </div>
     </div>
   );
 };

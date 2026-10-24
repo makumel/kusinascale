@@ -7,7 +7,8 @@ import {
   ArrowRight,
   Flame,
   Calculator,
-  Info
+  Info,
+  FileSpreadsheet
 } from 'lucide-react';
 import { COFFEE_MILKTEA_RECIPES, BARISTA_GOLDEN_RULES, BeverageRecipe } from '../data/coffeeMilkteaData';
 
@@ -16,13 +17,15 @@ interface IntroSalesRecipePopupProps {
   onClose: () => void;
   onUnlockFullPackage?: () => void;
   onOpenCalculator?: (recipe: BeverageRecipe) => void;
+  onOpenSpreadsheetModal?: (recipe: BeverageRecipe, tab?: 'spreadsheet' | 'sop' | 'simulator') => void;
 }
 
 export const IntroSalesRecipePopup: React.FC<IntroSalesRecipePopupProps> = ({
   isOpen,
   onClose,
   onUnlockFullPackage,
-  onOpenCalculator
+  onOpenCalculator,
+  onOpenSpreadsheetModal
 }) => {
   const [selectedDrinkId, setSelectedDrinkId] = useState<string>('intro-milktea-16oz');
 
@@ -290,18 +293,33 @@ export const IntroSalesRecipePopup: React.FC<IntroSalesRecipePopupProps> = ({
 
           {/* Bottom Actions CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-stone-200">
-            {onOpenCalculator && (
-              <button
-                onClick={() => {
-                  onClose();
-                  onOpenCalculator(currentRecipe);
-                }}
-                className="w-full sm:w-auto px-5 py-3 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-800 font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer"
-              >
-                <Calculator className="w-4 h-4 text-emerald-700" />
-                <span>Subukan sa Interactive Costing Calculator</span>
-              </button>
-            )}
+            <div className="flex items-center gap-2 flex-wrap w-full sm:w-auto">
+              {onOpenSpreadsheetModal && (
+                <button
+                  onClick={() => {
+                    onClose();
+                    onOpenSpreadsheetModal(currentRecipe, 'spreadsheet');
+                  }}
+                  className="flex-1 sm:flex-initial px-4 py-3 rounded-xl border-2 border-emerald-600 bg-emerald-50 hover:bg-emerald-100 active:scale-95 text-emerald-950 font-bold text-xs flex items-center justify-center gap-1.5 transition cursor-pointer shadow-xs"
+                >
+                  <FileSpreadsheet className="w-4 h-4 text-emerald-700" />
+                  <span>Drive Spreadsheet Format</span>
+                </button>
+              )}
+
+              {onOpenCalculator && (
+                <button
+                  onClick={() => {
+                    onClose();
+                    onOpenCalculator(currentRecipe);
+                  }}
+                  className="flex-1 sm:flex-initial px-4 py-3 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-800 font-bold text-xs flex items-center justify-center gap-1.5 transition cursor-pointer"
+                >
+                  <Calculator className="w-4 h-4 text-amber-700" />
+                  <span>Live Simulator</span>
+                </button>
+              )}
+            </div>
 
             <button
               onClick={() => {
