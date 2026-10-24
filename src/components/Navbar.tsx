@@ -16,27 +16,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, onOpenLaunchOf
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo & Editorial Title */}
-          <div className="flex items-center gap-3.5">
-            <a href="/" className="relative flex items-center justify-center w-12 h-12 rounded-2xl shadow-md shadow-stone-800/15 overflow-hidden group hover:scale-105 transition-transform">
-              <img src="/logo.png" alt="KusinaKita 3D App Icon" className="w-full h-full object-cover" />
-              <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-white"></span>
-              </span>
-            </a>
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="font-serif text-2xl font-bold tracking-tight text-stone-900">
-                  Kusina<span className="text-emerald-700">Kita</span>
-                </h1>
-                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
-                  Hindi Ito AI
-                </span>
+          <div className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3 group hover:opacity-95 transition-opacity">
+              <img
+                src="/brand-logo-main.png"
+                alt="KusinaKita - Asian & Carinderia Logo"
+                className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+              <div className="hidden sm:block border-l border-stone-200 pl-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-serif text-xl font-bold tracking-tight text-stone-900 leading-none">
+                    Kusina<span className="text-emerald-700">Kita</span>
+                  </span>
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200 uppercase tracking-wider">
+                    Hindi Ito AI
+                  </span>
+                </div>
+                <p className="text-[11px] text-stone-500 font-medium tracking-wide mt-1">
+                  May Kita sa Kusina • Recipe &amp; Food Costing OS
+                </p>
               </div>
-              <p className="text-xs text-stone-500 font-medium tracking-wide">
-                May Kita sa Kusina • Recipe &amp; Food Costing OS
-              </p>
-            </div>
+            </a>
           </div>
 
           {/* Quick Metrics & Actions */}

@@ -80,6 +80,14 @@ export const LaunchSalesFunnel: React.FC<LaunchSalesFunnelProps> = ({
           
           {/* Hero Section */}
           <section className="text-center space-y-5 max-w-3xl mx-auto">
+            <div className="flex justify-center mb-1">
+              <img
+                src="/brand-logo-main.png"
+                alt="KusinaKita - Asian and Carinderia"
+                className="h-20 sm:h-24 w-auto object-contain"
+              />
+            </div>
+
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-300 uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4 text-emerald-700" />
               Subok sa Kalan • 100% Proven &amp; Tested • Hindi Ito AI

@@ -1,8 +1,8 @@
-import { Recipe, CostingParameters, CostingBreakdown, ScaledIngredientItem } from '../types/recipe';
+import { Recipe, CostingParameters, CostingBreakdown, ScaledIngredientItem, OverheadBreakdown } from '../types/recipe';
 
 /**
- * Calculates complete batch food costing, overhead, packaging, suggested retail price (SRP),
- * and projected net profit margins for KusinaKita recipes.
+ * Calculates complete batch food costing, itemized overhead expenses, packaging,
+ * suggested retail price (SRP), and projected net profit margins for KusinaKita recipes.
  */
 export function calculateCosting(
   recipe: Recipe,
@@ -40,18 +40,53 @@ export function calculateCosting(
   });
 
   // Total raw ingredients cost
-  const rawIngredientsCost = scaledIngredients.reduce(
-    (sum, item) => sum + item.effectiveCost,
-    0
+  const rawIngredientsCost = Number(
+    scaledIngredients.reduce((sum, item) => sum + item.effectiveCost, 0).toFixed(2)
   );
 
-  // Overhead cost (LPG gas, electricity, water, kitchen wear & tear)
-  const overheadPercent = Math.max(0, Number(params.overheadPercent) || 0);
-  const overheadCost = Number(((rawIngredientsCost * overheadPercent) / 100).toFixed(2));
-
-  // Packaging cost (e.g. food containers, paper bags, disposable spoons, sauce containers)
-  const packagingPerServing = Math.max(0, Number(params.packagingCostPerServing) || 0);
+  // Packaging cost (food containers, paper bags, disposable spoons, sauce containers)
+  const packagingPerServing = Math.max(0, Number(params.packagingCostPerServing ?? recipe.defaultPackagingPerServing));
   const packagingCost = Number((packagingPerServing * servings).toFixed(2));
+
+  // Determine Overhead Mode (Simple Percentage vs. Itemized Commercial Breakdown)
+  const overheadMode = params.overheadMode || 'simple';
+
+  let lpgCost = 0;
+  let utilitiesCost = 0;
+  let laborCost = 0;
+  let shrinkageBufferCost = 0;
+  let overheadCost = 0;
+
+  if (overheadMode === 'itemized') {
+    // Commercial itemized allocation based on batch multiplier
+    lpgCost = Number((params.lpgCost ?? Math.round(35 * scaleMultiplier)).toFixed(2));
+    utilitiesCost = Number((params.utilitiesCost ?? Math.round(20 * scaleMultiplier)).toFixed(2));
+    laborCost = Number((params.laborCost ?? Math.round(50 * scaleMultiplier)).toFixed(2));
+    
+    const shrinkagePct = Math.max(0, Number(params.shrinkagePercent ?? 4));
+    shrinkageBufferCost = Number(((rawIngredientsCost * shrinkagePct) / 100).toFixed(2));
+
+    overheadCost = Number((lpgCost + utilitiesCost + laborCost + shrinkageBufferCost).toFixed(2));
+  } else {
+    // Standard Simple Mode (% of Raw Ingredients)
+    const overheadPercent = Math.max(0, Number(params.overheadPercent ?? recipe.defaultOverheadPercent));
+    overheadCost = Number(((rawIngredientsCost * overheadPercent) / 100).toFixed(2));
+
+    // Approximate line-item distribution for visual transparency
+    lpgCost = Number((overheadCost * 0.40).toFixed(2));
+    utilitiesCost = Number((overheadCost * 0.25).toFixed(2));
+    laborCost = Number((overheadCost * 0.20).toFixed(2));
+    shrinkageBufferCost = Number((overheadCost * 0.15).toFixed(2));
+  }
+
+  const overheadBreakdown: OverheadBreakdown = {
+    lpgCost,
+    utilitiesCost,
+    laborCost,
+    packagingCost,
+    shrinkageBufferCost,
+    totalOverhead: Number((overheadCost + packagingCost).toFixed(2)),
+  };
 
   // Total batch production cost
   const totalProductionCost = Number(
@@ -63,17 +98,13 @@ export function calculateCosting(
 
   // Target profit margin calculation:
   // Margin Formula: SRP = Cost / (1 - MarginRate)
-  // Clamp margin between 5% and 85% to prevent division by zero or infinite SRP
   const rawTargetMargin = Number(params.targetMarginPercent);
-  const targetMarginPercent = Math.min(85, Math.max(5, isNaN(rawTargetMargin) ? 50 : rawTargetMargin));
+  const targetMarginPercent = Math.min(85, Math.max(5, isNaN(rawTargetMargin) ? recipe.defaultTargetMargin : rawTargetMargin));
   const marginDecimal = targetMarginPercent / 100;
 
-  // Suggested SRP per serving
-  // Note: Normalize precision with 4-decimal round prior to Math.ceil to eliminate
-  // IEEE 754 precision artifacts (e.g. 99.4 / 0.7 = 142.00000000000003)
+  // Suggested SRP per serving with floating point stabilization
   const rawSrp = costPerServing / (1 - marginDecimal);
   const cleanRawSrp = Math.round(rawSrp * 10000) / 10000;
-  // Negosyo-friendly psychological rounding (round to nearest whole peso)
   const suggestedSrp = Math.ceil(cleanRawSrp);
 
   // Suggested Batch Revenue & Net Profit
@@ -81,10 +112,17 @@ export function calculateCosting(
   const netBatchProfit = Number((suggestedBatchRevenue - totalProductionCost).toFixed(2));
   const profitPerServing = Number((suggestedSrp - costPerServing).toFixed(2));
 
+  // Daily & Monthly ROI Simulation (default: 30 servings/day, 26 business days/month)
+  const unitsPerDay = Math.max(1, Number(params.dailyTargetUnits || 30));
+  const dailyRevenue = Number((suggestedSrp * unitsPerDay).toFixed(2));
+  const dailyCost = Number((costPerServing * unitsPerDay).toFixed(2));
+  const dailyProfit = Number((profitPerServing * unitsPerDay).toFixed(2));
+  const monthlyProfit = Number((dailyProfit * 26).toFixed(2));
+
   return {
     servings,
     scaleMultiplier: Number(scaleMultiplier.toFixed(2)),
-    rawIngredientsCost: Number(rawIngredientsCost.toFixed(2)),
+    rawIngredientsCost,
     overheadCost,
     packagingCost,
     totalProductionCost,
@@ -95,6 +133,14 @@ export function calculateCosting(
     netBatchProfit,
     profitPerServing,
     scaledIngredients,
+    overheadBreakdown,
+    dailyProjection: {
+      unitsPerDay,
+      dailyRevenue,
+      dailyCost,
+      dailyProfit,
+      monthlyProfit,
+    },
   };
 }
 
@@ -116,7 +162,6 @@ export function formatPHP(value: number): string {
  */
 export function formatQuantity(qty: number, unit: string): string {
   if (qty === 0) return `0 ${unit}`;
-  // Avoid unsightly floating precision issues like 1.3333333
   const rounded = Math.round(qty * 100) / 100;
   return `${rounded} ${unit}`;
 }

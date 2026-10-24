@@ -91,6 +91,14 @@ export function App() {
       <section className="relative overflow-hidden bg-gradient-to-b from-amber-100/60 via-amber-50/40 to-[#faf8f5] pt-12 pb-16 border-b border-stone-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="flex justify-center mb-2">
+              <img
+                src="/brand-logo-main.png"
+                alt="KusinaKita - Asian & Carinderia"
+                className="h-24 sm:h-32 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform"
+              />
+            </div>
+
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-100/80 text-orange-800 border border-orange-200/90 shadow-2xs">
               <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
               <span>Para sa Carinderia, Cloud Kitchen, Kiosk at Handaan</span>
@@ -293,7 +301,7 @@ export function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <img src="/logo.png" alt="KusinaKita" className="w-8 h-8 object-contain rounded-lg border border-stone-200" />
+              <img src="/brand-logo-main.png" alt="KusinaKita" className="h-10 w-auto object-contain" />
               <span className="font-serif text-lg font-bold text-stone-900">
                 Kusina<span className="text-emerald-700">Kita</span>
               </span>

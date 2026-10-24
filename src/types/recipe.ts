@@ -59,12 +59,27 @@ export interface Recipe {
   marketNotes?: string;
 }
 
+export interface OverheadBreakdown {
+  lpgCost: number;
+  utilitiesCost: number;
+  laborCost: number;
+  packagingCost: number;
+  shrinkageBufferCost: number;
+  totalOverhead: number;
+}
+
 export interface CostingParameters {
   servings: number;
   targetMarginPercent: number; // e.g., 50 for 50%
-  overheadPercent: number; // e.g., 15 for 15%
-  packagingCostPerServing: number; // e.g., 6.00
-  priceOverrides: Record<string, number>; // ingredientId -> custom price for this batch
+  overheadPercent?: number; // legacy / simple mode
+  packagingCostPerServing?: number; // per serving
+  priceOverrides?: Record<string, number>; // ingredientId -> custom price for this batch
+  overheadMode?: 'simple' | 'itemized';
+  lpgCost?: number;
+  utilitiesCost?: number;
+  laborCost?: number;
+  shrinkagePercent?: number; // e.g. 4%
+  dailyTargetUnits?: number; // for monthly ROI simulator (e.g. 30 servings/day)
 }
 
 export interface CostingBreakdown {
@@ -81,4 +96,12 @@ export interface CostingBreakdown {
   netBatchProfit: number;
   profitPerServing: number;
   scaledIngredients: ScaledIngredientItem[];
+  overheadBreakdown: OverheadBreakdown;
+  dailyProjection: {
+    unitsPerDay: number;
+    dailyRevenue: number;
+    dailyCost: number;
+    dailyProfit: number;
+    monthlyProfit: number; // 26 operating days / month
+  };
 }
