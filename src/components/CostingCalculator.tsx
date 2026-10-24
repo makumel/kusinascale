@@ -21,7 +21,8 @@ import {
   Store,
   Sliders,
   Cloud,
-  CheckCircle2
+  CheckCircle2,
+  Pencil
 } from 'lucide-react';
 
 interface CostingCalculatorProps {
@@ -808,11 +809,16 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
       <section className="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-xs">
         <div className="p-4 sm:p-5 border-b border-stone-200 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h3 className="font-serif text-base sm:text-lg font-bold text-stone-900">
-              Talaan ng mga Sangkap at Presyo sa Palengke
-            </h3>
-            <p className="text-xs text-stone-500">
-              Maaari mong baguhin ang halaga sa kolum ng &quot;Aktwal na Halaga&quot; ayon sa binili mo sa palengke.
+            <div className="flex items-center gap-2">
+              <h3 className="font-serif text-base sm:text-lg font-bold text-stone-900">
+                Presyo ng mga Sangkap sa Palengke
+              </h3>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
+                Pwedeng Baguhin
+              </span>
+            </div>
+            <p className="text-xs text-stone-600 mt-0.5">
+              Iba-iba ang presyo sa bawat bayan. Pindutin ang <strong>&quot;I-edit&quot;</strong> sa bawat sangkap upang ilagay ang totoong presyo ng bili mo sa palengke.
             </p>
           </div>
           <div className="text-xs text-stone-600 bg-stone-100 px-3 py-1.5 rounded-xl font-semibold">
@@ -846,16 +852,48 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
                     {item.unitCostDescription || formatPHP(item.baseCost)}
                   </td>
                   <td className="py-3 px-4 text-right">
-                    <div className="inline-flex items-center gap-1 bg-stone-50 border border-stone-300 rounded-xl px-2.5 py-1 focus-within:ring-2 focus-within:ring-emerald-500">
-                      <span className="text-xs text-stone-400 font-mono">₱</span>
-                      <input
-                        type="number"
-                        min="0"
-                        step="1"
-                        value={item.effectiveCost}
-                        onChange={(e) => handleIngredientPriceChange(item.id, e.target.value)}
-                        className="w-20 font-mono text-right font-bold text-stone-900 text-xs sm:text-sm focus:outline-none"
-                      />
+                    <div className="flex items-center justify-end gap-1.5">
+                      {priceOverrides[item.id] !== undefined && (
+                        <button
+                          onClick={() => {
+                            const next = { ...priceOverrides };
+                            delete next[item.id];
+                            setPriceOverrides(next);
+                          }}
+                          type="button"
+                          title="Ibalik sa orihinal na presyo"
+                          className="text-[10px] text-orange-600 hover:text-orange-700 underline font-semibold cursor-pointer mr-1"
+                        >
+                          I-reset
+                        </button>
+                      )}
+                      <div className="inline-flex items-center gap-1 bg-stone-50 border border-stone-300 rounded-xl px-2.5 py-1 focus-within:ring-2 focus-within:ring-emerald-500 focus-within:bg-white transition-all">
+                        <span className="text-xs text-stone-400 font-mono">₱</span>
+                        <input
+                          id={`ing-price-${item.id}`}
+                          type="number"
+                          min="0"
+                          step="1"
+                          value={item.effectiveCost}
+                          onChange={(e) => handleIngredientPriceChange(item.id, e.target.value)}
+                          className="w-18 font-mono text-right font-bold text-stone-900 text-xs sm:text-sm focus:outline-none"
+                        />
+                      </div>
+                      <button
+                        onClick={() => {
+                          const input = document.getElementById(`ing-price-${item.id}`) as HTMLInputElement | null;
+                          if (input) {
+                            input.focus();
+                            input.select();
+                          }
+                        }}
+                        type="button"
+                        title="I-edit ang presyo ayon sa bili mo sa palengke"
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold border border-emerald-200 transition-all cursor-pointer active:scale-95"
+                      >
+                        <Pencil className="w-3.5 h-3.5 text-emerald-600" />
+                        <span>I-edit</span>
+                      </button>
                     </div>
                   </td>
                 </tr>

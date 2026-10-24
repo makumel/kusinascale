@@ -1,8 +1,8 @@
+import { CookingMode } from './CookingMode';
 import React, { useState, useEffect } from 'react';
 import { Recipe } from '../types/recipe';
 import { CostingCalculator } from './CostingCalculator';
 import { exportRecipeKitchenSheet, ImageExportFormat } from '../utils/brandImageExporter';
-import { Image as ImageIcon } from 'lucide-react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import {
   X,
@@ -16,6 +16,8 @@ import {
   Minus,
   Plus,
   Scale,
+  Flame,
+  Download,
 } from 'lucide-react';
 
 interface RecipeModalProps {
@@ -33,6 +35,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'calculator' | 'recipe'>(initialTab);
   const [completedSteps, setCompletedSteps] = useState<Record<number, boolean>>({});
+  const [isCookingMode, setIsCookingMode] = useState<boolean>(false);
   const [portions, setPortions] = useState<number>(recipe ? recipe.baseServings : 5);
   const [isExporting, setIsExporting] = useState<boolean>(false);
   const { triggerInstall } = usePWAInstall();
@@ -48,15 +51,9 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
 
   const scaleMultiplier = portions / recipe.baseServings;
 
-  const toggleStep = (index: number) => {
-    setCompletedSteps((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
-
-
-  const handleExportKitchenSheet = async (format: ImageExportFormat) => {
+  
+  const handleExportRecipe = async (format: ImageExportFormat) => {
+    if (!recipe) return;
     setIsExporting(true);
     try {
       await exportRecipeKitchenSheet(recipe, portions, format);
@@ -65,7 +62,13 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
     }
   };
 
-  
+  const toggleStep = (index: number) => {
+    setCompletedSteps((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-900/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
@@ -101,12 +104,11 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
             {/* Header Action Controls */}
             <div className="flex items-center gap-2 no-print">
               <button
-                onClick={() => handleExportKitchenSheet('png')}
-                disabled={isExporting}
-                title="I-save ang Branded Kitchen Card bilang PNG (Never PDF / Never Excel)"
-                aria-label="I-save ang Branded Kitchen Card bilang PNG"
+                onClick={() => window.print()}
+                title="I-print ang Resipe"
+                aria-label="I-print ang Resipe"
                 type="button"
-                className="p-2 text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 active:scale-95 rounded-xl transition-all cursor-pointer disabled:opacity-50"
+                className="p-2 text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 active:scale-95 rounded-xl transition-all cursor-pointer"
               >
                 <Printer className="w-5 h-5" />
               </button>
@@ -151,7 +153,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
               <Calculator className="w-4 h-4" />
               <span>Food Costing &amp; SRP</span>
               <span className="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.2 rounded-full">
-                App Only
+                Tubo &amp; SRP
               </span>
             </button>
           </nav>
@@ -160,6 +162,13 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
         {/* Modal Scrollable Body */}
         <div className="p-4 sm:p-6 overflow-y-auto flex-1 space-y-6">
           {activeTab === 'recipe' ? (
+            isCookingMode ? (
+              <CookingMode
+                recipe={recipe}
+                portions={portions}
+                onExit={() => setIsCookingMode(false)}
+              />
+            ) : (
             <div className="space-y-6">
               {/* Infographic Portions Scaler Toolbar (Google Drive Format) */}
               <section className="bg-gradient-to-r from-emerald-50/80 via-teal-50/60 to-stone-50 border border-emerald-200/80 rounded-2xl p-4 sm:p-5 shadow-xs">
@@ -212,37 +221,48 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
                       </button>
                     </div>
 
-                    {/* Shopping Prep Checklist Exporter & Image Exporter */}
-                    <div className="flex flex-wrap items-center gap-1.5">
-                      
+                    {/* Interactive Cooking Mode & Exporter Actions */}
+                    <div className="flex flex-wrap items-center gap-2">
                       <button
-                        onClick={() => handleExportKitchenSheet('png')}
-                        disabled={isExporting}
+                        onClick={() => setIsCookingMode(true)}
                         type="button"
-                        title="I-download ang Branded Kitchen Prep Sheet (PNG Image)"
-                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-700 font-semibold text-xs transition-all cursor-pointer disabled:opacity-50"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 active:scale-95 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all cursor-pointer"
                       >
-                        <ImageIcon className="w-4 h-4 text-emerald-600" />
-                        <span>{isExporting ? 'Generating...' : 'PNG'}</span>
+                        <Flame className="w-4 h-4 text-amber-200 animate-pulse" />
+                        <span>Lutuin Natin! (Let's Cook This)</span>
                       </button>
-                      <button
-                        onClick={() => handleExportKitchenSheet('jpeg')}
-                        disabled={isExporting}
-                        type="button"
-                        title="I-download bilang JPG Image"
-                        className="px-2.5 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-700 font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
-                      >
-                        JPG
-                      </button>
-                      <button
-                        onClick={() => handleExportKitchenSheet('gif')}
-                        disabled={isExporting}
-                        type="button"
-                        title="I-download bilang GIF Image"
-                        className="px-2.5 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-95 text-stone-700 font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
-                      >
-                        GIF
-                      </button>
+
+                      {/* Branded Recipe Card Exporter: PNG / JPG / GIF (Never Excel / Never PDF) */}
+                      <div className="flex items-center gap-1">
+                        <button
+                          onClick={() => handleExportRecipe('png')}
+                          disabled={isExporting}
+                          type="button"
+                          title="I-save ang Resipe na may opisyal na watermark (PNG)"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white font-bold text-xs shadow-xs transition-all cursor-pointer disabled:opacity-50"
+                        >
+                          <Download className="w-3.5 h-3.5" />
+                          <span>{isExporting ? 'Generating...' : 'I-save Resipe (PNG)'}</span>
+                        </button>
+                        <button
+                          onClick={() => handleExportRecipe('jpeg')}
+                          disabled={isExporting}
+                          type="button"
+                          title="I-save bilang JPG Image"
+                          className="px-2.5 py-2 rounded-xl border border-emerald-300 bg-white hover:bg-emerald-50 text-emerald-800 font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
+                        >
+                          JPG
+                        </button>
+                        <button
+                          onClick={() => handleExportRecipe('gif')}
+                          disabled={isExporting}
+                          type="button"
+                          title="I-save bilang GIF Image"
+                          className="px-2.5 py-2 rounded-xl border border-emerald-300 bg-white hover:bg-emerald-50 text-emerald-800 font-bold text-xs transition-all cursor-pointer disabled:opacity-50"
+                        >
+                          GIF
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -372,35 +392,63 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
                 </section>
               )}
             </div>
+            )
           ) : (
             <div className="space-y-6">
-              {/* PWA Gated Protective Banner: Calculator is Protected and Never Downloadable */}
-              <section className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500 text-stone-950 flex items-center justify-center shrink-0 font-bold mt-0.5">
-                    <Smartphone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h4 className="text-sm font-bold text-white">Eksklusibo sa KusinaKita App</h4>
-                      <span className="text-[10px] bg-amber-400/20 text-amber-300 border border-amber-400/30 px-2 py-0.5 rounded-full font-semibold">
-                        PWA Protected • Hindi Downloadable
-                      </span>
+              {/* Cellphone Offline Guide & Install Assistance for Android and iPhone */}
+              <section className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-950 via-stone-900 to-emerald-900 text-white shadow-sm border border-emerald-800/40 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500 text-stone-950 flex items-center justify-center shrink-0 font-bold">
+                      <Smartphone className="w-5 h-5" />
                     </div>
-                    <p className="text-xs text-stone-300 mt-1 leading-relaxed">
-                      Ang buong Food Costing Engine, margin sliders, at SRP calculations ay hindi pwedeng i-download upang maprotektahan ang proprietary model. I-install ang App sa iyong phone para sa mabilisang gamit sa palengke.
-                    </p>
+                    <div>
+                      <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                        <span>Gamitin sa Palengke Kahit Walang Internet</span>
+                        <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full font-semibold">
+                          Libre • Offline Ready
+                        </span>
+                      </h4>
+                      <p className="text-xs text-stone-300 mt-0.5">
+                        Maaari mong i-save ang KusinaKita sa iyong cellphone para mabilis buksan habang namamalengke.
+                      </p>
+                    </div>
                   </div>
+
+                  <button
+                    onClick={triggerInstall}
+                    type="button"
+                    className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-stone-950 font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+                  >
+                    <Smartphone className="w-4 h-4" />
+                    <span>I-save sa Cellphone</span>
+                  </button>
                 </div>
 
-                <button
-                  onClick={triggerInstall}
-                  type="button"
-                  className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-stone-950 font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
-                >
-                  <Smartphone className="w-4 h-4" />
-                  <span>I-install ang PWA App</span>
-                </button>
+                {/* Clear Step-by-Step Instructions for Android and iPhone */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2 border-t border-emerald-800/50 text-xs">
+                  <div className="bg-white/5 rounded-xl p-3 border border-white/10">
+                    <div className="font-bold text-amber-300 flex items-center gap-1.5 mb-1">
+                      <span>🤖 Para sa Android (Samsung, Xiaomi, Oppo, Vivo):</span>
+                    </div>
+                    <ol className="list-decimal list-inside space-y-1 text-stone-300">
+                      <li>Pindutin ang <strong>tatlong tuldok (⋮)</strong> sa itaas ng Chrome.</li>
+                      <li>Piliin ang <strong>&quot;Install app&quot;</strong> o <strong>&quot;Add to Home screen&quot;</strong>.</li>
+                      <li>Kusa nang lalabas ang KusinaKita sa iyong home screen!</li>
+                    </ol>
+                  </div>
+
+                  <div className="bg-white/5 rounded-xl p-3 border border-white/10">
+                    <div className="font-bold text-emerald-300 flex items-center gap-1.5 mb-1">
+                      <span>🍎 Para sa iPhone / iPad (Safari):</span>
+                    </div>
+                    <ol className="list-decimal list-inside space-y-1 text-stone-300">
+                      <li>Pindutin ang <strong>Share button</strong> (icon na may kahon at arrow paitaas sa ibaba).</li>
+                      <li>Piliin ang <strong>&quot;Add to Home Screen&quot;</strong>.</li>
+                      <li>Pindutin ang <strong>&quot;Add&quot;</strong> sa kanang itaas.</li>
+                    </ol>
+                  </div>
+                </div>
               </section>
 
               {/* The Live Interactive Calculator */}

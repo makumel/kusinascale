@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { RECIPES, CATEGORIES } from './data/recipes';
 import { Recipe, RecipeCategory } from './types/recipe';
 import { Navbar } from './components/Navbar';
@@ -7,6 +7,8 @@ import { RecipeCard } from './components/RecipeCard';
 import { RecipeModal } from './components/RecipeModal';
 import { SuggestionModal } from './components/SuggestionModal';
 import { LaunchSalesFunnel } from './components/LaunchSalesFunnel';
+import { AdminDashboard } from './components/AdminDashboard';
+import { CoffeeMilkteaPage } from './components/CoffeeMilkteaPage';
 import {
   TrendingUp,
   Percent,
@@ -16,10 +18,31 @@ import {
   Sparkles,
   HelpCircle,
   Flame,
-  ArrowRight
+  ArrowRight,
+  Lock
 } from 'lucide-react';
 
 export function App() {
+  const [currentPath, setCurrentPath] = useState<string>(() => {
+    return typeof window !== 'undefined' ? window.location.pathname : '/';
+  });
+
+  useEffect(() => {
+    const onPopState = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  const navigateTo = (path: string) => {
+    if (typeof window !== 'undefined') {
+      window.history.pushState({}, '', path);
+      setCurrentPath(path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const [activeCategory, setActiveCategory] = useState<RecipeCategory>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -77,6 +100,32 @@ export function App() {
     setSelectedRecipe(recipe);
     setModalInitialTab('recipe');
   };
+
+  // Dedicated Route: Admin OS (/admin)
+  if (currentPath === '/admin') {
+    return (
+      <div className="min-h-screen bg-stone-900 font-sans">
+        <AdminDashboard
+          onBackToStorefront={() => navigateTo('/')}
+          onPreviewRecipe={(r) => {
+            setSelectedRecipe(r);
+            setModalInitialTab('recipe');
+          }}
+        />
+      </div>
+    );
+  }
+
+  // Dedicated Route: Coffee & Milk Tea Gated Commercial Package (/coffee-milktea)
+  if (currentPath === '/coffee-milktea') {
+    return (
+      <div className="min-h-screen bg-[#faf8f5] font-sans">
+        <CoffeeMilkteaPage
+          onBackToCarinderia={() => navigateTo('/')}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf8f5] text-stone-900 selection:bg-orange-500 selection:text-white pb-20 sm:pb-12">
@@ -327,10 +376,12 @@ export function App() {
               </button>
               <span>•</span>
               <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="hover:text-emerald-700 transition-colors cursor-pointer"
+                onClick={() => navigateTo('/admin')}
+                className="hover:text-emerald-700 transition-colors cursor-pointer inline-flex items-center gap-1 text-stone-400 hover:text-stone-700"
+                title="KusinaKita Admin Dashboard"
               >
-                Bumalik sa Taas
+                <Lock className="w-3 h-3 text-stone-400" />
+                <span>Admin OS</span>
               </button>
             </div>
           </div>

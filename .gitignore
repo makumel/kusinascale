@@ -10,3 +10,7 @@ dist-ssr
 scratch/
 
 .vercel
+
+tsconfig.tsbuildinfo
+verify_*.py
+capture_*.py

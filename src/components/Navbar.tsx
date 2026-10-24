@@ -1,15 +1,23 @@
 import React from 'react';
-import { Sparkles, MessageSquarePlus, Calculator, TrendingUp, Smartphone, CheckCircle2, Flame, Wifi, WifiOff } from 'lucide-react';
+import { Sparkles, MessageSquarePlus, Calculator, TrendingUp, Smartphone, CheckCircle2, Flame, Wifi, WifiOff, Coffee } from 'lucide-react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import { useNetworkStatus } from '../hooks/useNetworkStatus';
 
 interface NavbarProps {
   onOpenSuggestion: () => void;
   onOpenLaunchOffer?: () => void;
+  onOpenCoffeeMilktea?: () => void;
+  currentView?: 'food' | 'beverage';
   recipeCount: number;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, onOpenLaunchOffer, recipeCount }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenSuggestion,
+  onOpenLaunchOffer,
+  onOpenCoffeeMilktea,
+  currentView = 'food',
+  recipeCount
+}) => {
   const { isInstalled, triggerInstall } = usePWAInstall();
   const { isOnline } = useNetworkStatus();
 
@@ -41,8 +49,52 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, onOpenLaunchOf
             </a>
           </div>
 
+          {/* Center Navigation Switcher for Food vs Beverage */}
+          {onOpenCoffeeMilktea && (
+            <div className="hidden md:flex items-center p-1 bg-stone-100 rounded-2xl border border-stone-200/90 text-xs font-bold">
+              <button
+                onClick={() => {
+                  if (currentView !== 'food') onOpenCoffeeMilktea(); // toggle
+                }}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition cursor-pointer ${
+                  currentView === 'food'
+                    ? 'bg-white text-stone-900 shadow-2xs'
+                    : 'text-stone-600 hover:text-stone-900'
+                }`}
+              >
+                <span>🥘 Ulam &amp; Carinderia</span>
+                <span className="text-[10px] text-stone-400 font-mono">({recipeCount})</span>
+              </button>
+
+              <button
+                onClick={onOpenCoffeeMilktea}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl transition cursor-pointer ${
+                  currentView === 'beverage'
+                    ? 'bg-amber-600 text-white shadow-2xs'
+                    : 'text-amber-800 hover:bg-amber-100/60'
+                }`}
+              >
+                <Coffee className="w-3.5 h-3.5 text-amber-500" />
+                <span>Coffee &amp; Milk Tea</span>
+                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-200 text-amber-900 font-extrabold">
+                  28 Recipes
+                </span>
+              </button>
+            </div>
+          )}
+
           {/* Quick Metrics & Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Mobile Coffee & Milk Tea Quick Toggle */}
+            {onOpenCoffeeMilktea && (
+              <button
+                onClick={onOpenCoffeeMilktea}
+                className="md:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-amber-500/20 text-amber-900 border border-amber-500/40 text-xs font-bold transition active:scale-95 cursor-pointer"
+              >
+                <Coffee className="w-3.5 h-3.5 text-amber-700" />
+                <span>{currentView === 'beverage' ? 'Ulam' : 'Kape & Tea'}</span>
+              </button>
+            )}
             {/* Palengke Offline / Online Status Badge */}
             {!isOnline ? (
               <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-900 text-xs font-bold animate-pulse">
@@ -84,18 +136,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, onOpenLaunchOf
             <button
               onClick={triggerInstall}
               type="button"
-              title={isInstalled ? 'Naka-install na ang app sa device na ito' : 'I-install ang KusinaKita PWA sa iyong Phone'}
+              title={isInstalled ? 'Naka-save na ang app sa device na ito' : 'I-save ang KusinaKita app sa iyong cellphone'}
               className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-95 text-stone-950 font-bold text-xs shadow-xs transition-all cursor-pointer"
             >
               {isInstalled ? (
                 <>
                   <CheckCircle2 className="w-3.5 h-3.5 text-stone-950" />
-                  <span className="hidden sm:inline">Installed</span>
+                  <span className="hidden sm:inline">Naka-save na</span>
                 </>
               ) : (
                 <>
                   <Smartphone className="w-3.5 h-3.5 text-stone-950" />
-                  <span>I-install App</span>
+                  <span>I-save sa Cellphone</span>
                 </>
               )}
             </button>
@@ -117,7 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, onOpenLaunchOf
       {/* Sub-header Banner */}
       <div className="bg-gradient-to-r from-emerald-800 via-emerald-700 to-teal-800 text-white py-1.5 px-4 text-xs font-medium tracking-wide flex items-center justify-center gap-2 shadow-inner text-center">
         <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
-        <span>Subok na timpla mula sa retiradong Head Cook at Fastfood Entrepreneur — Hindi AI. I-install ang PWA para magamit offline sa palengke.</span>
+        <span>Subok na timpla mula sa retiradong Head Cook at Fastfood Entrepreneur — Hindi AI. I-save sa iyong cellphone para magamit kahit walang internet sa palengke.</span>
       </div>
     </header>
   );

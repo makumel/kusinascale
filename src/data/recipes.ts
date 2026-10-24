@@ -10,7 +10,6 @@ export const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const RECIPES: Recipe[] = [
-  // --- CARINDERIA NEGOSYO BESTSELLERS ---
   {
     id: 'chicken-adobo-classic',
     name: 'Special Classic Chicken Adobo',
@@ -21,7 +20,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '15 mins',
     cookTime: '40 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/chicken-adobo-classic.jpg',
     description: 'Juicy chicken cuts braised in dark soy sauce, native cane vinegar, plenty of toasted crushed garlic, black peppercorns, and aromatic bay leaves. Balanced savory, tangy, and subtly sweet glaze.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 6,
@@ -50,6 +49,7 @@ export const RECIPES: Recipe[] = [
       'Chicken thighs and legs remain moist and juicy even when kept under food warmer lamps.',
     ],
   },
+
   {
     id: 'beef-caldereta-fiesta',
     name: 'Fiesta Beef Caldereta Especial',
@@ -60,7 +60,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '90 mins',
     difficulty: 'Negosyo Pro',
-    imageUrl: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/beef-caldereta-fiesta.jpg',
     description: 'Slow-simmered melt-in-your-mouth beef brisket in a savory tomato-liver sauce enriched with cheddar cheese, sweet bell peppers, carrots, and potatoes.',
     defaultOverheadPercent: 18,
     defaultPackagingPerServing: 8,
@@ -89,6 +89,7 @@ export const RECIPES: Recipe[] = [
       'Pan-frying potatoes and carrots separately prevents them from crumbling into the sauce during display.',
     ],
   },
+
   {
     id: 'pork-menudo-kapampangan',
     name: 'Kapampangan Pork Menudo',
@@ -99,7 +100,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '45 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/pork-menudo-kapampangan.jpg',
     description: 'Tender pork shoulder and liver braised in savory garlic-tomato sauce with diced potatoes, carrots, sweet raisins, and sliced hotdogs for a nostalgic party punch.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 6,
@@ -128,6 +129,7 @@ export const RECIPES: Recipe[] = [
       'Soak raw liver in milk or water with calamansi beforehand to remove any metallic off-taste.',
     ],
   },
+
   {
     id: 'bicol-express-spicy',
     name: 'Creamy Bicol Express Authentico',
@@ -138,7 +140,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '15 mins',
     cookTime: '35 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/bicol-express-spicy.jpg',
     description: 'Crispy browned pork belly simmered in pure coconut cream (kakang gata) with sauteed shrimp paste (bagoong alamang), garlic, ginger, and abundant fresh green and red chilies.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 6,
@@ -167,7 +169,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- TOP ASIAN FAVORITES ---
   {
     id: 'japanese-tonkotsu-ramen',
     name: 'Artisan Chashu Tonkotsu Ramen',
@@ -178,7 +179,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '25 mins',
     cookTime: '60 mins',
     difficulty: 'Negosyo Pro',
-    imageUrl: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/japanese-tonkotsu-ramen.jpg',
     description: 'Creamy collagen-rich pork bone broth served over springy fresh ramen noodles, crowned with torched braised chashu rolled pork belly, jammy ajitsuke ramen egg, nori sheet, and scallions.',
     defaultOverheadPercent: 20,
     defaultPackagingPerServing: 12,
@@ -206,6 +207,7 @@ export const RECIPES: Recipe[] = [
       'Torch the chashu right before packing—the smoky aroma when customers pop open the lid triggers 5-star ratings.',
     ],
   },
+
   {
     id: 'korean-crispy-yangnyeom-chicken',
     name: 'Korean Yangnyeom Crispy Chicken',
@@ -216,7 +218,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '25 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/korean-crispy-yangnyeom-chicken.jpg',
     description: 'Shatteringly crisp double-fried chicken drumettes and flats coated in a glistening, sticky, sweet and spicy Korean red pepper glaze, finished with crushed peanuts and toasted white sesame.',
     defaultOverheadPercent: 18,
     defaultPackagingPerServing: 8,
@@ -244,6 +246,7 @@ export const RECIPES: Recipe[] = [
       'Offer glaze on the side ("Sauce-on-Side") for long-distance deliveries to prevent softening.',
     ],
   },
+
   {
     id: 'thai-pad-kra-pao',
     name: 'Bangkok Spicy Pad Kra Pao',
@@ -254,7 +257,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '10 mins',
     cookTime: '12 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/thai-pad-kra-pao.jpg',
     description: 'High-heat wok-tossed minced pork with Thai holy basil, hand-pounded garlic and bird\'s eye chilies in a savory-sweet oyster fish sauce, served with steaming jasmine rice and a crispy fried egg.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 7,
@@ -283,7 +286,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- TOP EUROPEAN & WESTERN ---
   {
     id: 'classic-italian-lasagna',
     name: 'Trattoria Beef Bolognese Lasagna',
@@ -294,7 +296,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '30 mins',
     cookTime: '60 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/classic-italian-lasagna.jpg',
     description: 'Decadent baked party platter featuring sheets of semolina pasta layered with slow-cooked ground beef ragù, velvety nutmeg béchamel sauce, and gooey golden melted mozzarella and parmesan cheese.',
     defaultOverheadPercent: 16,
     defaultPackagingPerServing: 10,
@@ -323,6 +325,7 @@ export const RECIPES: Recipe[] = [
       'Selling by whole catering aluminum trays (8-10 pax) yields ₱1,400-₱1,800 with minimal plating labor.',
     ],
   },
+
   {
     id: 'neapolitan-margherita-pizza',
     name: 'Artisan Neapolitan Margherita Pizza',
@@ -333,7 +336,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '25 mins',
     cookTime: '15 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/neapolitan-margherita-pizza.jpg',
     description: 'Rustic wood-oven style artisan pizza featuring cold-fermented dough, crushed Italian San Marzano tomatoes, melty fresh mozzarella cheese, fresh sweet basil leaves, and extra virgin olive oil drizzle.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 12,
@@ -362,7 +365,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- PINOY PALAMIG & DESSERTS ---
   {
     id: 'special-halo-halo-supreme',
     name: 'Special Halo-Halo Overload Supreme',
@@ -373,7 +375,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '0 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/special-halo-halo-supreme.jpg',
     description: 'Philippine summer legend featuring ultra-fine micro-shaved ice, evaporated milk, layered with sweet red beans, nata de coco, kaong, saba bananas, jackfruit, topped with real ube halaya, leche flan slice, and toasted pinipig.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 8,
@@ -401,6 +403,7 @@ export const RECIPES: Recipe[] = [
       'Pre-portioning the preserves into squeeze bottles or stainless bain-maries cuts assembly time to 45 seconds per cup.',
     ],
   },
+
   {
     id: 'creamy-leche-flan-gold',
     name: 'Silky Creamy Leche Flan Oro',
@@ -411,7 +414,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '45 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/creamy-leche-flan-gold.jpg',
     description: 'Velvety smooth, bubble-free Filipino steamed custard made exclusively with egg yolks and sweetened condensed milk, glazed in glistening amber caramel syrup.',
     defaultOverheadPercent: 14,
     defaultPackagingPerServing: 7,
@@ -439,7 +442,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- TIPID 15-MINUTE MEALS ---
   {
     id: 'ginisang-sardinas-miswa',
     name: 'Ginisang Sardinas with Miswa & Patola',
@@ -450,7 +452,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '5 mins',
     cookTime: '10 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/ginisang-sardinas-miswa.jpg',
     description: 'Comforting, flavorful canned sardines in tomato sauce sauteed with garlic, onions, juicy patola (luffa gourd), and silky fine miswa noodles. Warm broth that stretches small budgets.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 5,
@@ -476,6 +478,7 @@ export const RECIPES: Recipe[] = [
       'Using rice washing (pinaghugasan ng bigas) instead of plain tap water yields a thicker, more savory comforting soup base for free.',
     ],
   },
+
   {
     id: 'tortang-talong-especial',
     name: 'Tortang Talong with Ground Pork',
@@ -486,7 +489,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '8 mins',
     cookTime: '12 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/tortang-talong-especial.jpg',
     description: 'Charred, smoky roasted eggplant peeled, flattened with a fork, dipped in fluffy seasoned beaten eggs with savory sauteed minced giniling, and pan-fried until golden with crispy lace edges.',
     defaultOverheadPercent: 14,
     defaultPackagingPerServing: 5,
@@ -513,7 +516,7 @@ export const RECIPES: Recipe[] = [
       'Pairing with a complimentary banana ketchup packet or spicy spiced vinegar (sukang Iloko) elevates takeout satisfaction.',
     ],
   },
-  // --- ADDITIONAL CARINDERIA & SIZZLING BESTSELLERS ---
+
   {
     id: 'pork-sisig-kapampangan',
     name: 'Sizzling Pork Sisig Kapampangan',
@@ -524,7 +527,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '35 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/pork-sisig-kapampangan.jpg',
     description: 'Crispy boiled, grilled, and finely minced pork mask and belly seasoned with chicken liver puree, red onions, bird-eye chilies, and fresh calamansi juice. Served sizzling.',
     defaultOverheadPercent: 16,
     defaultPackagingPerServing: 8,
@@ -552,6 +555,7 @@ export const RECIPES: Recipe[] = [
       'Double-frying the pork mask creates an irresistible crunch that stays crispy even in takeout boxes.',
     ],
   },
+
   {
     id: 'beef-pares-retiro',
     name: 'Retiro Style Beef Pares & Sabaw',
@@ -562,7 +566,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '15 mins',
     cookTime: '90 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/beef-pares-retiro.jpg',
     description: 'Tender beef chuck and gelatinous tendon braised in sweet-savory dark sauce spiced with star anise, ginger, and brown sugar. Served with separate aromatic beef bone broth and toasted garlic rice.',
     defaultOverheadPercent: 18,
     defaultPackagingPerServing: 8,
@@ -588,6 +592,7 @@ export const RECIPES: Recipe[] = [
       'Serve with homemade chili garlic paste and native calamansi for repeat customer cravings.',
     ],
   },
+
   {
     id: 'pork-dinuguan-gold',
     name: 'Special Gold Pork Dinuguan',
@@ -598,7 +603,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '45 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/pork-dinuguan-gold.jpg',
     description: 'Bite-sized pork belly simmered in vinegar, garlic, onions, and rich pig blood gravy with long green chilies. Perfectly paired with puto or steaming white rice.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 6,
@@ -624,6 +629,7 @@ export const RECIPES: Recipe[] = [
       'Pairing with mini steamed puto as an afternoon combo doubles average ticket size.',
     ],
   },
+
   {
     id: 'crispy-lumpiang-shanghai',
     name: 'Crispy Lumpiang Shanghai Catering Tray',
@@ -634,7 +640,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '25 mins',
     cookTime: '15 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1548869206-93b036288d7e?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/crispy-lumpiang-shanghai.jpg',
     description: 'Crispy paper-thin lumpia wrappers packed with seasoned minced pork, carrots, minced onions, and singkamas. Deep-fried golden brown with homemade sweet chili sauce.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 6,
@@ -660,6 +666,7 @@ export const RECIPES: Recipe[] = [
       'Always freeze rolls for 15 minutes before frying to ensure crispy crust without bursting the filling.',
     ],
   },
+
   {
     id: 'crispy-lechon-kawali',
     name: 'Crunchy Pork Lechon Kawali',
@@ -670,7 +677,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '15 mins',
     cookTime: '50 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/crispy-lechon-kawali.jpg',
     description: 'Pork belly slab boiled in aromatics, thoroughly dried, and deep-fried to blistered perfection. Served with Mang Tomas all-around lechon sauce or spiced sukang pinakurat.',
     defaultOverheadPercent: 16,
     defaultPackagingPerServing: 8,
@@ -695,6 +702,7 @@ export const RECIPES: Recipe[] = [
       'Sprinkle with toasted garlic and chili flakes for an upscale "Spicy Lechon Kawali" variation.',
     ],
   },
+
   {
     id: 'kare-kare-bagnet',
     name: 'Fiesta Kare-Kare with Crispy Bagnet',
@@ -705,7 +713,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '45 mins',
     difficulty: 'Negosyo Pro',
-    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/kare-kare-bagnet.jpg',
     description: 'Velvety savory peanut sauce infused with toasted ground rice and achuete oil, packed with blanched string beans, pechay, and eggplant slices, crowned with crunchy bagnet pork.',
     defaultOverheadPercent: 18,
     defaultPackagingPerServing: 8,
@@ -732,7 +740,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- TOP ASIAN FAVORITES ---
   {
     id: 'thai-pad-thai-goong',
     name: 'Bangkok Pad Thai Goong Especial',
@@ -743,7 +750,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '15 mins',
     cookTime: '12 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/thai-pad-thai-goong.jpg',
     description: 'Chewy rice noodles stir-fried in authentic tamarind-palm sugar glaze with juicy plump shrimp, firm tofu cubes, scrambled eggs, fresh bean sprouts, and crushed roasted peanuts.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 8,
@@ -770,6 +777,7 @@ export const RECIPES: Recipe[] = [
       'High wok heat (wok hei) is critical for authentic smoky street-vendor flavor.',
     ],
   },
+
   {
     id: 'korean-beef-bulgogi',
     name: 'Seoul Beef Bulgogi & Kimchi Rice',
@@ -780,7 +788,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '10 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/korean-beef-bulgogi.jpg',
     description: 'Thinly sliced tender beef marinated in sweet dark soy sauce, Asian pear puree, toasted sesame oil, minced garlic, and ginger. Flash-seared with sweet onions and scallions.',
     defaultOverheadPercent: 16,
     defaultPackagingPerServing: 8,
@@ -806,6 +814,7 @@ export const RECIPES: Recipe[] = [
       'Cook over scorching high heat in small batches to avoid braising or boiling in juices.',
     ],
   },
+
   {
     id: 'japanese-katsu-curry',
     name: 'Japanese Pork Katsu Golden Curry',
@@ -816,7 +825,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '25 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/japanese-katsu-curry.jpg',
     description: 'Crispy Japanese panko-crusted pork cutlet sliced over hot steamed rice, smothered in thick, savory Japanese golden curry stew with potatoes and sweet carrots.',
     defaultOverheadPercent: 14,
     defaultPackagingPerServing: 8,
@@ -843,6 +852,7 @@ export const RECIPES: Recipe[] = [
       'Pounding pork cutlets evenly ensures uniform cooking and creates larger-looking portions on the plate.',
     ],
   },
+
   {
     id: 'dim-sum-pork-siomai',
     name: 'Dim Sum Master Pork & Shrimp Siomai',
@@ -853,7 +863,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '25 mins',
     cookTime: '15 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/dim-sum-pork-siomai.jpg',
     description: 'Juicy, springy pork and shrimp open-faced dumplings seasoned with sesame oil, wrapped in yellow wonton skins, and steamed to juicy perfection. Served with signature crunchy garlic chili oil.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 5,
@@ -880,6 +890,7 @@ export const RECIPES: Recipe[] = [
       'Garlic chili sauce is the true driver of repeat visits; make it extra aromatic with slow-roasted fried garlic.',
     ],
   },
+
   {
     id: 'cantonese-sweet-sour-pork',
     name: 'Cantonese Sweet & Sour Crispy Pork',
@@ -890,7 +901,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '20 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/cantonese-sweet-sour-pork.jpg',
     description: 'Bite-sized pork cubes coated in potato starch batter, double-fried until crunchy, and tossed in bright red sweet and sour sauce with pineapple chunks, onions, and bell peppers.',
     defaultOverheadPercent: 14,
     defaultPackagingPerServing: 7,
@@ -917,7 +928,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- WESTERN & ITALIAN ---
   {
     id: 'roman-spaghetti-carbonara',
     name: 'Authentic Roman Spaghetti Carbonara',
@@ -928,7 +938,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '10 mins',
     cookTime: '15 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/roman-spaghetti-carbonara.jpg',
     description: 'True Italian trattoria carbonara made with al dente spaghetti, crispy cured pork strips, rich egg yolk and grated parmesan/pecorino emulsion, and freshly cracked black pepper. Zero cream.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 8,
@@ -953,6 +963,7 @@ export const RECIPES: Recipe[] = [
       'Always pull the pan off direct flame before adding the egg mixture to prevent egg curds from forming.',
     ],
   },
+
   {
     id: 'cheesy-baked-macaroni',
     name: 'Fiesta Cheesy Baked Macaroni Catering Tray',
@@ -963,7 +974,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '35 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1543339308-43e59d6b73a6?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/cheesy-baked-macaroni.jpg',
     description: 'Filipino-style party baked macaroni with elbow macaroni tossed in sweet-savory ground beef and hotdog tomato sauce, blanketed with silky quickmelt cheese sauce, and broiled golden.',
     defaultOverheadPercent: 14,
     defaultPackagingPerServing: 10,
@@ -990,6 +1001,7 @@ export const RECIPES: Recipe[] = [
       'A splash of evaporated milk in the cheese topping prevents the sauce from congealing into rubber when cooled.',
     ],
   },
+
   {
     id: 'chicken-cordon-bleu-rolls',
     name: 'Crispy Chicken Cordon Bleu Rolls',
@@ -1000,7 +1012,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '20 mins',
     difficulty: 'Katamtaman (Medium)',
-    imageUrl: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/chicken-cordon-bleu-rolls.jpg',
     description: 'Thin chicken breast fillet wrapped tightly around sweet smoked ham and gooey melted mozzarella cheese, coated in crispy panko, and golden-fried. Sliced into elegant medallions.',
     defaultOverheadPercent: 15,
     defaultPackagingPerServing: 8,
@@ -1027,6 +1039,7 @@ export const RECIPES: Recipe[] = [
       'Cutting the roll into diagonal medallions exposes the ham-cheese swirl, creating maximum visual appeal on the buffet table.',
     ],
   },
+
   {
     id: 'creamy-garlic-butter-salmon',
     name: 'Pan-Seared Creamy Garlic Butter Salmon',
@@ -1037,7 +1050,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '10 mins',
     cookTime: '15 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/creamy-garlic-butter-salmon.jpg',
     description: 'Crisp skin Norwegian salmon fillets pan-seared in butter, bathed in rich garlic white wine reduction with heavy cream, fresh spinach, and squeezed lemon zest.',
     defaultOverheadPercent: 18,
     defaultPackagingPerServing: 12,
@@ -1065,7 +1078,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- PALAMIG & DESSERTS ---
   {
     id: 'mango-graham-float-tub',
     name: 'Mango Graham Float Negosyo Tub',
@@ -1076,7 +1088,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '20 mins',
     cookTime: '0 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/mango-graham-float-tub.jpg',
     description: 'The definitive Pinoy refrigerator cake. Layers of sweet honey graham crackers, chilled fluffy whipped all-purpose cream, sweetened condensed milk, and fresh golden Guimaras ripe mangoes in reusable 500ml tubs.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 8,
@@ -1102,6 +1114,7 @@ export const RECIPES: Recipe[] = [
       '500ml rectangular tubs are standard delivery size, commanding ₱140-₱180 retail at ₱65 food cost.',
     ],
   },
+
   {
     id: 'classic-sago-at-gulaman',
     name: "Classic Sago't Gulaman Street Cooler",
@@ -1112,7 +1125,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '15 mins',
     cookTime: '30 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/classic-sago-at-gulaman.jpg',
     description: 'Refreshing thirst quencher made with translucent chewy tapioca pearls, black agar-agar jelly cubes, crushed ice, and rich caramelized brown sugar syrup (arnibal) with banana essence.',
     defaultOverheadPercent: 10,
     defaultPackagingPerServing: 5,
@@ -1138,6 +1151,7 @@ export const RECIPES: Recipe[] = [
       'Store cooked sago submerged in light sugar syrup to keep pearls plump and prevent sticking into clump.',
     ],
   },
+
   {
     id: 'creamy-coffee-jelly-cups',
     name: 'Creamy Coffee Jelly Dessert Cups',
@@ -1148,7 +1162,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '15 mins',
     cookTime: '10 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/creamy-coffee-jelly-cups.jpg',
     description: 'Firm, bittersweet coffee gelatin cubes suspended in velvety sweet blend of chilled cream, evaporated milk, and condensed milk. Refreshing, creamy pick-me-up dessert.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 6,
@@ -1174,6 +1188,7 @@ export const RECIPES: Recipe[] = [
       'Can be packaged in portable bottles or cups with wide straws as a ready-to-drink "Coffee Jelly Latte".',
     ],
   },
+
   {
     id: 'mais-con-yelo-special',
     name: 'Mais Con Yelo Overload Supreme',
@@ -1184,7 +1199,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '10 mins',
     cookTime: '0 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/mais-con-yelo-special.jpg',
     description: 'Creamy sweet whole corn kernels and cream-style corn layered with fine shaved ice, rich evaporated milk, sugar, crowned with crunchy toasted cornflakes and grated cheese.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 6,
@@ -1211,7 +1226,6 @@ export const RECIPES: Recipe[] = [
     ],
   },
 
-  // --- TIPID 15-MIN MEALS ---
   {
     id: 'corned-beef-silog-jumbo',
     name: 'Chunky Corned Beef Sinangag Silog',
@@ -1222,7 +1236,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '5 mins',
     cookTime: '10 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/corned-beef-silog-jumbo.jpg',
     description: 'Chunky canned corned beef sautéed with onions and crispy fried potatoes, served alongside aromatic golden toasted garlic fried rice (sinangag) and runny sunny-side-up fried egg.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 6,
@@ -1249,6 +1263,7 @@ export const RECIPES: Recipe[] = [
       'Do not stir corned beef continuously; allowing it to sear undisturbed creates deeply savory browned crust.',
     ],
   },
+
   {
     id: 'ginisang-sayote-giniling',
     name: 'Ginisang Sayote with Ground Pork',
@@ -1259,7 +1274,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '8 mins',
     cookTime: '12 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/ginisang-sayote-giniling.jpg',
     description: 'Tender-crisp julienned chayote squash sauteed with aromatic garlic, sweet red onions, ripe tomatoes, and lean minced pork in light savory broth.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 5,
@@ -1285,6 +1300,7 @@ export const RECIPES: Recipe[] = [
       'Do not overcook sayote; keeping a slight vegetable crunch makes it taste much fresher and prevents sogginess in display trays.',
     ],
   },
+
   {
     id: 'spicy-tuna-egg-fried-rice',
     name: 'Wok Spicy Tuna Egg Fried Rice',
@@ -1295,7 +1311,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '5 mins',
     cookTime: '8 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/spicy-tuna-egg-fried-rice.jpg',
     description: 'Fragrant day-old rice wok-tossed over high flame with savory canned spicy tuna flakes, scrambled eggs, toasted garlic, soy sauce, and chopped green scallions.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 5,
@@ -1321,6 +1337,7 @@ export const RECIPES: Recipe[] = [
       'Cold, day-old refrigerated rice is mandatory; fresh warm rice will become gummy and clump in the wok.',
     ],
   },
+
   {
     id: 'adobong-kangkong-crispy-tofu',
     name: 'Adobong Kangkong with Crispy Tofu',
@@ -1331,7 +1348,7 @@ export const RECIPES: Recipe[] = [
     prepTime: '8 mins',
     cookTime: '10 mins',
     difficulty: 'Madali (Easy)',
-    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1000&auto=format&fit=crop',
+    imageUrl: '/recipes/adobong-kangkong-crispy-tofu.jpg',
     description: 'Crisp green water spinach (kangkong) stalks and leaves simmered in tangy garlic adobo reduction, topped with golden crispy fried tofu cubes. High protein, plant-powered budget meal.',
     defaultOverheadPercent: 12,
     defaultPackagingPerServing: 5,
@@ -19618,43 +19635,6 @@ export const RECIPES: Recipe[] = [
     ],
     instructions: [
       "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pancit Bihon.",
-      "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
-      "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
-      "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
-      "Ihalo ang mga gulay sa huling 5 minuto upang mapanatili ang tamang lutong.",
-      "Ihain nang mainit kasama ang mainit na kanin.",
-    ],
-    chefTips: [
-      "Huwag i-overcook ang mga gulay upang manatiling sariwa at makulay sa display.",
-      "Maglaan ng tamang portions kada serving para kontrolado ang food cost at kita.",
-    ],
-  },
-
-  {
-    id: 'pancit-canton',
-    name: "Special Pancit Canton",
-    tagline: "Mabango at Patok na Negosyo Recipe mula sa Carinderia pinoy recipes",
-    category: 'carinderia',
-    categoryLabel: 'Carinderia Negosyo',
-    baseServings: 5,
-    prepTime: '15 mins',
-    cookTime: '35 mins',
-    difficulty: 'Katamtaman (Medium)',
-    imageUrl: '/recipes/pancit-canton.jpg',
-    description: "Autentiko at malasang Pancit Canton, niluto sa tradisyonal na paraan na may mataas na gross profit margin para sa carinderia at takeaway catering.",
-    defaultOverheadPercent: 15,
-    defaultPackagingPerServing: 6,
-    defaultTargetMargin: 50,
-    marketNotes: "Mataas ang demand sa tanghalian at hapunan. Madaling i-scale mula 5 servings hanggang 50 servings.",
-    ingredients: [
-      { id: 'ing-pancit-1', name: "Pork Kasim / Liempo (sliced)", quantity: 1, unit: 'kg', baseCost: 360, unitCostDescription: '₱360/kg fresh local', category: 'protein' },
-      { id: 'ing-pancit-2', name: "Garlic & Red Onion Saut\u00e9 Base", quantity: 1, unit: 'portion', baseCost: 22, unitCostDescription: '₱22 market portion', category: 'produce' },
-      { id: 'ing-pancit-3', name: "Gulay at Sariwang Sahog", quantity: 1, unit: 'set', baseCost: 40, unitCostDescription: '₱40 gulay portion', category: 'produce' },
-      { id: 'ing-pancit-4', name: "Pampalasa, Toyo at Sarsa", quantity: 1, unit: 'set', baseCost: 25, unitCostDescription: '₱25 pantry portion', category: 'pantry' },
-      { id: 'ing-pancit-5', name: "Vegetable Cooking Oil", quantity: 50, unit: 'ml', baseCost: 12, unitCostDescription: '₱12 usage', category: 'pantry' },
-    ],
-    instructions: [
-      "Ihanda at hugasan nang maigi ang lahat ng sangkap para sa Pancit Canton.",
       "Painitin ang kawali at igisa ang bawang at sibuyas hanggang sa maging mabango.",
       "Ilagay ang Pork Kasim / Liempo at sangkutsahin nang mabuti.",
       "Idagdag ang mga pampalasa at sabaw; pakuluin sa mahinang apoy hanggang maging malambot ang karne.",
