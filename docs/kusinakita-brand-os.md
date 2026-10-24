@@ -58,6 +58,20 @@ The brand mark features custom hand-lettered brush script paired with the tradit
 
 ## 5. Web App Integration Status
 
-* **Navbar**: Embedded official logo with live pulsating trust badge (`Hindi Ito AI`), dual taglines, and active recipe counters.
+* **Navbar**: Embedded official script brand logo (`/brand-logo-main.png`) alongside editorial title and trust badge (`Hindi Ito AI`).
+* **Hero Section**: Prominently displays the flagship KusinaKita Asian & Carinderia brand mark above the target market tag.
+* **Launch Sales Funnel**: Features the official script mark at the top of the offer and the 3D claymorphic app icon for the Lifetime App OS boxshot.
 * **Costing Engine**: Integrated live SRP markup calculator (`SRP = Cost / (1 - Margin%)`) with automatic 15% overhead and packaging buffer.
 * **Production Build**: Verified with 0 TypeScript and Tailwind errors (`dist/assets/index.js`).
+
+---
+
+## 6. Official Brand Asset Matrix & System Mapping
+
+| Role | Asset Path | Dimensions | Visual Style / Source |
+|---|---|---|---|
+| **Primary Website Logo (Main)** | `/brand-logo-main.png` | 627x597 (Retina) | Authentic script lockup with chef hat, pan flourish, green leaves, and "Asian & Carinderia" badge. Used in Navbar, Hero section, and Sales Funnel. |
+| **Horizontal Brand Lockup** | `/brand-logo-horizontal.png` | 708x735 (Retina) | Clean horizontal script with chef hat on K and green leaves ("Recipe Guide"). |
+| **Carinderia Badge Variant** | `/brand-logo-carinderia.png` | 651x543 (Retina) | "EST. 2026 KusinaKita AT CARINDERIA" with cooking pot icon for certifications and trust seals. |
+| **Site Favicon (Web Browser)** | `/favicon-32x32.png`, `/favicon-64x64.png`, `/favicon-512x512.png` | 32x32, 64x64, 512x512 | Authentic 2D circular badge with chef hat on "K" and culinary leaf. Reserved exclusively for browser tabs and web bookmarks. |
+| **App & PWA Icon (Device)** | `/app-icon-192x192.png`, `/app-icon-512x512.png`, `/app-icon-180x180.png` | 192x192, 512x512, 180x180 | Authentic 3D claymorphic square tile with rounded squircle. Reserved for iOS Apple Touch Icon, Android PWA install, and app boxshots. |
