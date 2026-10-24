@@ -13,8 +13,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSuggestion, recipeCount })
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo & Editorial Title */}
           <div className="flex items-center gap-3.5">
-            <a href="/" className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-white border border-stone-200/90 shadow-md shadow-emerald-600/10 p-1 overflow-hidden group hover:scale-105 transition-transform">
-              <img src="/logo.png" alt="KusinaKita Logo" className="w-full h-full object-contain" />
+            <a href="/" className="relative flex items-center justify-center w-12 h-12 rounded-2xl shadow-md shadow-stone-800/15 overflow-hidden group hover:scale-105 transition-transform">
+              <img src="/logo.png" alt="KusinaKita 3D App Icon" className="w-full h-full object-cover" />
               <span className="absolute -top-1 -right-1 flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-white"></span>

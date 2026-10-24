@@ -111,11 +111,12 @@ export const SuggestionModal: React.FC<SuggestionModalProps> = ({ isOpen, onClos
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Invisible Honeypot Field */}
+              {/* Invisible Honeypot Field for Automated Bot Protection */}
               <div
                 aria-hidden="true"
                 tabIndex={-1}
-                className="opacity-0 absolute -left-[9999px] h-0 w-0 overflow-hidden pointer-events-none select-none"
+                className="opacity-0 pointer-events-none select-none"
+                style={{ position: 'absolute', left: '-9999px', top: '-9999px', opacity: 0, pointerEvents: 'none' }}
               >
                 <label htmlFor="website_url_field">Website URL (Leave blank)</label>
                 <input
@@ -126,6 +127,7 @@ export const SuggestionModal: React.FC<SuggestionModalProps> = ({ isOpen, onClos
                   onChange={(e) => setHoneypotValue(e.target.value)}
                   tabIndex={-1}
                   autoComplete="off"
+                  style={{ position: 'absolute', left: '-9999px' }}
                 />
               </div>
 
