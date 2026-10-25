@@ -18,7 +18,6 @@ import {
   Scale,
   Flame,
   Download,
-  FileText,
 } from 'lucide-react';
 
 interface RecipeModalProps {
@@ -61,87 +60,6 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
     } finally {
       setIsExporting(false);
     }
-  };
-
-  const handleDownloadRecipe = () => {
-    if (!recipe) return;
-    const lines = [
-      "=======================================================",
-      "KUSINAKITA - OPISYAL NA RESIPE AT GABAY SA PAGLULUTO",
-      "=======================================================",
-      `Ulam: ${recipe.name}`,
-      `Kategorya: ${recipe.categoryLabel}`,
-      `Tagline: ${recipe.tagline}`,
-      `Inihanda Para sa: ${portions} Portions (Scale: ${scaleMultiplier.toFixed(2)}x Multiplier)`,
-      `Oras ng Paghahanda: ${recipe.prepTime}`,
-      `Oras ng Pagluluto: ${recipe.cookTime}`,
-      `Antas ng Hirap: ${recipe.difficulty}`,
-      "-------------------------------------------------------",
-      "DESKRIPSIYON:",
-      recipe.description,
-      "-------------------------------------------------------",
-      `MGA SANGKAP AT SUKAT (${portions} PAX):`,
-      "-------------------------------------------------------",
-      ...recipe.ingredients.map((ing, idx) => {
-        const scaledQty = ing.quantity * scaleMultiplier;
-        const qtyStr = scaledQty % 1 === 0 ? String(scaledQty) : scaledQty.toFixed(2);
-        return `${idx + 1}. ${ing.name.padEnd(28, ' ')} : ${qtyStr} ${ing.unit} [${((ing.category || 'sangkap') as string).toUpperCase()}]`;
-      }),
-      "-------------------------------------------------------",
-      "MGA HAKBANG SA PAGLULUTO (STEP-BY-STEP):",
-      "-------------------------------------------------------",
-      ...recipe.instructions.map((step, idx) => `[Hakbang ${idx + 1}] ${step}`),
-      "-------------------------------------------------------",
-      "LIHIM NG KUSINERO (CHEF TIPS & NEGOSYO ADVICE):",
-      recipe.chefTips && recipe.chefTips.length > 0 ? recipe.chefTips.join('\r\n• ') : (recipe.marketNotes || 'Walang karagdagang paalala.'),
-      "=======================================================",
-      "KusinaKita - May Kita sa Kusina • https://kusinakita.mikabiz.space",
-      "Paalala: Ang opisyal na Food Costing at Kalkulador ng SRP ay eksklusibong makukuha sa naka-install na PWA app."
-    ];
-
-    const blob = new Blob([lines.join('\r\n')], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `KusinaKita_${recipe.id}_${portions}pax_Recipe.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
-
-  const handleDownloadShoppingList = () => {
-    if (!recipe) return;
-    const lines = [
-      "=======================================================",
-      "KUSINAKITA - PALENGKE SHOPPING & PREP LIST",
-      "=======================================================",
-      `Recipe: ${recipe.name}`,
-      `Category: ${recipe.categoryLabel}`,
-      `Servings: ${portions} pax (Base: ${recipe.baseServings} pax, Scale: ${scaleMultiplier.toFixed(2)}x)`,
-      `Prep / Cook Time: ${recipe.prepTime} / ${recipe.cookTime}`,
-      `Date Generated: ${new Date().toLocaleDateString('fil-PH', { year: 'numeric', month: 'long', day: 'numeric' })}`,
-      "-------------------------------------------------------",
-      "MGA SANGKAP NA BIBILHIN SA PALENGKE:",
-      "-------------------------------------------------------",
-      ...recipe.ingredients.map((ing) => {
-        const scaledQty = ing.quantity * scaleMultiplier;
-        const qtyStr = scaledQty % 1 === 0 ? String(scaledQty) : scaledQty.toFixed(2);
-        return `[ ] ${ing.name.padEnd(28, ' ')} : ${qtyStr} ${ing.unit}`;
-      }),
-      "=======================================================",
-      "KusinaKita - May Kita sa Kusina • https://kusinakita.mikabiz.space"
-    ];
-
-    const blob = new Blob([lines.join('\r\n')], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `KusinaKita_${recipe.id}_${portions}pax_ShoppingList.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
   };
 
   const toggleStep = (index: number) => {
@@ -312,24 +230,6 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({
                       >
                         <Flame className="w-4 h-4 text-amber-200 animate-pulse" />
                         <span>Lutuin Natin! (Let's Cook This)</span>
-                      </button>
-
-                      <button
-                        onClick={handleDownloadRecipe}
-                        type="button"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white font-bold text-xs shadow-xs transition-all cursor-pointer"
-                      >
-                        <Download className="w-3.5 h-3.5" />
-                        <span>I-download Resipe</span>
-                      </button>
-
-                      <button
-                        onClick={handleDownloadShoppingList}
-                        type="button"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-50 text-stone-700 font-bold text-xs shadow-2xs transition-all cursor-pointer"
-                      >
-                        <FileText className="w-3.5 h-3.5 text-stone-500" />
-                        <span>Shopping List</span>
                       </button>
 
                       {/* Branded Recipe Card Exporter: PNG / JPG / GIF (Never Excel / Never PDF) */}
