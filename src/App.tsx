@@ -173,7 +173,7 @@ export function App() {
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 hover:from-red-700 hover:to-orange-700 active:scale-95 text-white font-extrabold text-sm shadow-xl shadow-orange-600/25 transition-all hover:scale-105 cursor-pointer group"
               >
                 <Flame className="w-4 h-4 text-amber-200 animate-bounce" />
-                <span>Kunin ang 572+ Negosyo Bible (₱299 Launch Offer)</span>
+                <span>Palakihin ang Kita • ₱299 Bundle</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -258,14 +258,14 @@ export function App() {
                 type="button"
                 className="px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 active:scale-95 text-xs font-semibold text-stone-700 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
               >
-                I-clear ang Search
+                Lahat ng Ulam
               </button>
               <button
                 onClick={() => setIsSuggestionOpen(true)}
                 type="button"
                 className="px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 active:scale-95 text-xs font-semibold text-white transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
               >
-                Mag-Suggest ng Recipe
+                Dagdag Ulam
               </button>
             </div>
           </div>
@@ -339,7 +339,7 @@ export function App() {
             <span className="text-xs text-stone-300 hidden md:inline">• 572+ Recipes &amp; Costing OS</span>
           </div>
           <span className="text-xs font-extrabold bg-gradient-to-r from-emerald-600 to-teal-600 group-hover:from-emerald-500 group-hover:to-teal-500 px-3.5 py-1.5 rounded-xl text-white shadow-sm flex items-center gap-1">
-            <span>KUNIN BUNDLE</span>
+            <span>ASENSO BUNDLE</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </span>
         </button>
@@ -365,14 +365,14 @@ export function App() {
                 onClick={() => setIsLaunchOfferOpen(true)}
                 className="hover:text-emerald-700 font-bold text-amber-700 transition-colors cursor-pointer"
               >
-                🔥 Launch Bundle (₱299)
+                🔥 Asenso Bundle (₱299)
               </button>
               <span>•</span>
               <button
                 onClick={() => setIsSuggestionOpen(true)}
                 className="hover:text-emerald-700 transition-colors cursor-pointer"
               >
-                Mag-Suggest ng Ulam
+                Dagdag Ulam
               </button>
               <span>•</span>
               <button

@@ -539,7 +539,7 @@ export const LaunchSalesFunnel: React.FC<LaunchSalesFunnelProps> = ({
                     className="w-full py-4 rounded-2xl bg-emerald-700 hover:bg-emerald-800 active:scale-[0.98] text-white font-extrabold text-base sm:text-lg shadow-xl shadow-emerald-700/30 transition-all cursor-pointer flex items-center justify-center gap-2"
                   >
                     <Lock className="w-5 h-5 text-emerald-200" />
-                    <span>BAYARAN AT I-DOWNLOAD ANG BUNDLE (₱{totalPrice})</span>
+                    <span>I-SECURE ANG ASENSO BUNDLE (₱{totalPrice})</span>
                   </button>
 
                   <div className="flex items-center justify-center gap-4 text-[11px] text-stone-400">

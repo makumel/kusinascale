@@ -128,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-red-600 to-orange-600 text-white font-semibold text-xs shadow-xs hover:shadow transition-all cursor-pointer"
               >
                 <Flame className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
-                <span>500+ Drive Pack (₱119)</span>
+                <span>Asenso Bundle (₱299)</span>
               </button>
             )}
 
@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               ) : (
                 <>
                   <Smartphone className="w-3.5 h-3.5 text-stone-950" />
-                  <span>I-save sa Cellphone</span>
+                  <span>Gamitin Offline</span>
                 </>
               )}
             </button>
@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 active:scale-95 text-white font-medium text-xs shadow-xs transition-all cursor-pointer"
             >
               <MessageSquarePlus className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Mag-Suggest</span>
+              <span className="hidden sm:inline">Dagdag Ulam</span>
               <span className="sm:hidden">Suggest</span>
             </button>
           </div>

@@ -186,7 +186,7 @@ export const SuggestionModal: React.FC<SuggestionModalProps> = ({ isOpen, onClos
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-orange-600 hover:bg-orange-700 active:scale-[0.98] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all cursor-pointer disabled:opacity-50"
                 >
                   <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? 'Ipinapadala...' : 'Ipadala ang Suggestion'}</span>
+                  <span>{isSubmitting ? 'Ipinapadala...' : 'Idagdag sa Kusina'}</span>
                 </button>
               </div>
 

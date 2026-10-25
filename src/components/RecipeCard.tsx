@@ -111,19 +111,19 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
           <button
             onClick={() => onOpenCalculator(recipe)}
             type="button"
-            className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 active:scale-[0.98] active:bg-orange-800 text-white text-xs font-semibold shadow-xs hover:shadow transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+            className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 active:scale-[0.98] active:bg-orange-800 text-white text-xs font-bold tracking-wide shadow-xs hover:shadow transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
           >
-            <span>Kalkulahin</span>
+            <span>Tingnan Tubo</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
 
           <button
             onClick={() => onViewRecipe(recipe)}
             type="button"
-            className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 active:scale-[0.98] text-stone-800 text-xs font-medium border border-stone-200 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+            className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 active:scale-[0.98] text-stone-800 text-xs font-semibold tracking-tight border border-stone-200 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
           >
             <ChefHat className="w-3.5 h-3.5 text-stone-600" />
-            <span>Recipe &amp; Tips</span>
+            <span>Resipe &amp; Sikreto</span>
           </button>
         </div>
       </div>

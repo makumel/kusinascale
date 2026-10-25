@@ -287,7 +287,7 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
             ) : (
               <>
                 <Cloud className="w-3.5 h-3.5 text-emerald-200" />
-                <span>{isSaving ? 'Nagsa-save...' : 'I-save sa Cloud / App'}</span>
+                <span>{isSaving ? 'Nagsa-save...' : 'I-save ang Tubo'}</span>
               </>
             )}
           </button>
@@ -302,7 +302,7 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
               className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 active:scale-95 text-stone-950 font-bold text-xs shadow-xs transition-all cursor-pointer disabled:opacity-50"
             >
               <ImageIcon className="w-3.5 h-3.5" />
-              <span>{isExporting ? 'Generating...' : 'I-save Costing (PNG)'}</span>
+              <span>{isExporting ? 'Generating...' : 'Kopya ng Costing (PNG)'}</span>
             </button>
             <button
               onClick={() => handleExportCosting('jpeg')}
@@ -356,7 +356,7 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 rounded-xl transition cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>I-reset Lahat</span>
+            <span>I-reset</span>
           </button>
         </div>
       </div>

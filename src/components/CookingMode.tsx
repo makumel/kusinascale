@@ -166,7 +166,7 @@ export const CookingMode: React.FC<CookingModeProps> = ({ recipe, portions, onEx
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 active:scale-95 text-white font-semibold text-xs backdrop-blur-md border border-white/20 transition-all cursor-pointer self-start md:self-center"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Bumalik sa Resipe</span>
+          <span>Resipe</span>
         </button>
       </div>
 
@@ -203,12 +203,12 @@ export const CookingMode: React.FC<CookingModeProps> = ({ recipe, portions, onEx
               {isTimerRunning ? (
                 <>
                   <Pause className="w-4 h-4" />
-                  <span>I-pause</span>
+                  <span>Pause</span>
                 </>
               ) : (
                 <>
                   <Play className="w-4 h-4" />
-                  <span>I-resume</span>
+                  <span>Resume</span>
                 </>
               )}
             </button>
