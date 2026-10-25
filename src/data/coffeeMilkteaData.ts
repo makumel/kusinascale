@@ -7,14 +7,9 @@ export interface BeverageIngredient {
   cost: number;
 }
 
-export interface BeverageRecipe {
-  id: string;
-  name: string;
-  category: 'coffee_hot' | 'coffee_iced' | 'milktea' | 'fruittea' | 'blended_frappe' | 'fruit_shake_juice' | 'drip';
-  categoryLabel: string;
+export interface BeverageSizeOption {
   size: string;
-  isIntroSalesLeader?: boolean;
-  description: string;
+  sizeLabel: string;
   primaryIngredients: BeverageIngredient[];
   secondaryIngredients: BeverageIngredient[];
   heatAndUtilities: number;
@@ -29,9 +24,40 @@ export interface BeverageRecipe {
   walkinNetProfit: number;
   foodPandaPrice: number;
   cogsRatio: number;
+}
+
+export interface BeverageRecipe {
+  id: string;
+  name: string;
+  category: 'milktea' | 'coffee_iced' | 'coffee_hot' | 'fruittea' | 'blended_frappe' | 'fruit_shake_juice' | 'drip';
+  categoryLabel: string;
+  imageUrl: string;
+  description: string;
+  isIntroSalesLeader?: boolean;
+  defaultSize: string;
+  sizes: BeverageSizeOption[];
   baristaNotes: string[];
   preparationSteps: string[];
 }
+
+export function getBeverageActiveSize(recipe: BeverageRecipe, selectedSize?: string): BeverageSizeOption {
+  if (selectedSize) {
+    const found = recipe.sizes.find(s => s.size === selectedSize);
+    if (found) return found;
+  }
+  return recipe.sizes[0];
+}
+
+export const BEVERAGE_CATEGORIES = [
+  { id: 'all', name: 'Lahat ng Inumin' },
+  { id: 'milktea', name: 'Milk Tea & Pearls' },
+  { id: 'coffee_iced', name: 'Iced Espresso' },
+  { id: 'coffee_hot', name: 'Hot Specialty Coffee' },
+  { id: 'fruittea', name: 'Jasmine Fruit Teas' },
+  { id: 'blended_frappe', name: 'Frappes & Shakes' },
+  { id: 'fruit_shake_juice', name: 'Real Fruit & Calamansi' },
+  { id: 'drip', name: 'Single Drip Coffee' }
+];
 
 export const BARISTA_GOLDEN_RULES = [
   {
@@ -59,1113 +85,936 @@ export const BARISTA_GOLDEN_RULES = [
     number: 4,
     title: "The Golden Labor Separation Rule",
     tagalogTitle: "Wag na Wag Gagawing Baon ang Pera ng Negosyo",
-    content: "Ang totoong personal na kita mo sa bawat baso ay ang iyong 'Labor Allocation' (₱7.50 - ₱20 per cup). Ang natitirang Net Profit ay mananatili sa bangko ng shop para sa replenishment, buffer sa masisirang blender, at business expansion. Pag tumataas ang benta, tsaka mo lang itataas ang labor mo.",
+    content: "Ang totoong personal na kita mo sa bawat baso ay ang iyong 'Labor Allocation' (₱7.50 - ₱20 per cup). Ang natitirang Net Profit ay mananatili sa bangko ng shop para sa replenishment, buffer sa masisirang blender, at business expansion.",
     icon: "shield-alert"
-  },
-  {
-    number: 5,
-    title: "Direct Dairy & Powder Supplier Hunting",
-    tagalogTitle: "Huwag Bumili sa Supermarket Retail",
-    content: "Ang freshmilk sa supermarket ay ₱140/L, ngunit sa wholesale dairy distributor o UHT institutional pack ay ₱90/L lang (makakatipid ka agad ng ₱50 kada litro!). Ang bawas sa puhunan ay direktang dagdag sa iyong net profit.",
-    icon: "store"
   }
 ];
 
 export const COFFEE_MILKTEA_RECIPES: BeverageRecipe[] = [
-  // 1. Medium Milk Tea 16oz (The #1 Intro Sales Hero)
+  // 1. CLASSIC BROWN SUGAR PEARL MILK TEA
   {
-    id: 'intro-milktea-16oz',
-    name: 'Classic Brown Sugar Pearl Milk Tea',
-    category: 'milktea',
-    categoryLabel: 'Milk Tea & Pearls',
-    size: '16oz',
+    id: "classic-pearl-milktea",
+    name: "Classic Brown Sugar Pearl Milk Tea",
+    category: "milktea",
+    categoryLabel: "Milk Tea & Pearls",
+    imageUrl: "/beverages/classic-pearl-milktea.jpg",
+    description: "Ang #1 profit maker sa buong menu. Signature black tea blend na may non-dairy creamer, brown sugar syrup, at chewy tapioca boba pearls.",
     isIntroSalesLeader: true,
-    description: 'Ang pambansang intro sales leader! Mataas ang margin (68.5% net profit), mabilis gawin (under 90 seconds), at paboritong panimulang order ng mga walk-in at food delivery customers.',
-    primaryIngredients: [
-      { name: 'Brewed Assam/Black Tea Base', quantity: 100, unit: 'ml', unitPrice: 15, unitPriceUnit: '/l', cost: 1.50 },
-      { name: 'Non-Dairy Creamer (High Grade)', quantity: 20, unit: 'g', unitPrice: 250, unitPriceUnit: '/kg', cost: 5.00 },
-      { name: 'Signature Milk Tea Flavor Powder', quantity: 20, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 10.00 },
-      { name: 'Cooked Brown Sugar Tapioca Pearls', quantity: 15, unit: 'g', unitPrice: 150, unitPriceUnit: '/kg', cost: 2.25 },
-    ],
-    secondaryIngredients: [
-      { name: 'Liquid Fructose / Cane Syrup', quantity: 15, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 2.25 },
-      { name: 'Tube/Tube Block Ice', quantity: 100, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.00 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 25.00,
-    packagingCost: 10.00,
-    laborCost: 7.50,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 42.50,
-    markup: 92.50,
-    walkinPrice: 135.00,
-    walkinNetProfit: 92.50,
-    foodPandaPrice: 212.63,
-    cogsRatio: 0.3148,
-    baristaNotes: [
-      "Brew Black Tea at 85°C for exactly 10 minutes. Huwag i-squeeze ang tea bag para hindi pumait.",
-      "Tunawin ang creamer at powder sa mainit na tea base gamit ang shaker bago lagyan ng yelo.",
-      "Ang 15g tapioca pearls ay dapat panatilihin sa brown sugar syrup na maligamgam para manatiling chewy."
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 100, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 1.50 },
+          { name: "Non-Dairy Creamer", quantity: 20, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 5.00 },
+          { name: "Brown Sugar Flavor Powder", quantity: 20, unit: "g", unitPrice: 500, unitPriceUnit: "/kg", cost: 10.00 },
+          { name: "Cooked Boba Pearls", quantity: 15, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 2.25 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose / Liquid Sugar", quantity: 15, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Solid Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 3.00,
+        recipeCost: 25.00,
+        packagingCost: 10.00,
+        laborCost: 7.50,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 42.50,
+        markup: 92.50,
+        walkinPrice: 135.00,
+        walkinNetProfit: 92.50,
+        foodPandaPrice: 212.63,
+        cogsRatio: 0.185
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 150, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Non-Dairy Creamer", quantity: 30, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 7.50 },
+          { name: "Brown Sugar Flavor Powder", quantity: 30, unit: "g", unitPrice: 500, unitPriceUnit: "/kg", cost: 15.00 },
+          { name: "Cooked Boba Pearls", quantity: 25, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 3.75 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose / Liquid Sugar", quantity: 25, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 3.75 },
+          { name: "Solid Tube Ice", quantity: 150, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        heatAndUtilities: 3.65,
+        recipeCost: 37.40,
+        packagingCost: 10.00,
+        laborCost: 11.22,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 58.62,
+        markup: 106.38,
+        walkinPrice: 165.00,
+        walkinNetProfit: 106.38,
+        foodPandaPrice: 259.85,
+        cogsRatio: 0.227
+      }
     ],
     preparationSteps: [
-      "I-scoop ang 15g cooked brown sugar pearls sa ilalim ng 16oz cup at i-coat ang gilid ng baso.",
-      "Sa cocktail shaker, ilagay ang 100ml mainit na brewed tea base.",
-      "Idagdag ang 20g creamer at 20g flavor powder. Haluing mabuti hanggang matunaw.",
-      "Idagdag ang 15ml fructose at punuin ng 100g yelo.",
-      "I-shake nang malakas sa loob ng 10-15 segundo hanggang lumamig at mag-froth.",
-      "Isalin sa baso, i-seal gamit ang cup sealer o lagyan ng dome lid at boba straw."
+      "Maglagay ng 1 scoop (15g-25g) ng mainit-init na brown sugar pearls sa ilalim ng baso.",
+      "Sa shaker cup, ihalo ang freshly brewed black tea base at creamer gamit ang bar whisk hanggang matunaw.",
+      "Idagdag ang flavor powder at liquid fructose ayon sa napiling sweetness level ng customer.",
+      "Punuin ng yelo, isara ang shaker at i-shake nang malakas ng 10-15 seconds para lumabas ang velvety microfoam.",
+      "Isalin sa baso, i-seal gamit ang cup sealing machine o dome lid, at i-serve kasama ang boba straw."
+    ],
+    baristaNotes: [
+      "Ang pearls ay huwag ilalagay sa ref! Titigas ang core nito. Panatilihin itong nakababad sa brown sugar syrup sa room temperature sa loob ng 4-6 hours.",
+      "Kung medyo matamlay ang kulay, mag-drizzle ng 5ml brown sugar syrup sa panloob na dingding ng baso bago ibuhos ang gatas."
     ]
   },
 
-  // 2. Large Milk Tea 22oz
+  // 2. WINTERMELON MILK TEA
   {
-    id: 'milktea-22oz',
-    name: 'Classic Brown Sugar Pearl Milk Tea (Large)',
-    category: 'milktea',
-    categoryLabel: 'Milk Tea & Pearls',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Upgraded 22oz thirst-quencher. ₱100.38 net profit kada baso sa walk-in customers.',
-    primaryIngredients: [
-      { name: 'Brewed Assam/Black Tea Base', quantity: 220, unit: 'ml', unitPrice: 15, unitPriceUnit: '/l', cost: 3.30 },
-      { name: 'Non-Dairy Creamer (High Grade)', quantity: 30, unit: 'ml', unitPrice: 230, unitPriceUnit: '/kg', cost: 6.90 },
-      { name: 'Signature Milk Tea Flavor Powder', quantity: 30, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 15.00 },
-      { name: 'Cooked Brown Sugar Tapioca Pearls', quantity: 20, unit: 'g', unitPrice: 150, unitPriceUnit: '/kg', cost: 3.00 },
-    ],
-    secondaryIngredients: [
-      { name: 'Liquid Fructose / Cane Syrup', quantity: 20, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 3.00 },
-      { name: 'Tube/Tube Block Ice', quantity: 120, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.20 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 37.40,
-    packagingCost: 10.00,
-    laborCost: 11.22,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 58.62,
-    markup: 101.00,
-    walkinPrice: 159.00,
-    walkinNetProfit: 100.38,
-    foodPandaPrice: 250.42,
-    cogsRatio: 0.3687,
-    baristaNotes: [
-      "Perpektong sweetness balance: 20ml fructose para sa 220ml tea base.",
-      "Mataas ang margin dahil ang tea base cost ay ₱3.30 lamang."
+    id: "wintermelon-milktea",
+    name: "Wintermelon Milk Tea Supreme",
+    category: "milktea",
+    categoryLabel: "Milk Tea & Pearls",
+    imageUrl: "/beverages/wintermelon-milktea.jpg",
+    description: "Caramelized melon flavor na balanseng-balanse sa black tea at silky creamer. Paboritong all-day refresher.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 100, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 1.50 },
+          { name: "Non-Dairy Creamer", quantity: 20, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 5.00 },
+          { name: "Wintermelon Syrup / Powder", quantity: 20, unit: "g", unitPrice: 480, unitPriceUnit: "/kg", cost: 9.60 },
+          { name: "Cooked Boba Pearls", quantity: 15, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 2.25 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose / Sugar", quantity: 10, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 1.50 },
+          { name: "Solid Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 3.00,
+        recipeCost: 23.85,
+        packagingCost: 10.00,
+        laborCost: 7.15,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 41.00,
+        markup: 89.00,
+        walkinPrice: 130.00,
+        walkinNetProfit: 89.00,
+        foodPandaPrice: 204.76,
+        cogsRatio: 0.183
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 150, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Non-Dairy Creamer", quantity: 30, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 7.50 },
+          { name: "Wintermelon Syrup / Powder", quantity: 30, unit: "g", unitPrice: 480, unitPriceUnit: "/kg", cost: 14.40 },
+          { name: "Cooked Boba Pearls", quantity: 25, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 3.75 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose / Sugar", quantity: 15, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Solid Tube Ice", quantity: 150, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        heatAndUtilities: 3.50,
+        recipeCost: 35.15,
+        packagingCost: 10.00,
+        laborCost: 10.55,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 55.70,
+        markup: 99.30,
+        walkinPrice: 155.00,
+        walkinNetProfit: 99.30,
+        foodPandaPrice: 244.13,
+        cogsRatio: 0.227
+      }
     ],
     preparationSteps: [
-      "Ilagay ang 20g chewy pearls sa 22oz baso.",
-      "Tunawin ang creamer at powder sa 220ml mainit na tea base.",
-      "Ihalo ang 20ml fructose at 120g yelo sa shaker.",
-      "I-shake nang masigla sa loob ng 15 segundo at isalin sa baso."
+      "Ihanda ang baso na may boba pearls sa ilalim.",
+      "Tunawin ang creamer at wintermelon base sa mainit na tea concentrate.",
+      "Lagyan ng yelo at i-shake ng 10 segundo.",
+      "Isalin sa cup at i-seal."
+    ],
+    baristaNotes: [
+      "Natural nang matamis ang wintermelon syrup; bawasan ang fructose sa 50% kung maselan ang customer sa tamis."
     ]
   },
 
-  // 3. 16oz Ice Coffee Basic (The #2 Intro Sales Hero)
+  // 3. OKINAWA ROASTED MILK TEA
   {
-    id: 'intro-ice-coffee-16oz',
-    name: 'Iced Caramel Cafe Latte / Macchiato',
-    category: 'coffee_iced',
-    categoryLabel: 'Iced Coffee Specials',
-    size: '16oz',
+    id: "okinawa-milktea",
+    name: "Okinawa Roasted Brown Sugar Tea",
+    category: "milktea",
+    categoryLabel: "Milk Tea & Pearls",
+    imageUrl: "/beverages/okinawa-milktea.jpg",
+    description: "Mabango at deep roasted Japanese style brown sugar flavor na may nutty molasses aroma.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 100, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 1.50 },
+          { name: "Non-Dairy Creamer", quantity: 20, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 5.00 },
+          { name: "Okinawa Roasted Powder", quantity: 20, unit: "g", unitPrice: 520, unitPriceUnit: "/kg", cost: 10.40 },
+          { name: "Cooked Boba Pearls", quantity: 15, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 2.25 }
+        ],
+        secondaryIngredients: [
+          { name: "Molasses Sugar", quantity: 10, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 1.50 },
+          { name: "Solid Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 3.00,
+        recipeCost: 24.65,
+        packagingCost: 10.00,
+        laborCost: 7.40,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 42.05,
+        markup: 92.95,
+        walkinPrice: 135.00,
+        walkinNetProfit: 92.95,
+        foodPandaPrice: 212.63,
+        cogsRatio: 0.183
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 150, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Non-Dairy Creamer", quantity: 30, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 7.50 },
+          { name: "Okinawa Roasted Powder", quantity: 30, unit: "g", unitPrice: 520, unitPriceUnit: "/kg", cost: 15.60 },
+          { name: "Cooked Boba Pearls", quantity: 25, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 3.75 }
+        ],
+        secondaryIngredients: [
+          { name: "Molasses Sugar", quantity: 15, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Solid Tube Ice", quantity: 150, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        heatAndUtilities: 3.50,
+        recipeCost: 36.35,
+        packagingCost: 10.00,
+        laborCost: 10.90,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 57.25,
+        markup: 102.75,
+        walkinPrice: 160.00,
+        walkinNetProfit: 102.75,
+        foodPandaPrice: 251.97,
+        cogsRatio: 0.227
+      }
+    ],
+    preparationSteps: [
+      "Ilagay ang boba pearls sa cup.",
+      "Ihalo ang Okinawa powder at creamer sa bagong timplang tea base.",
+      "Lagyan ng yelo at i-shake ng masigla.",
+      "Isalin at takpan."
+    ],
+    baristaNotes: [
+      "Bagay itong lagyan ng cream cheese foam topping para sa karagdagang ₱25 upcharge sa menu."
+    ]
+  },
+
+  // 4. TARO CREAM MILK TEA
+  {
+    id: "taro-milktea",
+    name: "Taro Cream Velvet Milk Tea",
+    category: "milktea",
+    categoryLabel: "Milk Tea & Pearls",
+    imageUrl: "/beverages/taro-milktea.jpg",
+    description: "Creamy at malinamnam na purple taro na paborito ng mga bata at kabataan. Sweet vanilla-nutty profile.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 80, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 1.20 },
+          { name: "Non-Dairy Creamer", quantity: 25, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 6.25 },
+          { name: "Premium Taro Powder", quantity: 25, unit: "g", unitPrice: 480, unitPriceUnit: "/kg", cost: 12.00 },
+          { name: "Cooked Boba Pearls", quantity: 15, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 2.25 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose / Sugar", quantity: 10, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 1.50 },
+          { name: "Solid Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 3.00,
+        recipeCost: 27.20,
+        packagingCost: 10.00,
+        laborCost: 8.16,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 45.36,
+        markup: 89.64,
+        walkinPrice: 135.00,
+        walkinNetProfit: 89.64,
+        foodPandaPrice: 212.63,
+        cogsRatio: 0.201
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Black Tea Concentrate", quantity: 120, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 1.80 },
+          { name: "Non-Dairy Creamer", quantity: 35, unit: "g", unitPrice: 250, unitPriceUnit: "/kg", cost: 8.75 },
+          { name: "Premium Taro Powder", quantity: 35, unit: "g", unitPrice: 480, unitPriceUnit: "/kg", cost: 16.80 },
+          { name: "Cooked Boba Pearls", quantity: 25, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 3.75 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose / Sugar", quantity: 15, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Solid Tube Ice", quantity: 150, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        heatAndUtilities: 3.50,
+        recipeCost: 38.60,
+        packagingCost: 10.00,
+        laborCost: 11.58,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 60.18,
+        markup: 99.82,
+        walkinPrice: 160.00,
+        walkinNetProfit: 99.82,
+        foodPandaPrice: 251.97,
+        cogsRatio: 0.241
+      }
+    ],
+    preparationSteps: [
+      "Haluing maigi ang taro powder gamit ang 50ml mainit na tubig o tea base bago i-shake para walang buo-buong pulbos.",
+      "Ilagay ang creamer at yelo.",
+      "I-shake at ibuhos sa basong may boba."
+    ],
+    baristaNotes: [
+      "Huwag iwanan ang taro powder na nakabukas sa hangin; mabilis itong mamuo sa humidity."
+    ]
+  },
+
+  // 5. ICED CARAMEL CAFE LATTE / MACCHIATO
+  {
+    id: "iced-caramel-latte",
+    name: "Iced Caramel Cafe Latte / Macchiato",
+    category: "coffee_iced",
+    categoryLabel: "Iced Espresso",
+    imageUrl: "/beverages/iced-caramel-latte.jpg",
+    description: "Double-shot espresso sa ibabaw ng malamig na fresh milk at premium Torani caramel sauce. Napakaganda ng layered visual.",
     isIntroSalesLeader: true,
-    description: 'Ang best-selling iced coffee sa mga coffee cart at cafes. Espresso kick na may Torani caramel syrup at fresh milk, nagbibigay ng ₱64.43 net profit kada baso.',
-    primaryIngredients: [
-      { name: 'Freshly Ground Espresso Beans (Arabica/Robusta blend)', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Chilled Fresh Milk', quantity: 120, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 16.80 },
-      { name: 'Torani Caramel/Vanilla Flavored Syrup', quantity: 25, unit: 'ml', unitPrice: 795, unitPriceUnit: '/l', cost: 19.88 },
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "12oz",
+        sizeLabel: "Small (12oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Single Shot)", quantity: 12, unit: "g", unitPrice: 1100, unitPriceUnit: "/kg", cost: 13.20 },
+          { name: "Pasteurized Fresh Milk", quantity: 100, unit: "ml", unitPrice: 90, unitPriceUnit: "/l", cost: 9.00 },
+          { name: "Torani Caramel Syrup / Sauce", quantity: 15, unit: "ml", unitPrice: 800, unitPriceUnit: "/l", cost: 12.00 },
+          { name: "Milk Sweetener Blend", quantity: 15, unit: "ml", unitPrice: 120, unitPriceUnit: "/l", cost: 1.80 }
+        ],
+        secondaryIngredients: [
+          { name: "Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 42.00,
+        packagingCost: 10.00,
+        laborCost: 10.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 62.00,
+        markup: 68.00,
+        walkinPrice: 130.00,
+        walkinNetProfit: 68.00,
+        foodPandaPrice: 204.76,
+        cogsRatio: 0.323
+      },
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot)", quantity: 18, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 27.90 },
+          { name: "Pasteurized Fresh Milk", quantity: 120, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 16.80 },
+          { name: "Torani Caramel Syrup / Sauce", quantity: 25, unit: "ml", unitPrice: 795, unitPriceUnit: "/l", cost: 19.88 }
+        ],
+        secondaryIngredients: [
+          { name: "Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 70.58,
+        packagingCost: 10.00,
+        laborCost: 10.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 90.58,
+        markup: 64.42,
+        walkinPrice: 155.00,
+        walkinNetProfit: 64.42,
+        foodPandaPrice: 244.13,
+        cogsRatio: 0.455
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot+)", quantity: 17, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 26.35 },
+          { name: "Pasteurized Fresh Milk", quantity: 140, unit: "ml", unitPrice: 90, unitPriceUnit: "/l", cost: 12.60 },
+          { name: "Torani Caramel Syrup / Sauce", quantity: 35, unit: "ml", unitPrice: 795, unitPriceUnit: "/l", cost: 27.83 }
+        ],
+        secondaryIngredients: [
+          { name: "Tube Ice", quantity: 200, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 2.00 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 73.78,
+        packagingCost: 10.00,
+        laborCost: 10.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 93.78,
+        markup: 81.22,
+        walkinPrice: 175.00,
+        walkinNetProfit: 81.22,
+        foodPandaPrice: 275.63,
+        cogsRatio: 0.421
+      }
     ],
-    secondaryIngredients: [
-      { name: 'Purified Ice Cubes', quantity: 100, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.00 },
-      { name: 'Whipped Cream Topping (Optional)', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 0.00 },
+    preparationSteps: [
+      "I-extract ang double shot espresso (18g in, 36g out sa 25-28 seconds).",
+      "Magbuhos ng caramel syrup/sauce sa ilalim o paligid ng baso.",
+      "Ibuhos ang malamig na fresh milk at punuin ng yelo hanggang 80% ng baso.",
+      "Dahan-dahang i-float ang bagong extract na mainit na espresso sa ibabaw ng yelo para makita ang magandang 2-layer separation."
     ],
-    heatAndUtilities: 5.00,
-    recipeCost: 70.58,
-    packagingCost: 10.00,
-    laborCost: 10.00,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 90.58,
-    markup: 65.00,
-    walkinPrice: 155.00,
-    walkinNetProfit: 64.43,
-    foodPandaPrice: 244.13,
-    cogsRatio: 0.5844,
     baristaNotes: [
-      "Extract double shot espresso (approx 36-40ml liquid output) within 25-28 seconds.",
-      "Syrup first: ibuhos ang Torani syrup sa baso, lagyan ng cold milk, punuin ng yelo, at dahan-dahang i-float ang mainit na espresso shot para sa signature layered aesthetic."
-    ],
-    preparationSteps: [
-      "I-tamp ang 18g espresso grounds at i-extract ang double shot espresso sa shot glass.",
-      "Sa 16oz cup, ilagay ang 25ml Torani syrup.",
-      "Ibuhos ang 120ml malamig na fresh milk at haluin saglit gamit ang bar spoon.",
-      "Punuin ang baso ng 100g yelo.",
-      "Dahan-dahang ibuhos ang espresso shot sa ibabaw ng yelo para lumabas ang layered coffee effect."
+      "Huwag ihalo bago ibigay sa customer! Hayaan silang mag-enjoy sa visual layering at mag-picture para sa organic social media promo."
     ]
   },
 
-  // 4. 22oz Ice Coffee Basic
+  // 6. ICED CLASSIC CAFE LATTE
   {
-    id: 'ice-coffee-22oz-basic',
-    name: 'Iced Cafe Latte (Large 22oz)',
-    category: 'coffee_iced',
-    categoryLabel: 'Iced Coffee Specials',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Malaking 22oz iced coffee para sa matagalang pag-aaral o work-from-home sessions. ₱81.23 net profit sa bawat order.',
-    primaryIngredients: [
-      { name: 'Freshly Ground Espresso Beans', quantity: 17, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 26.35 },
-      { name: 'Chilled Fresh Milk (Wholesale)', quantity: 140, unit: 'ml', unitPrice: 90, unitPriceUnit: '/l', cost: 12.60 },
-      { name: 'Torani Flavored Syrup', quantity: 35, unit: 'ml', unitPrice: 795, unitPriceUnit: '/l', cost: 27.83 },
+    id: "iced-cafe-latte",
+    name: "Iced Classic Cafe Latte",
+    category: "coffee_iced",
+    categoryLabel: "Iced Espresso",
+    imageUrl: "/beverages/iced-cafe-latte.jpg",
+    description: "Malinis, masarap, at smooth na gatas na may tapang ng espresso. Walang halong artificial flavoring.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot)", quantity: 18, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 27.90 },
+          { name: "Pasteurized Fresh Milk", quantity: 140, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 19.60 }
+        ],
+        secondaryIngredients: [
+          { name: "Liquid Sugar (Optional)", quantity: 10, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 1.50 },
+          { name: "Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 55.00,
+        packagingCost: 10.00,
+        laborCost: 10.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 75.00,
+        markup: 65.00,
+        walkinPrice: 140.00,
+        walkinNetProfit: 65.00,
+        foodPandaPrice: 220.47,
+        cogsRatio: 0.392
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot+)", quantity: 20, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 31.00 },
+          { name: "Pasteurized Fresh Milk", quantity: 180, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 25.20 }
+        ],
+        secondaryIngredients: [
+          { name: "Liquid Sugar (Optional)", quantity: 15, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 2.25 },
+          { name: "Tube Ice", quantity: 150, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 64.95,
+        packagingCost: 10.00,
+        laborCost: 10.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 84.95,
+        markup: 75.05,
+        walkinPrice: 160.00,
+        walkinNetProfit: 75.05,
+        foodPandaPrice: 251.97,
+        cogsRatio: 0.405
+      }
     ],
-    secondaryIngredients: [
-      { name: 'Purified Ice Cubes', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
+    preparationSteps: [
+      "I-pull ang double espresso shot.",
+      "Maglagay ng yelo sa baso at ibuhos ang fresh milk.",
+      "I-pour ang espresso sa ibabaw."
     ],
-    heatAndUtilities: 5.00,
-    recipeCost: 73.78,
-    packagingCost: 10.00,
-    laborCost: 10.00,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 93.78,
-    markup: 81.22,
-    walkinPrice: 175.00,
-    walkinNetProfit: 81.23,
-    foodPandaPrice: 275.63,
-    cogsRatio: 0.5359,
     baristaNotes: [
-      "Gumamit ng wholesale dairy (₱90/L) para mapababa ang milk cost sa ₱12.60 sa halip na ₱19.60.",
-      "Tamang tamis: 35ml syrup para sa 22oz baso."
-    ],
-    preparationSteps: [
-      "Mag-brew ng double espresso mula sa 17g freshly ground beans.",
-      "Ilagay ang 35ml syrup sa ilalim ng 22oz cup.",
-      "Ibuhos ang 140ml fresh milk.",
-      "Punuin ng 200g yelo at i-pour ang espresso sa tuktok."
+      "Siguraduhing malamig ang fresh milk bago gamitin para hindi matunaw agad ang yelo."
     ]
   },
 
-  // 5. 12oz Ice Coffee Beginner Starter Pack
+  // 7. ICED SPANISH LATTE
   {
-    id: 'ice-coffee-12oz-starter',
-    name: '12oz Pop-up Kiosk Iced Coffee',
-    category: 'coffee_iced',
-    categoryLabel: 'Iced Coffee Specials',
-    size: '12oz',
-    isIntroSalesLeader: false,
-    description: 'Ang mabilisang pang-kiosk na 12oz formula na binigyang-diin sa Barista Notes. Puhunang ₱37.15 lang sa sangkap at ₱20 labor, benta sa ₱107.15.',
-    primaryIngredients: [
-      { name: 'Dark Roast Coffee Grounds (Moka pot / Espresso)', quantity: 10, unit: 'g', unitPrice: 800, unitPriceUnit: '/kg', cost: 8.00 },
-      { name: 'Fresh Milk', quantity: 60, unit: 'ml', unitPrice: 90, unitPriceUnit: '/l', cost: 5.40 },
-      { name: 'Flavor Extract / Sauce', quantity: 10, unit: 'ml', unitPrice: 500, unitPriceUnit: '/l', cost: 5.00 },
-      { name: 'Sugar Syrup', quantity: 25, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 3.75 },
+    id: "iced-spanish-latte",
+    name: "Iced Spanish Sweet Latte",
+    category: "coffee_iced",
+    categoryLabel: "Iced Espresso",
+    imageUrl: "/beverages/iced-spanish-latte.jpg",
+    description: "Bestseller sa mga kabataan! Pinaghalong condensed milk, fresh milk, at matapang na espresso.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot)", quantity: 18, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 27.90 },
+          { name: "Fresh Milk", quantity: 110, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 15.40 },
+          { name: "Condensed Milk Sauce", quantity: 30, unit: "ml", unitPrice: 220, unitPriceUnit: "/l", cost: 6.60 }
+        ],
+        secondaryIngredients: [
+          { name: "Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 55.90,
+        packagingCost: 10.00,
+        laborCost: 10.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 75.90,
+        markup: 74.10,
+        walkinPrice: 150.00,
+        walkinNetProfit: 74.10,
+        foodPandaPrice: 236.22,
+        cogsRatio: 0.372
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot+)", quantity: 20, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 31.00 },
+          { name: "Fresh Milk", quantity: 150, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 21.00 },
+          { name: "Condensed Milk Sauce", quantity: 45, unit: "ml", unitPrice: 220, unitPriceUnit: "/l", cost: 9.90 }
+        ],
+        secondaryIngredients: [
+          { name: "Tube Ice", quantity: 150, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 68.40,
+        packagingCost: 10.00,
+        laborCost: 10.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 88.40,
+        markup: 81.60,
+        walkinPrice: 170.00,
+        walkinNetProfit: 81.60,
+        foodPandaPrice: 267.72,
+        cogsRatio: 0.402
+      }
     ],
-    secondaryIngredients: [
-      { name: '12oz Cup & Straw', quantity: 1, unit: 'pc/s', unitPrice: 12, unitPriceUnit: '/pc', cost: 12.00 },
+    preparationSteps: [
+      "Ilagay ang condensed milk sa ilalim ng baso.",
+      "Ibuhos ang fresh milk at haluin bahagya.",
+      "Lagyan ng yelo.",
+      "I-float ang double espresso shot."
     ],
-    heatAndUtilities: 3.00,
-    recipeCost: 37.15,
-    packagingCost: 0.00,
-    laborCost: 20.00,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 57.15,
-    markup: 50.00,
-    walkinPrice: 107.15,
-    walkinNetProfit: 50.00,
-    foodPandaPrice: 168.00,
-    cogsRatio: 0.5333,
     baristaNotes: [
-      "Eto ang resipe mula sa 'PAKI BASA MUNA' tutorial tab ng barista notes.",
-      "Ang ₱20 per cup ay direct labor income mo bilang barista at may ₱50 net profit pa ang negosyo."
-    ],
-    preparationSteps: [
-      "I-brew ang 10g coffee grounds sa 60ml mainit na tubig (ratio 1:6).",
-      "Haluin ang 10ml flavor extract at 25ml syrup sa brewed coffee.",
-      "Ibuhos ang 60ml fresh milk at lagyan ng yelo."
+      "Haluing maigi bago inumin para lumabas ang signature velvety texture ng Spanish Latte."
     ]
   },
 
-  // 6. Drip Coffee Single-Origin Kiosk Pack
+  // 8. HOT ARTISAN CAFE LATTE
   {
-    id: 'drip-coffee-single',
-    name: 'Artisan Pour-Over Drip Coffee Bag',
-    category: 'drip',
-    categoryLabel: 'Drip Coffee Pouches',
-    size: 'Single Cup',
-    isIntroSalesLeader: false,
-    description: 'Grab-and-go artisan drip bag. Walang mamahaling espresso machine na kailangan — ₱13.50 lang ang kape, benta sa ₱57.50.',
-    primaryIngredients: [
-      { name: 'Specialty Ground Coffee', quantity: 15, unit: 'g', unitPrice: 900, unitPriceUnit: '/kg', cost: 13.50 },
+    id: "hot-cafe-latte",
+    name: "Hot Artisan Cafe Latte",
+    category: "coffee_hot",
+    categoryLabel: "Hot Specialty Coffee",
+    imageUrl: "/beverages/hot-cafe-latte.jpg",
+    description: "Steamed textured milk na may silky microfoam sa ibabaw ng espresso shot. Paborito sa umaga.",
+    defaultSize: "8oz",
+    sizes: [
+      {
+        size: "8oz",
+        sizeLabel: "Small (8oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans", quantity: 10, unit: "g", unitPrice: 1100, unitPriceUnit: "/kg", cost: 11.00 },
+          { name: "Fresh Milk", quantity: 160, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 22.40 }
+        ],
+        secondaryIngredients: [
+          { name: "Sugar Packet", quantity: 1, unit: "pc/s", unitPrice: 3, unitPriceUnit: "/pc", cost: 3.00 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 41.40,
+        packagingCost: 7.00,
+        laborCost: 8.28,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 56.68,
+        markup: 48.32,
+        walkinPrice: 105.00,
+        walkinNetProfit: 48.32,
+        foodPandaPrice: 165.35,
+        cogsRatio: 0.394
+      },
+      {
+        size: "12oz",
+        sizeLabel: "Medium (12oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot)", quantity: 17, unit: "g", unitPrice: 1100, unitPriceUnit: "/kg", cost: 18.70 },
+          { name: "Fresh Milk", quantity: 240, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 33.60 }
+        ],
+        secondaryIngredients: [
+          { name: "Sugar Packet", quantity: 1, unit: "pc/s", unitPrice: 3, unitPriceUnit: "/pc", cost: 3.00 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 60.30,
+        packagingCost: 8.00,
+        laborCost: 12.06,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 80.36,
+        markup: 54.64,
+        walkinPrice: 135.00,
+        walkinNetProfit: 54.64,
+        foodPandaPrice: 212.63,
+        cogsRatio: 0.446
+      }
     ],
-    secondaryIngredients: [
-      { name: 'Organic Sugar Packet', quantity: 1, unit: 'pc/s', unitPrice: 5, unitPriceUnit: '/pc', cost: 5.00 },
-      { name: 'Hanging Ear Drip Filter Bag & Foil', quantity: 1, unit: 'pc/s', unitPrice: 3.5, unitPriceUnit: '/pc', cost: 3.50 },
+    preparationSteps: [
+      "I-extract ang espresso sa tasa.",
+      "I-steam ang gatas hanggang umabot sa 60°C - 65°C para makalikha ng makinis na microfoam.",
+      "Ibuhos ang gatas na may kasamang latte art."
     ],
-    heatAndUtilities: 3.00,
-    recipeCost: 25.00,
-    packagingCost: 10.00,
-    laborCost: 2.50,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 37.50,
-    markup: 20.00,
-    walkinPrice: 57.50,
-    walkinNetProfit: 20.00,
-    foodPandaPrice: 90.56,
-    cogsRatio: 0.6522,
     baristaNotes: [
-      "Perpekto para sa office supply packages, souvenirs, at takeout bundles.",
-      "Pre-packed sa nitrogen o sealed pouch para manatiling fresh hanggang 6 buwan."
-    ],
-    preparationSteps: [
-      "Timbangin ang 15g medium-coarse ground coffee.",
-      "Ilagay sa hanging ear filter bag at i-heat seal ang protective outer pouch.",
-      "Para sa customer: buksan ang bag, isabit sa baso, at dahan-dahang buhusan ng 180ml 92°C na tubig."
+      "Huwag iinit ang gatas nang higit sa 70°C dahil masusunog ang natural sugar ng dairy."
     ]
   },
 
-  // 7. Small Hot 8oz Non-Coffee
+  // 9. PASSION FRUIT JASMINE TEA
   {
-    id: 'small-hot-noncoffee-8oz',
-    name: 'Hot Belgian Chocolate / Matcha Latte (8oz)',
-    category: 'coffee_hot',
-    categoryLabel: 'Hot Classics & Non-Coffee',
-    size: '8oz HOT',
-    isIntroSalesLeader: false,
-    description: 'Silky smooth comfort beverage para sa rainy days at malamig na umaga.',
-    primaryIngredients: [
-      { name: 'Fresh Milk (Full Cream)', quantity: 200, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 28.00 },
-      { name: 'Dark Chocolate / Ceremonial Matcha Sauce', quantity: 20, unit: 'ml', unitPrice: 680, unitPriceUnit: '/l', cost: 13.60 },
+    id: "passion-fruit-tea",
+    name: "Passion Fruit Jasmine Green Tea",
+    category: "fruittea",
+    categoryLabel: "Jasmine Fruit Teas",
+    imageUrl: "/beverages/passion-fruit-tea.jpg",
+    description: "Malamig at preskong Jasmine green tea na may natural passion fruit pulp at chewy nata / boba pearls.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Jasmine Green Tea Base", quantity: 170, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 2.55 },
+          { name: "Passion Fruit Syrup & Pulp", quantity: 30, unit: "ml", unitPrice: 450, unitPriceUnit: "/l", cost: 13.50 },
+          { name: "Cooked Boba / Nata Pearls", quantity: 10, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose Syrup", quantity: 15, unit: "ml", unitPrice: 135, unitPriceUnit: "/l", cost: 2.03 },
+          { name: "Tube Ice", quantity: 100, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.00 }
+        ],
+        heatAndUtilities: 3.00,
+        recipeCost: 23.58,
+        packagingCost: 10.00,
+        laborCost: 7.07,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 40.65,
+        markup: 74.35,
+        walkinPrice: 115.00,
+        walkinNetProfit: 74.35,
+        foodPandaPrice: 181.10,
+        cogsRatio: 0.205
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Jasmine Green Tea Base", quantity: 230, unit: "ml", unitPrice: 15, unitPriceUnit: "/l", cost: 3.45 },
+          { name: "Passion Fruit Syrup & Pulp", quantity: 45, unit: "ml", unitPrice: 450, unitPriceUnit: "/l", cost: 20.25 },
+          { name: "Cooked Boba / Nata Pearls", quantity: 20, unit: "g", unitPrice: 150, unitPriceUnit: "/kg", cost: 3.00 }
+        ],
+        secondaryIngredients: [
+          { name: "Fructose Syrup", quantity: 20, unit: "ml", unitPrice: 135, unitPriceUnit: "/l", cost: 2.70 },
+          { name: "Tube Ice", quantity: 150, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 1.50 }
+        ],
+        heatAndUtilities: 3.50,
+        recipeCost: 34.40,
+        packagingCost: 10.00,
+        laborCost: 10.32,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 54.72,
+        markup: 90.28,
+        walkinPrice: 145.00,
+        walkinNetProfit: 90.28,
+        foodPandaPrice: 228.35,
+        cogsRatio: 0.237
+      }
     ],
-    secondaryIngredients: [
-      { name: 'Muscovado Sugar', quantity: 1, unit: 'pc/s', unitPrice: 3, unitPriceUnit: '/pc', cost: 3.00 },
+    preparationSteps: [
+      "Ilagay ang nata o boba pearls sa baso.",
+      "Sa shaker, pagsamahin ang jasmine tea base, passion fruit syrup, at fructose.",
+      "Lagyan ng yelo at i-shake ng 8-10 segundo.",
+      "Isalin at i-serve nang napakalamig."
     ],
-    heatAndUtilities: 5.00,
-    recipeCost: 49.60,
-    packagingCost: 7.00,
-    laborCost: 4.96,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 61.56,
-    markup: 38.44,
-    walkinPrice: 100.00,
-    walkinNetProfit: 38.44,
-    foodPandaPrice: 152.50,
-    cogsRatio: 0.6156,
     baristaNotes: [
-      "Steam milk to 65°C para lumabas ang natural sweetness at velvety microfoam.",
-      "Haluin muna ang sauce sa kaunting mainit na gatas bago ibuhos ang buong steam jug."
-    ],
-    preparationSteps: [
-      "Ilagay ang 20ml chocolate o matcha sauce sa 8oz hot cup.",
-      "Mag-steam ng 200ml fresh milk gamit ang steam wand hanggang magkaroon ng makintab na microfoam.",
-      "Magbuhos ng kaunting steamed milk at haluin gamit ang mini whisk hanggang mag-emulsify.",
-      "I-pour ang natitirang milk na may subtle latte art sa ibabaw."
+      "Ang Jasmine green tea ay dapat i-brew sa 80°C sa loob ng 7 minuto. Kapag pinakuluan ng 100°C ay papait ang tsaa."
     ]
   },
 
-  // 8. Med Hot 12oz Non-Coffee
+  // 10. JAVA CHIP BLENDED FRAPPE
   {
-    id: 'med-hot-noncoffee-12oz',
-    name: 'Hot Belgian Chocolate / Matcha Latte (12oz)',
-    category: 'coffee_hot',
-    categoryLabel: 'Hot Classics & Non-Coffee',
-    size: '12oz HOT',
-    isIntroSalesLeader: false,
-    description: 'Medium sized hot comforting chocolate or rich matcha latte.',
-    primaryIngredients: [
-      { name: 'Fresh Milk (Full Cream)', quantity: 250, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 35.00 },
-      { name: 'Rich Flavor Sauce', quantity: 30, unit: 'ml', unitPrice: 680, unitPriceUnit: '/l', cost: 20.40 },
+    id: "java-chip-frappe",
+    name: "Java Chip Chocolate Coffee Frappe",
+    category: "blended_frappe",
+    categoryLabel: "Frappes & Shakes",
+    imageUrl: "/beverages/java-chip-frappe.jpg",
+    description: "Ice-blended mocha espresso na may halong dark chocolate chips, creamy frappe base, at whipped cream topping.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot)", quantity: 18, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 27.90 },
+          { name: "Chocolate / Torani Sauce", quantity: 35, unit: "ml", unitPrice: 680, unitPriceUnit: "/l", cost: 23.80 },
+          { name: "Frappe Emulsifier Base", quantity: 20, unit: "g", unitPrice: 395, unitPriceUnit: "/kg", cost: 7.90 }
+        ],
+        secondaryIngredients: [
+          { name: "Crushed Tube Ice", quantity: 200, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 2.00 },
+          { name: "Chocolate Drizzle Topping", quantity: 10, unit: "ml", unitPrice: 280, unitPriceUnit: "/l", cost: 2.80 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 69.40,
+        packagingCost: 12.00,
+        laborCost: 15.00,
+        equipmentDepreciation: 2.00,
+        miscCost: 0,
+        totalCost: 98.40,
+        markup: 66.60,
+        walkinPrice: 165.00,
+        walkinNetProfit: 66.60,
+        foodPandaPrice: 259.85,
+        cogsRatio: 0.421
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Espresso Beans (Double Shot)", quantity: 18, unit: "g", unitPrice: 1550, unitPriceUnit: "/kg", cost: 27.90 },
+          { name: "Chocolate / Torani Sauce", quantity: 45, unit: "ml", unitPrice: 680, unitPriceUnit: "/l", cost: 30.60 },
+          { name: "Frappe Emulsifier Base", quantity: 30, unit: "g", unitPrice: 395, unitPriceUnit: "/kg", cost: 11.85 }
+        ],
+        secondaryIngredients: [
+          { name: "Crushed Tube Ice", quantity: 250, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 2.50 },
+          { name: "Chocolate Drizzle Topping", quantity: 15, unit: "ml", unitPrice: 280, unitPriceUnit: "/l", cost: 4.20 }
+        ],
+        heatAndUtilities: 5.00,
+        recipeCost: 82.05,
+        packagingCost: 12.00,
+        laborCost: 18.00,
+        equipmentDepreciation: 2.00,
+        miscCost: 0,
+        totalCost: 114.05,
+        markup: 80.95,
+        walkinPrice: 195.00,
+        walkinNetProfit: 80.95,
+        foodPandaPrice: 307.09,
+        cogsRatio: 0.421
+      }
     ],
-    secondaryIngredients: [],
-    heatAndUtilities: 10.00,
-    recipeCost: 65.40,
-    packagingCost: 7.00,
-    laborCost: 6.54,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 78.94,
-    markup: 46.06,
-    walkinPrice: 125.00,
-    walkinNetProfit: 46.06,
-    foodPandaPrice: 196.88,
-    cogsRatio: 0.6014,
-    baristaNotes: ["Higher milk volume nangangailangan ng 30ml sauce para manatiling buo ang lasa."],
     preparationSteps: [
-      "Ilagay ang 30ml premium sauce sa 12oz double wall cup.",
-      "I-steam ang 250ml fresh milk sa 65°C.",
-      "Haluin nang maigi at buhusan ng silky milk foam."
-    ]
-  },
-
-  // 9. 16oz Non-Coffee Milk-based Iced
-  {
-    id: 'noncoffee-iced-16oz',
-    name: 'Iced Matcha / Chocolate Milk Cream (16oz)',
-    category: 'milktea',
-    categoryLabel: 'Milk-Based Cold Creations',
-    size: '16oz',
-    isIntroSalesLeader: false,
-    description: 'Rich and creamy non-coffee refresher. ₱87.80 net profit kada baso.',
-    primaryIngredients: [
-      { name: 'Fresh Milk', quantity: 150, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 21.00 },
-      { name: 'Specialty Flavor Powder', quantity: 25, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 12.50 },
-      { name: 'Sweetened Condensed Milk Syrup', quantity: 30, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 4.50 },
+      "Ilagay sa commercial blender pitcher ang yelo, espresso, chocolate sauce, at frappe base powder.",
+      "I-blend sa Low ng 10 segundo, pagkatapos sa High ng 25 segundo hanggang maging malasutla ang texture.",
+      "Isalin sa baso, lagyan ng whipped cream sa ibabaw at i-drizzle ng chocolate sauce."
     ],
-    secondaryIngredients: [
-      { name: 'Tube Ice', quantity: 100, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 44.00,
-    packagingCost: 10.00,
-    laborCost: 13.20,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 67.20,
-    markup: 65.00,
-    walkinPrice: 155.00,
-    walkinNetProfit: 87.80,
-    foodPandaPrice: 244.13,
-    cogsRatio: 0.4335,
-    baristaNotes: ["I-dissolve ang powder sa 30ml warm water o gatas bago ihalo sa malamig na gatas."],
-    preparationSteps: [
-      "Tunawin ang 25g powder sa kaunting mainit na tubig.",
-      "Ihalo ang 30ml milk syrup at 150ml malamig na gatas.",
-      "Lagyan ng 100g yelo at i-serve nang malamig."
-    ]
-  },
-
-  // 10. 22oz Non-Coffee Milk-based Iced
-  {
-    id: 'noncoffee-iced-22oz',
-    name: 'Iced Matcha / Chocolate Milk Cream (22oz)',
-    category: 'milktea',
-    categoryLabel: 'Milk-Based Cold Creations',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Giant 22oz size non-coffee iced drink with high margin.',
-    primaryIngredients: [
-      { name: 'Fresh Milk', quantity: 200, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 28.00 },
-      { name: 'Specialty Flavor Powder', quantity: 30, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 15.00 },
-      { name: 'Sweetened Milk Syrup', quantity: 30, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 4.50 },
-    ],
-    secondaryIngredients: [
-      { name: 'Tube Ice', quantity: 100, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 53.50,
-    packagingCost: 5.00,
-    laborCost: 16.05,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 74.55,
-    markup: 70.00,
-    walkinPrice: 170.00,
-    walkinNetProfit: 95.45,
-    foodPandaPrice: 267.75,
-    cogsRatio: 0.4385,
-    baristaNotes: ["Napakataas ng gross margin sa 22oz dahil sa mabisang milk syrup ratio."],
-    preparationSteps: [
-      "I-dissolve ang 30g powder sa 50ml warm milk.",
-      "Idagdag ang 30ml milk syrup at natitirang gatas.",
-      "Punuin ng yelo at i-serve."
-    ]
-  },
-
-  // 11. Small Hot 8oz Espresso Latte
-  {
-    id: 'small-hot-latte-8oz',
-    name: 'Caffe Latte / Flat White (8oz HOT)',
-    category: 'coffee_hot',
-    categoryLabel: 'Hot Classics & Non-Coffee',
-    size: '8oz HOT',
-    isIntroSalesLeader: false,
-    description: 'Classic double espresso with velvety steamed milk. The benchmark recipe for any barista.',
-    primaryIngredients: [
-      { name: 'Specialty Espresso Beans', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Steamed Fresh Milk', quantity: 200, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 28.00 },
-    ],
-    secondaryIngredients: [
-      { name: 'Sugar stick', quantity: 1, unit: 'pc/s', unitPrice: 3, unitPriceUnit: '/pc', cost: 3.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 63.90,
-    packagingCost: 7.00,
-    laborCost: 12.78,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 83.68,
-    markup: 50.00,
-    walkinPrice: 133.68,
-    walkinNetProfit: 50.00,
-    foodPandaPrice: 203.86,
-    cogsRatio: 0.6260,
     baristaNotes: [
-      "18g dose in -> 36g liquid espresso out in 27 seconds.",
-      "Steam milk to 60-65°C with microfoam like wet paint."
-    ],
-    preparationSteps: [
-      "Grind 18g espresso beans, distribute, tamp evenly.",
-      "Extract double shot into pre-warmed 8oz cup.",
-      "Steam 200ml milk creating fine microfoam.",
-      "Pour with gentle heart or tulip latte art."
+      "Laging gumamit ng frappe base powder! Ito ang sikreto para hindi maghiwalay ang yelo at likido kapag iniwan ng customer."
     ]
   },
 
-  // 12. Small Hot 8oz Flavored Latte
+  // 11. FRESH PHILIPPINE MANGO SHAKE
   {
-    id: 'small-hot-flavored-latte-8oz',
-    name: 'Spanish Latte / Mocha (8oz HOT)',
-    category: 'coffee_hot',
-    categoryLabel: 'Hot Classics & Non-Coffee',
-    size: '8oz HOT',
-    isIntroSalesLeader: false,
-    description: 'Double espresso infused with condensed sauce or rich cocoa.',
-    primaryIngredients: [
-      { name: 'Specialty Espresso Beans', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Steamed Fresh Milk', quantity: 200, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 28.00 },
-      { name: 'Flavored Sauce', quantity: 20, unit: 'ml', unitPrice: 680, unitPriceUnit: '/l', cost: 13.60 },
+    id: "fresh-mango-shake",
+    name: "Fresh Philippine Mango Shake",
+    category: "fruit_shake_juice",
+    categoryLabel: "Real Fruit & Calamansi",
+    imageUrl: "/beverages/fresh-mango-shake.jpg",
+    description: "Gawa sa tunay na hinog na manggang kalabaw, fresh milk, at condensed milk. Purong sarap ng prutas.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Fresh Ripe Mango Slices", quantity: 165, unit: "g", unitPrice: 300, unitPriceUnit: "/kg", cost: 49.50 },
+          { name: "Fresh Milk", quantity: 100, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 14.00 },
+          { name: "Sweetened Milk Syrup", quantity: 30, unit: "g", unitPrice: 120, unitPriceUnit: "/kg", cost: 3.60 },
+          { name: "Fructose Syrup", quantity: 30, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 4.50 }
+        ],
+        secondaryIngredients: [
+          { name: "Crushed Ice", quantity: 200, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 2.00 }
+        ],
+        heatAndUtilities: 3.00,
+        recipeCost: 76.60,
+        packagingCost: 10.00,
+        laborCost: 15.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 101.60,
+        markup: 43.40,
+        walkinPrice: 145.00,
+        walkinNetProfit: 43.40,
+        foodPandaPrice: 228.35,
+        cogsRatio: 0.528
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Fresh Ripe Mango Slices", quantity: 220, unit: "g", unitPrice: 300, unitPriceUnit: "/kg", cost: 66.00 },
+          { name: "Fresh Milk", quantity: 140, unit: "ml", unitPrice: 140, unitPriceUnit: "/l", cost: 19.60 },
+          { name: "Sweetened Milk Syrup", quantity: 40, unit: "g", unitPrice: 120, unitPriceUnit: "/kg", cost: 4.80 },
+          { name: "Fructose Syrup", quantity: 40, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 6.00 }
+        ],
+        secondaryIngredients: [
+          { name: "Crushed Ice", quantity: 250, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 2.50 }
+        ],
+        heatAndUtilities: 3.50,
+        recipeCost: 102.40,
+        packagingCost: 10.00,
+        laborCost: 18.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 130.40,
+        markup: 44.60,
+        walkinPrice: 175.00,
+        walkinNetProfit: 44.60,
+        foodPandaPrice: 275.63,
+        cogsRatio: 0.585
+      }
     ],
-    secondaryIngredients: [],
-    heatAndUtilities: 5.00,
-    recipeCost: 74.50,
-    packagingCost: 7.00,
-    laborCost: 11.18,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 92.68,
-    markup: 40.00,
-    walkinPrice: 132.68,
-    walkinNetProfit: 40.00,
-    foodPandaPrice: 202.00,
-    cogsRatio: 0.6985,
-    baristaNotes: ["Haluin ang sauce direkta sa mainit na espresso shot bago ibuhos ang steamed milk."],
     preparationSteps: [
-      "Ilagay ang 20ml sauce sa ilalim ng baso.",
-      "I-extract ang double shot espresso direkta sa ibabaw ng sauce at haluin.",
-      "I-steam ang 200ml fresh milk at i-pour."
-    ]
-  },
-
-  // 13. Med Hot 12oz Latte
-  {
-    id: 'med-hot-latte-12oz',
-    name: 'Caffe Latte Classic (12oz HOT)',
-    category: 'coffee_hot',
-    categoryLabel: 'Hot Classics & Non-Coffee',
-    size: '12oz HOT',
-    isIntroSalesLeader: false,
-    description: 'Comforting 12oz latte with balanced coffee sweetness and rich milk body.',
-    primaryIngredients: [
-      { name: 'Specialty Espresso Beans', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Steamed Fresh Milk', quantity: 250, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 35.00 },
+      "Ilagay ang sariwang hiwa ng mangga sa blender.",
+      "Idagdag ang gatas, milk syrup, at yelo.",
+      "I-blend hanggang sa maging pino at creamy.",
+      "Ibuhos sa baso at lagyan ng hiwang mangga sa ibabaw kung nais."
     ],
-    secondaryIngredients: [],
-    heatAndUtilities: 10.00,
-    recipeCost: 72.90,
-    packagingCost: 7.00,
-    laborCost: 14.58,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 94.48,
-    markup: 60.52,
-    walkinPrice: 155.00,
-    walkinNetProfit: 60.52,
-    foodPandaPrice: 244.13,
-    cogsRatio: 0.5805,
-    baristaNotes: ["18g double espresso holds up perfectly in 250ml milk."],
-    preparationSteps: [
-      "I-extract ang double shot espresso sa 12oz hot cup.",
-      "I-steam ang 250ml fresh milk.",
-      "I-pour at i-serve na may latte art."
-    ]
-  },
-
-  // 14. Med Hot 12oz Flavored Latte
-  {
-    id: 'med-hot-flavored-latte-12oz',
-    name: 'Caramel Macchiato / Mocha (12oz HOT)',
-    category: 'coffee_hot',
-    categoryLabel: 'Hot Classics & Non-Coffee',
-    size: '12oz HOT',
-    isIntroSalesLeader: false,
-    description: '12oz rich flavored espresso indulgence.',
-    primaryIngredients: [
-      { name: 'Specialty Espresso Beans', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Steamed Fresh Milk', quantity: 250, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 35.00 },
-      { name: 'Gourmet Sauce', quantity: 30, unit: 'ml', unitPrice: 680, unitPriceUnit: '/l', cost: 20.40 },
-    ],
-    secondaryIngredients: [],
-    heatAndUtilities: 5.00,
-    recipeCost: 88.30,
-    packagingCost: 8.00,
-    laborCost: 17.66,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 113.96,
-    markup: 41.04,
-    walkinPrice: 155.00,
-    walkinNetProfit: 41.04,
-    foodPandaPrice: 235.99,
-    cogsRatio: 0.7352,
-    baristaNotes: ["Drizzle additional caramel sauce on top of the milk foam."],
-    preparationSteps: [
-      "Ilagay ang 30ml gourmet sauce sa 12oz cup.",
-      "I-extract ang 18g espresso sa ibabaw nito at i-swirl.",
-      "I-steam ang 250ml gatas at buhusan ng foam."
-    ]
-  },
-
-  // 15. 16oz Fruit Shake
-  {
-    id: 'fruit-shake-16oz',
-    name: 'Real Fruit Shake (Mango / Strawberry 16oz)',
-    category: 'fruit_shake_juice',
-    categoryLabel: 'Fruit Shakes & Fresh Juices',
-    size: '16oz',
-    isIntroSalesLeader: false,
-    description: 'Fresh tropical fruit blitzed with milk and ice. ₱81.00 net profit per cup.',
-    primaryIngredients: [
-      { name: 'Real Frozen/Fresh Fruit Slices', quantity: 165, unit: 'g', unitPrice: 300, unitPriceUnit: '/kg', cost: 49.50 },
-      { name: 'Fresh Milk', quantity: 100, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 14.00 },
-      { name: 'Milk Syrup', quantity: 30, unit: 'g', unitPrice: 120, unitPriceUnit: '/kg', cost: 3.60 },
-      { name: 'Liquid Fructose', quantity: 30, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 4.50 },
-    ],
-    secondaryIngredients: [
-      { name: 'Crushed Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 78.60,
-    packagingCost: 10.00,
-    laborCost: 15.72,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 104.32,
-    markup: 81.00,
-    walkinPrice: 185.32,
-    walkinNetProfit: 81.00,
-    foodPandaPrice: 291.88,
-    cogsRatio: 0.5629,
     baristaNotes: [
-      "Gumamit ng hinog na mangga o pre-frozen fruit para creamy at hindi matubig ang shake.",
-      "High-speed blender 25 seconds sa pulse mode para walang naiiwang tipak ng yelo."
-    ],
-    preparationSteps: [
-      "Ilagay sa blender jar ang 165g prutas, 100ml gatas, 30g milk syrup, at 30ml fructose.",
-      "Idagdag ang 200g yelo.",
-      "I-blend sa high speed sa loob ng 25-30 segundo hanggang maging silky smooth.",
-      "Isalin sa 16oz cup at lagyan ng dome lid."
+      "Tiyaking hinog ang mangga bago gamitin. Kapag medyo maasim, dagdagan ng 10ml fructose syrup."
     ]
   },
 
-  // 16. 22oz Fruit Shake
+  // 12. CALAMANSI HONEY COLD PRESS JUICE
   {
-    id: 'fruit-shake-22oz',
-    name: 'Real Fruit Shake (Mango / Strawberry 22oz)',
-    category: 'fruit_shake_juice',
-    categoryLabel: 'Fruit Shakes & Fresh Juices',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Jumbo 22oz real fruit shake. Premium healthy choice for summer seasons.',
-    primaryIngredients: [
-      { name: 'Real Frozen/Fresh Fruit Slices', quantity: 185, unit: 'g', unitPrice: 300, unitPriceUnit: '/kg', cost: 55.50 },
-      { name: 'Fresh Milk', quantity: 100, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 14.00 },
-      { name: 'Milk Syrup', quantity: 40, unit: 'g', unitPrice: 120, unitPriceUnit: '/kg', cost: 4.80 },
-      { name: 'Liquid Fructose', quantity: 30, unit: 'g', unitPrice: 150, unitPriceUnit: '/kg', cost: 4.50 },
+    id: "calamansi-honey-juice",
+    name: "Native Calamansi Honey Cold Press",
+    category: "fruit_shake_juice",
+    categoryLabel: "Real Fruit & Calamansi",
+    imageUrl: "/beverages/calamansi-honey-juice.jpg",
+    description: "100% natural calamansi juice na pinalasa ng purong pulot-pukyutan (honey). Mura ang puhunan pero mataas ang demand.",
+    defaultSize: "16oz",
+    sizes: [
+      {
+        size: "16oz",
+        sizeLabel: "Medium (16oz)",
+        primaryIngredients: [
+          { name: "Fresh Native Calamansi", quantity: 10, unit: "pc/s", unitPrice: 2, unitPriceUnit: "/pc", cost: 20.00 },
+          { name: "Honey / Fructose Blend", quantity: 20, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 3.00 }
+        ],
+        secondaryIngredients: [
+          { name: "Tube Ice & Cold Water", quantity: 200, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 2.00 }
+        ],
+        heatAndUtilities: 2.00,
+        recipeCost: 27.00,
+        packagingCost: 10.00,
+        laborCost: 5.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 42.00,
+        markup: 53.00,
+        walkinPrice: 95.00,
+        walkinNetProfit: 53.00,
+        foodPandaPrice: 149.61,
+        cogsRatio: 0.284
+      },
+      {
+        size: "22oz",
+        sizeLabel: "Large (22oz)",
+        primaryIngredients: [
+          { name: "Fresh Native Calamansi", quantity: 15, unit: "pc/s", unitPrice: 2, unitPriceUnit: "/pc", cost: 30.00 },
+          { name: "Honey / Fructose Blend", quantity: 30, unit: "ml", unitPrice: 150, unitPriceUnit: "/l", cost: 4.50 }
+        ],
+        secondaryIngredients: [
+          { name: "Tube Ice & Cold Water", quantity: 250, unit: "g", unitPrice: 10, unitPriceUnit: "/kg", cost: 2.50 }
+        ],
+        heatAndUtilities: 2.00,
+        recipeCost: 39.00,
+        packagingCost: 10.00,
+        laborCost: 7.00,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 56.00,
+        markup: 64.00,
+        walkinPrice: 120.00,
+        walkinNetProfit: 64.00,
+        foodPandaPrice: 188.98,
+        cogsRatio: 0.325
+      }
     ],
-    secondaryIngredients: [
-      { name: 'Crushed Ice', quantity: 300, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 3.00 },
-    ],
-    heatAndUtilities: 10.00,
-    recipeCost: 91.80,
-    packagingCost: 10.00,
-    laborCost: 18.36,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 120.16,
-    markup: 62.00,
-    walkinPrice: 182.16,
-    walkinNetProfit: 62.00,
-    foodPandaPrice: 286.90,
-    cogsRatio: 0.6596,
-    baristaNotes: ["Requires 300g ice for the thick 22oz frosty texture."],
     preparationSteps: [
-      "Ilagay ang 185g prutas, 100ml gatas, syrups, at 300g yelo sa blender.",
-      "I-blend nang buo hanggang maging creamy.",
-      "I-serve agad para hindi matunaw."
-    ]
-  },
-
-  // 17. 16oz Fresh Calamansi Juice
-  {
-    id: 'calamansi-juice-16oz',
-    name: 'Fresh Native Calamansi Juice Refresher (16oz)',
-    category: 'fruit_shake_juice',
-    categoryLabel: 'Fruit Shakes & Fresh Juices',
-    size: '16oz',
-    isIntroSalesLeader: false,
-    description: 'High margin citrus staple! 10 pcs fresh calamansi with pure cane sweetener. ₱87.00 net profit per cup (puhunang ₱43 lang total).',
-    primaryIngredients: [
-      { name: 'Fresh Native Calamansi', quantity: 10, unit: 'pc/s', unitPrice: 2, unitPriceUnit: '/pc', cost: 20.00 },
-      { name: 'Liquid Cane Fructose', quantity: 20, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 3.00 },
+      "Hiwain at pigain ang calamansi sa baso gamit ang citrus squeezer para hindi mapiga ang buto.",
+      "Idagdag ang honey / fructose blend at malamig na tubig.",
+      "Punuin ng yelo at haluing maigi."
     ],
-    secondaryIngredients: [
-      { name: 'Purified Tube Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 30.00,
-    packagingCost: 7.00,
-    laborCost: 6.00,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 43.00,
-    markup: 84.00,
-    walkinPrice: 130.00,
-    walkinNetProfit: 87.00,
-    foodPandaPrice: 204.75,
-    cogsRatio: 0.3308,
     baristaNotes: [
-      "Pigaan ng kalamansi gamit ang hand squeezer. Huwag pipisilin ang balat para hindi pumait ang katas.",
-      "Ihalo ang honey o chia seeds para sa instant ₱20-₱30 add-on premium."
-    ],
-    preparationSteps: [
-      "Hiwain at pigaan ang 10 pirasong sariwang kalamansi gamit ang salaan.",
-      "Sa shaker, pagsamahin ang katas ng kalamansi, 20ml fructose, at 150ml malamig na tubig.",
-      "Lagyan ng 200g yelo at i-shake nang masigla sa loob ng 10 segundo.",
-      "Isalin sa 16oz baso at palamutian ng calamansi wheel."
+      "Huwag pipigain nang sobra ang balat ng calamansi dahil naglalabas ito ng mapait na citrus oil."
     ]
   },
 
-  // 18. 22oz Fresh Calamansi Juice
+  // 13. BENGUET ARABICA DRIP COFFEE
   {
-    id: 'calamansi-juice-22oz',
-    name: 'Fresh Native Calamansi Juice Refresher (22oz)',
-    category: 'fruit_shake_juice',
-    categoryLabel: 'Fruit Shakes & Fresh Juices',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Giant 22oz cold citrus quencher. ₱97.00 net profit per cup.',
-    primaryIngredients: [
-      { name: 'Fresh Native Calamansi', quantity: 13, unit: 'pc/s', unitPrice: 2, unitPriceUnit: '/pc', cost: 26.00 },
-      { name: 'Liquid Cane Fructose', quantity: 30, unit: 'ml', unitPrice: 150, unitPriceUnit: '/l', cost: 4.50 },
+    id: "benguet-arabica-drip",
+    name: "Benguet Highland Arabica Drip Coffee",
+    category: "drip",
+    categoryLabel: "Single Drip Coffee",
+    imageUrl: "/beverages/benguet-arabica-drip.jpg",
+    description: "Single-serve pour over hanging drip bag na may 15g premium medium roast Cordillera Arabica coffee.",
+    defaultSize: "1 pc",
+    sizes: [
+      {
+        size: "1 pc",
+        sizeLabel: "Single Cup (1 pc)",
+        primaryIngredients: [
+          { name: "Benguet Arabica Ground Coffee", quantity: 15, unit: "g", unitPrice: 900, unitPriceUnit: "/kg", cost: 13.50 }
+        ],
+        secondaryIngredients: [
+          { name: "Sugar Packet", quantity: 1, unit: "pc/s", unitPrice: 5, unitPriceUnit: "/pc", cost: 5.00 },
+          { name: "Japanese Filter Drip Pouch", quantity: 1, unit: "pc/s", unitPrice: 3.5, unitPriceUnit: "/pc", cost: 3.50 }
+        ],
+        heatAndUtilities: 3.00,
+        recipeCost: 25.00,
+        packagingCost: 10.00,
+        laborCost: 2.50,
+        equipmentDepreciation: 0,
+        miscCost: 0,
+        totalCost: 37.50,
+        markup: 20.00,
+        walkinPrice: 57.50,
+        walkinNetProfit: 20.00,
+        foodPandaPrice: 90.56,
+        cogsRatio: 0.435
+      }
     ],
-    secondaryIngredients: [
-      { name: 'Purified Tube Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 37.50,
-    packagingCost: 8.00,
-    laborCost: 7.50,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 53.00,
-    markup: 97.00,
-    walkinPrice: 150.00,
-    walkinNetProfit: 97.00,
-    foodPandaPrice: 236.25,
-    cogsRatio: 0.3533,
-    baristaNotes: ["Very cost-effective: ₱37.50 recipe cost yields ₱150 walk-in price."],
     preparationSteps: [
-      "Pigaan ang 13 pirasong kalamansi.",
-      "Ihalo sa 30ml fructose at 200ml tubig.",
-      "I-shake kasama ang 200g yelo at i-serve."
-    ]
-  },
-
-  // 19. 16oz Blended Frappe
-  {
-    id: 'blended-frappe-16oz',
-    name: 'Ice-Blended Vanilla / Caramel Frappe (16oz)',
-    category: 'blended_frappe',
-    categoryLabel: 'Ice-Blended Frappes',
-    size: '16oz',
-    isIntroSalesLeader: false,
-    description: 'Creamy frappe with frappe binder base and whipped cream crown. ₱89.86 net profit.',
-    primaryIngredients: [
-      { name: 'Fresh Milk', quantity: 100, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 14.00 },
-      { name: 'Flavoring Powder / Sauce', quantity: 30, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 15.00 },
-      { name: 'Commercial Frappe Base (Emulsifier)', quantity: 15, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 7.50 },
+      "Buksan ang drip bag at isabit ang cardboard ears sa bibig ng tasa.",
+      "Magbuhos ng 30ml mainit na tubig (92°C) at maghintay ng 30 seconds para sa coffee bloom.",
+      "Dahan-dahang ibuhos ang natitirang 150ml na tubig nang paikot.",
+      "Alisin ang drip bag at i-enjoy ang sariwang pour-over kape."
     ],
-    secondaryIngredients: [
-      { name: 'Crushed Ice', quantity: 300, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 3.00 },
-      { name: 'Whipped Cream', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 2.80 },
-      { name: 'Whipped Topping / Drizzle', quantity: 50, unit: 'ml', unitPrice: 250, unitPriceUnit: '/l', cost: 12.50 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 57.80,
-    packagingCost: 10.00,
-    laborCost: 17.34,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 85.14,
-    markup: 89.86,
-    walkinPrice: 175.00,
-    walkinNetProfit: 89.86,
-    foodPandaPrice: 275.63,
-    cogsRatio: 0.4865,
     baristaNotes: [
-      "Ang Frappe Base (15g) ang susi para hindi maghiwalay ang yelo at gatas habang iniinom.",
-      "Whipped cream crown adds perceived value allowing ₱175 retail price."
-    ],
-    preparationSteps: [
-      "Ilagay ang 100ml milk, 30g flavor, 15g frappe base, at 300g yelo sa blender.",
-      "I-blend sa high speed sa loob ng 30 segundo.",
-      "Isalin sa 16oz cup, i-swirl ang whipped cream, at lagyan ng drizzle syrup."
-    ]
-  },
-
-  // 20. 22oz Blended Frappe
-  {
-    id: 'blended-frappe-22oz',
-    name: 'Ice-Blended Vanilla / Caramel Frappe (22oz)',
-    category: 'blended_frappe',
-    categoryLabel: 'Ice-Blended Frappes',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Ultimate blended frappe indulgence. ₱84.91 net profit.',
-    primaryIngredients: [
-      { name: 'Fresh Milk', quantity: 100, unit: 'ml', unitPrice: 140, unitPriceUnit: '/l', cost: 14.00 },
-      { name: 'Flavoring Powder / Sauce', quantity: 40, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 20.00 },
-      { name: 'Commercial Frappe Base', quantity: 25, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 12.50 },
-    ],
-    secondaryIngredients: [
-      { name: 'Crushed Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-      { name: 'Whipped Cream', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 2.80 },
-      { name: 'Whipped Topping', quantity: 60, unit: 'ml', unitPrice: 250, unitPriceUnit: '/l', cost: 15.00 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 69.30,
-    packagingCost: 10.00,
-    laborCost: 20.79,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 100.09,
-    markup: 85.00,
-    walkinPrice: 185.00,
-    walkinNetProfit: 84.91,
-    foodPandaPrice: 291.38,
-    cogsRatio: 0.5410,
-    baristaNotes: ["Blend on medium first 10 seconds then high 20 seconds."],
-    preparationSteps: [
-      "Ihalo ang ingredients at yelo sa blender.",
-      "I-blend hanggang maging makinis ang texture.",
-      "Lagyan ng whipped topping at i-serve."
-    ]
-  },
-
-  // 21. 16oz Refreshing Fruit Tea
-  {
-    id: 'fruittea-16oz',
-    name: 'Jasmine Green Fruit Tea w/ Popping Boba (16oz)',
-    category: 'fruittea',
-    categoryLabel: 'Refreshing Fruit Teas',
-    size: '16oz',
-    isIntroSalesLeader: false,
-    description: 'Crisp brewed Jasmine green tea infused with tropical fruit syrup and pearls. ₱88.91 net profit.',
-    primaryIngredients: [
-      { name: 'Brewed Jasmine Green Tea Base', quantity: 170, unit: 'ml', unitPrice: 15, unitPriceUnit: '/l', cost: 2.55 },
-      { name: 'Fruit Tea Concentrated Syrup / Jam', quantity: 30, unit: 'g', unitPrice: 600, unitPriceUnit: '/kg', cost: 18.00 },
-      { name: 'Tapioca Pearls / Popping Boba', quantity: 10, unit: 'g', unitPrice: 150, unitPriceUnit: '/kg', cost: 1.50 },
-    ],
-    secondaryIngredients: [
-      { name: 'Liquid Fructose', quantity: 15, unit: 'ml', unitPrice: 135, unitPriceUnit: '/l', cost: 2.03 },
-      { name: 'Purified Tube Ice', quantity: 100, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 30.08,
-    packagingCost: 10.00,
-    laborCost: 6.02,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 46.09,
-    markup: 88.91,
-    walkinPrice: 135.00,
-    walkinNetProfit: 88.91,
-    foodPandaPrice: 212.63,
-    cogsRatio: 0.3414,
-    baristaNotes: [
-      "Brew Jasmine green tea at 75°C for 7 minutes only. Never boiling water to avoid bitter astringency.",
-      "Can pair with passion fruit, peach, or lychee syrup."
-    ],
-    preparationSteps: [
-      "Ilagay ang 10g pearls o boba sa ilalim ng baso.",
-      "Sa shaker, ilagay ang 170ml brewed green tea, 30g fruit syrup, at 15ml fructose.",
-      "Lagyan ng 100g yelo at i-shake nang masigla.",
-      "Ibuhos sa baso at lagyan ng slice ng lemon o mint leaves."
-    ]
-  },
-
-  // 22. 22oz Refreshing Fruit Tea
-  {
-    id: 'fruittea-22oz',
-    name: 'Jasmine Green Fruit Tea w/ Popping Boba (22oz)',
-    category: 'fruittea',
-    categoryLabel: 'Refreshing Fruit Teas',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Refreshing 22oz giant fruit tea quencher. ₱101.86 net profit.',
-    primaryIngredients: [
-      { name: 'Brewed Jasmine Green Tea Base', quantity: 220, unit: 'ml', unitPrice: 15, unitPriceUnit: '/l', cost: 3.30 },
-      { name: 'Fruit Tea Concentrated Syrup', quantity: 40, unit: 'g', unitPrice: 600, unitPriceUnit: '/kg', cost: 24.00 },
-      { name: 'Tapioca Pearls / Popping Boba', quantity: 15, unit: 'g', unitPrice: 150, unitPriceUnit: '/kg', cost: 2.25 },
-    ],
-    secondaryIngredients: [
-      { name: 'Liquid Fructose', quantity: 20, unit: 'ml', unitPrice: 135, unitPriceUnit: '/l', cost: 2.70 },
-      { name: 'Purified Tube Ice', quantity: 120, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.20 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 38.45,
-    packagingCost: 11.00,
-    laborCost: 7.69,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 57.14,
-    markup: 101.86,
-    walkinPrice: 159.00,
-    walkinNetProfit: 101.86,
-    foodPandaPrice: 250.42,
-    cogsRatio: 0.3594,
-    baristaNotes: ["Top tier profit: ₱101.86 per cup on ₱57.14 total investment."],
-    preparationSteps: [
-      "Ilagay ang 15g pearls sa baso.",
-      "I-shake ang 220ml green tea, 40g syrup, at fructose kasama ang yelo.",
-      "Isalin sa baso at i-seal."
-    ]
-  },
-
-  // 23. 22oz Blended Coffee Frappe
-  {
-    id: 'blended-coffee-frappe-22oz',
-    name: 'Mocha Espresso Java Chip Frappe (22oz)',
-    category: 'blended_frappe',
-    categoryLabel: 'Ice-Blended Frappes',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Blended espresso frappe with chocolate chip textures and frappe base. ₱70.00 net profit.',
-    primaryIngredients: [
-      { name: 'Espresso Beans Extract', quantity: 17, unit: 'g', unitPrice: 1100, unitPriceUnit: '/kg', cost: 18.70 },
-      { name: 'Flavor / Mocha Powder', quantity: 35, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 17.50 },
-      { name: 'Frappe Base Thickener', quantity: 30, unit: 'g', unitPrice: 500, unitPriceUnit: '/kg', cost: 15.00 },
-    ],
-    secondaryIngredients: [
-      { name: 'Purified Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-      { name: 'Chocolate Drizzle Topping', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 2.80 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 59.00,
-    packagingCost: 5.00,
-    laborCost: 17.70,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 81.70,
-    markup: 70.00,
-    walkinPrice: 151.70,
-    walkinNetProfit: 70.00,
-    foodPandaPrice: 238.93,
-    cogsRatio: 0.5386,
-    baristaNotes: ["Cool down espresso shot before blending so it doesn't melt the ice immediately."],
-    preparationSteps: [
-      "I-extract ang espresso at palamigin nang saglit.",
-      "I-combine ang kape, powder, frappe base, at yelo sa blender.",
-      "I-blend nang buo, ibuhos sa 22oz cup, at lagyan ng chocolate drizzle."
-    ]
-  },
-
-  // 24. 16oz Blended Premium Sauce Series
-  {
-    id: 'blended-sauce-premium-16oz',
-    name: 'Gourmet Salted Caramel Blended Frappe (16oz)',
-    category: 'blended_frappe',
-    categoryLabel: 'Ice-Blended Frappes',
-    size: '16oz',
-    isIntroSalesLeader: false,
-    description: 'Premium Torani sauce-based coffee frappe. ₱92.38 net profit.',
-    primaryIngredients: [
-      { name: 'Espresso Grounds', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Gourmet Flavor Sauce (Torani)', quantity: 35, unit: 'ml', unitPrice: 680, unitPriceUnit: '/l', cost: 23.80 },
-      { name: 'Frappe Base Powder', quantity: 20, unit: 'g', unitPrice: 395, unitPriceUnit: '/kg', cost: 7.90 },
-    ],
-    secondaryIngredients: [
-      { name: 'Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-      { name: 'Sauce Drizzle Topping', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 2.80 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 67.40,
-    packagingCost: 10.00,
-    laborCost: 20.22,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 97.62,
-    markup: 60.00,
-    walkinPrice: 190.00,
-    walkinNetProfit: 92.38,
-    foodPandaPrice: 299.25,
-    cogsRatio: 0.5138,
-    baristaNotes: ["Sauce-based frappes taste richer than powder-only alternatives."],
-    preparationSteps: [
-      "Ihalo ang espresso, sauce, frappe base, at yelo sa blender.",
-      "I-blend hanggang mag-ribbon ang texture.",
-      "Isalin sa baso na may caramel lining."
-    ]
-  },
-
-  // 25. 22oz Blended Premium Sauce Series
-  {
-    id: 'blended-sauce-premium-22oz',
-    name: 'Gourmet Salted Caramel Blended Frappe (22oz)',
-    category: 'blended_frappe',
-    categoryLabel: 'Ice-Blended Frappes',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Large gourmet sauce-based coffee frappe. ₱93.41 net profit.',
-    primaryIngredients: [
-      { name: 'Espresso Grounds', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Torani Gourmet Sauce', quantity: 45, unit: 'ml', unitPrice: 680, unitPriceUnit: '/l', cost: 30.60 },
-      { name: 'Frappe Base Powder', quantity: 30, unit: 'g', unitPrice: 395, unitPriceUnit: '/kg', cost: 11.85 },
-    ],
-    secondaryIngredients: [
-      { name: 'Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-      { name: 'Topping', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 2.80 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 78.15,
-    packagingCost: 10.00,
-    laborCost: 23.45,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 111.59,
-    markup: 70.00,
-    walkinPrice: 205.00,
-    walkinNetProfit: 93.41,
-    foodPandaPrice: 322.88,
-    cogsRatio: 0.5444,
-    baristaNotes: ["Upsell whip cream and crushed oreo/biscoff for ₱25 additional."],
-    preparationSteps: [
-      "I-blend ang 18g espresso shot, 45ml sauce, frappe base, at 200g yelo.",
-      "Isalin sa 22oz cup at lagyan ng whipped cream at drizzle."
-    ]
-  },
-
-  // 26. 16oz Blended Powder Basic Series
-  {
-    id: 'blended-powder-basic-16oz',
-    name: 'Cafe Frappe Powder Series (16oz)',
-    category: 'blended_frappe',
-    categoryLabel: 'Ice-Blended Frappes',
-    size: '16oz',
-    isIntroSalesLeader: false,
-    description: 'Affordable high-speed powder frappe formulation.',
-    primaryIngredients: [
-      { name: 'Espresso Grounds', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Flavor Powder', quantity: 30, unit: 'g', unitPrice: 450, unitPriceUnit: '/kg', cost: 13.50 },
-      { name: 'Frappe Base', quantity: 20, unit: 'g', unitPrice: 395, unitPriceUnit: '/kg', cost: 7.90 },
-    ],
-    secondaryIngredients: [
-      { name: 'Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-      { name: 'Topping', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 2.80 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 57.10,
-    packagingCost: 10.00,
-    laborCost: 17.13,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 84.23,
-    markup: 60.00,
-    walkinPrice: 180.00,
-    walkinNetProfit: 95.77,
-    foodPandaPrice: 283.50,
-    cogsRatio: 0.4679,
-    baristaNotes: ["Lower ingredient cost compared to sauce yet gives rich mouthfeel."],
-    preparationSteps: [
-      "I-blend ang espresso, powder, base, at yelo nang tuloy-tuloy.",
-      "I-serve nang malamig."
-    ]
-  },
-
-  // 27. 22oz Blended Powder Basic Series
-  {
-    id: 'blended-powder-basic-22oz',
-    name: 'Cafe Frappe Powder Series (22oz)',
-    category: 'blended_frappe',
-    categoryLabel: 'Ice-Blended Frappes',
-    size: '22oz',
-    isIntroSalesLeader: false,
-    description: 'Large powder-blend frappe recipe.',
-    primaryIngredients: [
-      { name: 'Espresso Grounds', quantity: 18, unit: 'g', unitPrice: 1550, unitPriceUnit: '/kg', cost: 27.90 },
-      { name: 'Flavor Powder', quantity: 40, unit: 'g', unitPrice: 450, unitPriceUnit: '/kg', cost: 18.00 },
-      { name: 'Frappe Base', quantity: 30, unit: 'g', unitPrice: 395, unitPriceUnit: '/kg', cost: 11.85 },
-    ],
-    secondaryIngredients: [
-      { name: 'Ice', quantity: 200, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 2.00 },
-      { name: 'Topping', quantity: 10, unit: 'ml', unitPrice: 280, unitPriceUnit: '/l', cost: 2.80 },
-    ],
-    heatAndUtilities: 3.00,
-    recipeCost: 65.55,
-    packagingCost: 10.00,
-    laborCost: 19.67,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 95.22,
-    markup: 70.00,
-    walkinPrice: 195.00,
-    walkinNetProfit: 99.78,
-    foodPandaPrice: 307.13,
-    cogsRatio: 0.4883,
-    baristaNotes: ["Quick 25 second blend time."],
-    preparationSteps: [
-      "Ihalo sa blender at i-blend sa high speed.",
-      "Isalin sa baso at palamutian."
-    ]
-  },
-
-  // 28. 12oz Ice Coffee Basic & Premium
-  {
-    id: 'ice-coffee-12oz-basic',
-    name: 'Iced Coffee Kiosk Classic (12oz)',
-    category: 'coffee_iced',
-    categoryLabel: 'Iced Coffee Specials',
-    size: '12oz',
-    isIntroSalesLeader: false,
-    description: 'Compact 12oz iced coffee recipe for daily commuters.',
-    primaryIngredients: [
-      { name: 'Specialty Coffee Grounds', quantity: 12, unit: 'g', unitPrice: 1100, unitPriceUnit: '/kg', cost: 13.20 },
-      { name: 'Fresh Milk', quantity: 100, unit: 'ml', unitPrice: 90, unitPriceUnit: '/l', cost: 9.00 },
-      { name: 'Torani Syrup', quantity: 15, unit: 'ml', unitPrice: 800, unitPriceUnit: '/l', cost: 12.00 },
-      { name: 'Milk Syrup', quantity: 15, unit: 'ml', unitPrice: 120, unitPriceUnit: '/l', cost: 1.80 },
-    ],
-    secondaryIngredients: [
-      { name: 'Tube Ice', quantity: 100, unit: 'g', unitPrice: 10, unitPriceUnit: '/kg', cost: 1.00 },
-    ],
-    heatAndUtilities: 5.00,
-    recipeCost: 42.00,
-    packagingCost: 10.00,
-    laborCost: 8.40,
-    equipmentDepreciation: 0,
-    miscCost: 0,
-    totalCost: 60.40,
-    markup: 40.00,
-    walkinPrice: 100.40,
-    walkinNetProfit: 40.00,
-    foodPandaPrice: 158.13,
-    cogsRatio: 0.6016,
-    baristaNotes: ["Compact 12oz size is ideal for high-traffic MRT/LRT commuter stalls."],
-    preparationSteps: [
-      "I-brew ang 12g coffee shot.",
-      "Haluin ang syrups sa gatas at buhusan ng yelo.",
-      "I-float ang coffee shot."
+      "Napaka-patok nito para sa mga nag-oopisina at takeout breakfast bundles kasama ang silog o pastry."
     ]
   }
-];
-
-export const BEVERAGE_CATEGORIES = [
-  { id: 'all', name: 'Lahat ng Inumin', count: 28 },
-  { id: 'milktea', name: 'Milk Tea & Pearls', count: 4 },
-  { id: 'coffee_iced', name: 'Iced Coffee Specials', count: 5 },
-  { id: 'coffee_hot', name: 'Hot Classics & Non-Coffee', count: 6 },
-  { id: 'blended_frappe', name: 'Ice-Blended Frappes', count: 7 },
-  { id: 'fruit_shake_juice', name: 'Fruit Shakes & Fresh Juices', count: 4 },
-  { id: 'drip', name: 'Drip Coffee Pouches', count: 2 },
 ];

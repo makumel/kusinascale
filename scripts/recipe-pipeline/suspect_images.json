@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "filename": "japanese-tonkotsu-ramen.jpg",
+    "size": [
+      800,
+      600
+    ],
+    "sat_mean": 78.22,
+    "val_mean": 182.42,
+    "color_diff_mean": 82.02,
+    "white_paper_ratio": 0.3199,
+    "black_text_ratio": 0.0582,
+    "is_suspect": true,
+    "reasons": [
+      "Form-like text on paper (5.8% dark text, 32.0% white)"
+    ]
+  }
+]
