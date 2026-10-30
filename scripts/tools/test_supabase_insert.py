@@ -1,10 +1,12 @@
 import urllib.request
 import json
+import os
 
 url = "https://eeetozfjqqrozwysjsgk.supabase.co/rest/v1/kusina_suggestions"
+secret_key = os.environ.get("SUPABASE_SECRET_KEY", "your-supabase-secret-key")
 headers = {
-    "apikey": "sanitized_secret_placeholder",
-    "Authorization": "Bearer sanitized_secret_placeholder",
+    "apikey": secret_key,
+    "Authorization": f"Bearer {secret_key}",
     "Content-Type": "application/json",
     "Prefer": "return=representation"
 }

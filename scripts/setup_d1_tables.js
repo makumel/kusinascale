@@ -1,5 +1,5 @@
 const ACCOUNT_ID = '0c21f8b6e38195d7c29e57ca8998cf48';
-const API_TOKEN = 'sanitized_token_placeholder';
+const API_TOKEN = process.env.CF_API_TOKEN || '';
 const DB_ID = 'a450128e-ad2a-4e76-a7c1-efa9225ea66d';
 
 async function createTables() {
