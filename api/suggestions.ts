@@ -1,5 +1,5 @@
 const accountId = process.env.CF_ACCOUNT_ID || '0c21f8b6e38195d7c29e57ca8998cf48';
-const apiToken = process.env.CF_API_TOKEN || 'sanitized_token_placeholder';
+const apiToken = process.env.CF_API_TOKEN || '';
 const dbId = process.env.CF_D1_DATABASE_ID || 'a450128e-ad2a-4e76-a7c1-efa9225ea66d';
 
 async function executeD1(sql: string, params: any[] = []) {
