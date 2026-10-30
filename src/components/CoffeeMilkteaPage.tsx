@@ -136,7 +136,7 @@ export const CoffeeMilkteaPage: React.FC<CoffeeMilkteaPageProps> = ({ onBackToCa
       'Labor Allocation (PHP)',
       'Kabuuang Gastos / Total Cost (PHP)',
       'Markup / Tubo (PHP)',
-      'Suggested Walk-In SRP (PHP)',
+      'Walk-In SRP (PHP)',
       'Net Profit / Tubo per Cup (PHP)',
       'FoodPanda 30% SRP (PHP)'
     ];

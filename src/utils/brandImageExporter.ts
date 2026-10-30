@@ -377,7 +377,7 @@ export async function exportCostingBreakdownSheet(
   const cardY = 250;
   const cardHeight = 160;
 
-  // Card 1: Suggested SRP
+  // Card 1: Presyo ng Benta (SRP)
   ctx.fillStyle = '#ecfdf5';
   ctx.fillRect(45, cardY, cardWidth, cardHeight);
   ctx.strokeStyle = '#10b981';
@@ -386,7 +386,7 @@ export async function exportCostingBreakdownSheet(
 
   ctx.fillStyle = '#065f46';
   ctx.font = 'bold 14px "Plus Jakarta Sans", sans-serif';
-  ctx.fillText('SUGGESTED SRP / BENTA', 65, cardY + 36);
+  ctx.fillText('PRESYO NG BENTA (SRP)', 65, cardY + 36);
 
   ctx.fillStyle = '#047857';
   ctx.font = 'bold 44px "JetBrains Mono", monospace';

@@ -92,7 +92,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
               </span>
             </div>
             <div>
-              <span className="block text-[11px] text-orange-700 font-medium">Suggested SRP</span>
+              <span className="block text-[11px] text-orange-700 font-medium">Presyo ng Benta (SRP)</span>
               <span className="font-mono text-base font-bold text-orange-600">
                 {formatPHP(baseMetrics.suggestedSrp)}
               </span>

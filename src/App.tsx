@@ -156,7 +156,7 @@ export function App() {
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-stone-950 tracking-tight leading-[1.15]">
               Master Your Food Costing &amp;{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 via-emerald-600 to-teal-700">
-                Suggested SRP
+                Presyo ng Benta (SRP)
               </span>
             </h1>
 

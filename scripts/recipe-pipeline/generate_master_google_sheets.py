@@ -154,7 +154,7 @@ for r in recipes:
         "Overhead %": overhead_pct,
         "Packaging Per Serving (PHP)": pkg_per_serving,
         "Target Margin %": margin_pct,
-        "Suggested SRP (PHP)": suggested_srp,
+        "Suggested Retail Price - SRP (PHP)": suggested_srp,
         "Profit Per Serving (PHP)": profit_per_serving,
         "Ingredients List": ingredients_formatted,
         "Cooking Instructions": instructions_formatted,

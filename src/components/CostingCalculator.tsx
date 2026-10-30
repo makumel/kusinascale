@@ -330,7 +330,7 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
       <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-stone-200">
         <div>
           <h2 className="font-serif text-lg sm:text-xl font-bold text-stone-900 flex items-center gap-2">
-            <span>Kalkulador ng Puhunan at Suggested SRP</span>
+            <span>Kalkulador ng Puhunan at Presyo ng Benta (SRP)</span>
             <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
               {breakdown.scaleMultiplier}x Batch Multiplier
             </span>
@@ -411,10 +411,10 @@ export const CostingCalculator: React.FC<CostingCalculatorProps> = ({ recipe }) 
           </div>
         </div>
 
-        {/* Suggested SRP */}
+        {/* Presyo ng Benta (SRP) */}
         <div className="bg-white border-2 border-emerald-600 rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between shadow-sm relative overflow-hidden">
           <div className="flex items-center justify-between text-emerald-800 text-xs font-bold">
-            <span>Suggested SRP</span>
+            <span>Presyo ng Benta (SRP)</span>
             <Sparkles className="w-4 h-4 text-emerald-600" />
           </div>
           <div className="mt-2">
