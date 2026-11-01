@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { RECIPES, CATEGORIES } from './data/recipes';
 import { Recipe, RecipeCategory } from './types/recipe';
 import { Navbar } from './components/Navbar';
-import { CategoryFilter } from './components/CategoryFilter';
+import { CategoryFilter, ProteinFilter, TimeFilter, SortOption, ViewMode } from './components/CategoryFilter';
 import { RecipeCard } from './components/RecipeCard';
 import { RecipeModal } from './components/RecipeModal';
 import { SuggestionModal } from './components/SuggestionModal';
@@ -45,6 +45,35 @@ export function App() {
 
   const [activeCategory, setActiveCategory] = useState<RecipeCategory>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedProtein, setSelectedProtein] = useState<ProteinFilter>('all');
+  const [selectedTime, setSelectedTime] = useState<TimeFilter>('all');
+  const [sortBy, setSortBy] = useState<SortOption>('bestseller');
+  const [viewMode, setViewMode] = useState<ViewMode>('grid');
+
+  // Helper to deduce protein group from name & ingredients
+  const getRecipeProtein = (recipe: Recipe): ProteinFilter => {
+    const text = (recipe.name + ' ' + recipe.description).toLowerCase();
+    if (text.includes('baboy') || text.includes('pork') || text.includes('liempo') || text.includes('kasim') || text.includes('bagnet') || text.includes('lechon') || text.includes('sisig') || text.includes('menudo')) return 'pork';
+    if (text.includes('manok') || text.includes('chicken') || text.includes('inasal') || text.includes('tinola')) return 'chicken';
+    if (text.includes('baka') || text.includes('beef') || text.includes('bulalo') || text.includes('kansi') || text.includes('caldereta') || text.includes('bistek')) return 'beef';
+    if (text.includes('isda') || text.includes('bangus') || text.includes('shrimp') || text.includes('hipon') || text.includes('tuna') || text.includes('pusit') || text.includes('seafood') || text.includes('salmon') || text.includes('tilapia')) return 'seafood';
+    if (text.includes('gulay') || text.includes('tokwa') || text.includes('talong') || text.includes('sitaw') || text.includes('kangkong') || text.includes('ampalaya') || text.includes('laing') || text.includes('pinakbet')) return 'vegetable';
+    return 'all';
+  };
+
+  // Helper to parse cook time in minutes
+  const parseCookTimeMinutes = (timeStr: string): number => {
+    const match = timeStr.match(/\d+/);
+    return match ? parseInt(match[0], 10) : 30;
+  };
+
+  const handleResetFilters = () => {
+    setActiveCategory('all');
+    setSearchQuery('');
+    setSelectedProtein('all');
+    setSelectedTime('all');
+    setSortBy('bestseller');
+  };
 
   // Selected recipe for modal
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
@@ -67,9 +96,9 @@ export function App() {
     });
   }, []);
 
-  // Filter recipes based on active category & search query
+  // Filter & sort recipes based on active category, multi-facets, & search query
   const filteredRecipes = useMemo(() => {
-    return RECIPES.filter((recipe) => {
+    const matched = RECIPES.filter((recipe) => {
       // Category check
       if (activeCategory !== 'all' && recipe.category !== activeCategory) {
         return false;
@@ -84,12 +113,49 @@ export function App() {
         const matchesIngredient = recipe.ingredients.some((ing) =>
           ing.name.toLowerCase().includes(q)
         );
-        return matchesName || matchesTagline || matchesDescription || matchesIngredient;
+        if (!matchesName && !matchesTagline && !matchesDescription && !matchesIngredient) {
+          return false;
+        }
+      }
+
+      // Protein facet check
+      if (selectedProtein !== 'all') {
+        const protein = getRecipeProtein(recipe);
+        if (protein !== selectedProtein) {
+          return false;
+        }
+      }
+
+      // Cook time facet check
+      if (selectedTime !== 'all') {
+        const minutes = parseCookTimeMinutes(recipe.cookTime);
+        if (selectedTime === 'quick' && minutes > 20) return false;
+        if (selectedTime === 'medium' && (minutes <= 20 || minutes > 45)) return false;
+        if (selectedTime === 'slow' && minutes <= 45) return false;
       }
 
       return true;
     });
-  }, [activeCategory, searchQuery]);
+
+    // Sort order
+    return matched.sort((a, b) => {
+      if (sortBy === 'profit-desc') {
+        return b.defaultTargetMargin - a.defaultTargetMargin;
+      }
+      if (sortBy === 'cost-asc') {
+        const costA = a.ingredients.reduce((acc, i) => acc + i.baseCost, 0) / a.baseServings;
+        const costB = b.ingredients.reduce((acc, i) => acc + i.baseCost, 0) / b.baseServings;
+        return costA - costB;
+      }
+      if (sortBy === 'time-asc') {
+        return parseCookTimeMinutes(a.cookTime) - parseCookTimeMinutes(b.cookTime);
+      }
+      if (sortBy === 'alphabetical') {
+        return a.name.localeCompare(b.name);
+      }
+      return 0; // Bestseller turnover default order
+    });
+  }, [activeCategory, searchQuery, selectedProtein, selectedTime, sortBy]);
 
   const handleOpenCalculator = (recipe: Recipe) => {
     setSelectedRecipe(recipe);
@@ -206,6 +272,16 @@ export function App() {
           onSelectCategory={setActiveCategory}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
+          selectedProtein={selectedProtein}
+          onSelectProtein={setSelectedProtein}
+          selectedTime={selectedTime}
+          onSelectTime={setSelectedTime}
+          sortBy={sortBy}
+          onSortChange={setSortBy}
+          viewMode={viewMode}
+          onViewModeChange={setViewMode}
+          totalFilteredCount={filteredRecipes.length}
+          onResetFilters={handleResetFilters}
         />
 
         {/* Filter Summary & Count Header */}
@@ -228,18 +304,33 @@ export function App() {
           </span>
         </div>
 
-        {/* Recipe Cards Grid */}
+        {/* Recipe Cards Grid / POS Table View */}
         {filteredRecipes.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filteredRecipes.map((recipe) => (
-              <RecipeCard
-                key={recipe.id}
-                recipe={recipe}
-                onOpenCalculator={handleOpenCalculator}
-                onViewRecipe={handleViewRecipe}
-              />
-            ))}
-          </div>
+          viewMode === 'pos' ? (
+            <div className="space-y-3">
+              {filteredRecipes.map((recipe) => (
+                <RecipeCard
+                  key={recipe.id}
+                  recipe={recipe}
+                  viewMode="pos"
+                  onOpenCalculator={handleOpenCalculator}
+                  onViewRecipe={handleViewRecipe}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {filteredRecipes.map((recipe) => (
+                <RecipeCard
+                  key={recipe.id}
+                  recipe={recipe}
+                  viewMode="grid"
+                  onOpenCalculator={handleOpenCalculator}
+                  onViewRecipe={handleViewRecipe}
+                />
+              ))}
+            </div>
+          )
         ) : (
           <div className="py-16 text-center space-y-4 bg-white rounded-3xl border border-dashed border-stone-300 p-8">
             <div className="w-14 h-14 bg-stone-100 text-stone-400 rounded-full flex items-center justify-center mx-auto">

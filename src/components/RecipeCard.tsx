@@ -2,15 +2,18 @@ import React from 'react';
 import { Recipe } from '../types/recipe';
 import { calculateCosting, formatPHP } from '../utils/costingEngine';
 import { Clock, Users, ArrowUpRight, Sparkles, ChefHat } from 'lucide-react';
+import { ViewMode } from './CategoryFilter';
 
 interface RecipeCardProps {
   recipe: Recipe;
+  viewMode?: ViewMode;
   onOpenCalculator: (recipe: Recipe) => void;
   onViewRecipe: (recipe: Recipe) => void;
 }
 
 export const RecipeCard: React.FC<RecipeCardProps> = ({
   recipe,
+  viewMode = 'grid',
   onOpenCalculator,
   onViewRecipe,
 }) => {
@@ -23,6 +26,71 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
     priceOverrides: {},
   });
 
+  const marginHealthy = recipe.defaultTargetMargin >= 50;
+
+  // DENSE POS / KITCHEN TABLET VIEW
+  if (viewMode === 'pos') {
+    return (
+      <article className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between p-4 bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:border-emerald-700/60 transition-all gap-4">
+        <div className="flex items-center gap-3.5 min-w-[240px]">
+          <img
+            src={recipe.imageUrl}
+            alt={recipe.name}
+            className="w-14 h-14 rounded-xl object-cover border border-stone-200 flex-shrink-0"
+            loading="lazy"
+          />
+          <div>
+            <h3 className="font-serif text-base font-bold text-stone-900 line-clamp-1">
+              {recipe.name}
+            </h3>
+            <span className="text-xs text-stone-500 flex items-center gap-2">
+              <span className="font-semibold text-emerald-800">{recipe.categoryLabel}</span>
+              <span>•</span>
+              <span className="font-mono text-stone-600">{recipe.cookTime}</span>
+              <span>•</span>
+              <span className="font-mono text-stone-600">{recipe.baseServings} portions</span>
+            </span>
+          </div>
+        </div>
+
+        {/* Financial POS Snapshot Columns */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center font-mono text-xs flex-1 max-w-md">
+          <div className="bg-stone-50 p-2 rounded-xl border border-stone-200">
+            <span className="block text-[10px] text-stone-500 font-sans uppercase">Puhunan</span>
+            <span className="font-bold text-stone-800">{formatPHP(baseMetrics.costPerServing)}</span>
+          </div>
+          <div className="bg-orange-50 p-2 rounded-xl border border-orange-200">
+            <span className="block text-[10px] text-orange-700 font-sans uppercase">Benta (SRP)</span>
+            <span className="font-bold text-orange-600">{formatPHP(baseMetrics.suggestedSrp)}</span>
+          </div>
+          <div className="bg-emerald-50 p-2 rounded-xl border border-emerald-200">
+            <span className="block text-[10px] text-emerald-800 font-sans uppercase">Tubo</span>
+            <span className="font-bold text-emerald-700">+{formatPHP(baseMetrics.profitPerServing)}</span>
+          </div>
+        </div>
+
+        {/* 44px POS Action Controls */}
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <button
+            onClick={() => onOpenCalculator(recipe)}
+            className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 active:scale-95 text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
+          >
+            Tingnan Tubo
+          </button>
+          <button
+            onClick={() => onViewRecipe(recipe)}
+            className="p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 active:scale-95 text-stone-700 border border-stone-300 transition-all cursor-pointer"
+            aria-label="Tingnan Resipe"
+            title="Tingnan Resipe"
+          >
+            <ChefHat className="w-4 h-4" />
+          </button>
+        </div>
+      </article>
+    );
+  }
+
+  // RICH EDITORIAL CARD VIEW
   return (
     <article className="group relative flex flex-col bg-white rounded-3xl border border-stone-200/80 shadow-xs hover:shadow-xl hover:border-orange-200/80 transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
       {/* Recipe Photo Header with Badges */}
@@ -58,8 +126,10 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
               {recipe.baseServings} portions
             </span>
           </div>
-          <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-orange-600/90 text-white shadow-xs">
-            {recipe.defaultTargetMargin}% Target Margin
+          <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded shadow-xs ${
+            marginHealthy ? 'bg-emerald-700/90 text-white' : 'bg-orange-600/90 text-white'
+          }`}>
+            {recipe.defaultTargetMargin}% Tubo
           </span>
         </div>
       </div>
