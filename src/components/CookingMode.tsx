@@ -74,6 +74,47 @@ export const CookingMode: React.FC<CookingModeProps> = ({ recipe, portions, onEx
   const [timerSecondsLeft, setTimerSecondsLeft] = useState<number | null>(null);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
   const [activeStepTimerIndex, setActiveStepTimerIndex] = useState<number | null>(null);
+
+  // Screen Wake Lock API with visibility re-acquisition guard
+  const [isWakeLocked, setIsWakeLocked] = useState<boolean>(false);
+  const wakeLockRef = useRef<any>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const requestWakeLock = async () => {
+      try {
+        if ('wakeLock' in navigator && (navigator as any).wakeLock) {
+          wakeLockRef.current = await (navigator as any).wakeLock.request('screen');
+          if (isMounted) setIsWakeLocked(true);
+          wakeLockRef.current.addEventListener('release', () => {
+            if (isMounted) setIsWakeLocked(false);
+          });
+        }
+      } catch (err) {
+        console.warn('Screen WakeLock failed:', err);
+        if (isMounted) setIsWakeLocked(false);
+      }
+    };
+
+    requestWakeLock();
+
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        requestWakeLock();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    return () => {
+      isMounted = false;
+      document.removeEventListener('visibilitychange', handleVisibility);
+      if (wakeLockRef.current) {
+        wakeLockRef.current.release().catch(() => {});
+      }
+    };
+  }, []);
   const timerIntervalRef = useRef<any>(null);
 
   // Timer tick effect
@@ -147,8 +188,16 @@ export const CookingMode: React.FC<CookingModeProps> = ({ recipe, portions, onEx
             <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/20 backdrop-blur-md uppercase tracking-wider text-amber-200">
               Interactive Cooking Station
             </span>
-            <span className="text-xs text-white/90 font-medium">
+            <span className="text-xs text-white/90 font-medium font-mono tabular-nums">
               • {portions} Pax ({scaleMultiplier.toFixed(2)}x Multiplier)
+            </span>
+            <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold tracking-tight border ${
+              isWakeLocked 
+                ? 'bg-emerald-950/80 text-emerald-300 border-emerald-500/60 shadow-xs' 
+                : 'bg-stone-900/60 text-stone-300 border-white/20'
+            }`}>
+              <span className={`w-2 h-2 rounded-full ${isWakeLocked ? 'bg-emerald-400 animate-pulse' : 'bg-stone-400'}`} />
+              {isWakeLocked ? 'Screen On 🔒' : 'Screen Auto-Sleep'}
             </span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight mt-1 flex items-center gap-2">
